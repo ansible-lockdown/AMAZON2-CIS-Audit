@@ -1,0 +1,25 @@
+{{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.level1 }}
+    {{ if .Vars.rule_1_8}}
+command:
+  security-updates:
+    title: 1.8 | Ensure updates, patches, and additional security software are installed
+    exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
+    exec: yum check-update
+    stdout: 
+    - "![0-9].* packages available"
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.8
+      CISv8:
+      - 7.3
+      - 7.4
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+{{ end }}

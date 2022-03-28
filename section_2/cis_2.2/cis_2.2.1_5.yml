@@ -1,0 +1,88 @@
+{{ if .Vars.level1 }}
+package:
+  {{ if not .Vars.ypbind_required }}
+    {{ if .Vars.rule_2_2_1 }}
+  ypbind:
+    title: 2.2.1 | Ensure NIS Client is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 2.2.1
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+  {{ if not .Vars.rsh_required }}
+    {{ if .Vars.rule_2_2_2 }}
+  rsh:
+    title: 2.2.2 | Ensure rsh client is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 2.2.2
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+  {{ if not .Vars.talk_required }}
+    {{ if .Vars.rule_2_2_3 }}
+  talk:
+    title: 2.2.3 | Ensure talk client is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID: 
+      - 2.2.3
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+  {{ if not .Vars.telnet_required }}
+    {{ if .Vars.rule_2_2_4 }}
+  telnet:
+    title: 2.2.4 | Ensure telnet client is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID:
+      - 2.2.4
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+  {{ if not .Vars.openldap_clients_required }}
+    {{ if .Vars.rule_2_2_5 }}  
+  openldap-clients:
+    title: 2.2.5 | Ensure LDAP client is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID:
+      - 2.2.5
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+{{ end }}

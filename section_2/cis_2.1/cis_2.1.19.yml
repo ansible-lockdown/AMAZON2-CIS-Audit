@@ -1,0 +1,36 @@
+{{ if not .Vars.rsyncd_server }}
+  {{ if .Vars.rule_2_1_19 }}
+    {{ if .Vars.level1 }}
+package:
+  rsync:
+    title: 2.2.19 | Ensure rsync is not installed or the rsyncd service is masked | Package
+    installed: false
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 2.1.19
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+service:
+  rsync:
+    title: 2.2.19 | L1 | Ensure rsync is not installed or the rsyncd service is masked | Service
+    enabled: false
+    running: false
+    skip: false
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID: 
+      - 2.2.19
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,20 @@
+{{ if not .Vars.ldap_server }}
+  {{ if .Vars.level1 }}
+    {{ if .Vars.rule_2_1_6 }}
+package:
+  openldap-servers:
+    title: 2.1.6 | Ensure LDAP server is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 2.1.6
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+{{ end }}

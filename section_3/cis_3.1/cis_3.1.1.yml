@@ -1,0 +1,66 @@
+{{ if .Vars.level2 }}
+{{ if not .Vars.ipv6_required }}
+  {{ if .Vars.rule_3_1_1 }}
+command:
+  ipv6_grub:
+    title: 3.1.1 | disable IPv6 | grub
+    exit-status: 0
+    exec: 'grep "^\s*linux" {{ .Vars.bootloader_file }} | grep -v ipv6.disable=1'
+    stdout: ['!/./']
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID: 
+      - 3.1.1
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+kernel-param:
+  net.ipv6.conf.all.disable_ipv6:
+    title: 3.1.1 | disable IPv6 | kernel
+    value: '1'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID: 
+      - 3.1.1
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+  net.ipv6.conf.default.disable_ipv6:
+    value: '1'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID: 
+      - 3.1.1
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+file:
+  /etc/default/grub:
+    title: 3.1.1 | Disable IPv6 | default_grub
+    exists: true
+    contains:
+    - '/(?=\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 3.1.1
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}
+{{ end }}
+
+

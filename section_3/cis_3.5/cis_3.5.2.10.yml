@@ -1,0 +1,18 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_3_5_2_10 }}
+service:
+  nftables:
+   title: 3.5.2.10 | Ensure nftables service is enabled
+   enabled: true
+   meta:
+     server: 1
+     workstation: NA
+     CIS_ID:
+     - 3.5.2.10
+     CISv8:
+     - 4.4
+     CISv8_IG1: true
+     CISv8_IG2: true
+     CISv8_IG3: true
+  {{ end }}
+{{ end }}

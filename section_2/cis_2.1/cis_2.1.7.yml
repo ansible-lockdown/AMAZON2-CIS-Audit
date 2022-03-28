@@ -1,0 +1,20 @@
+{{ if not .Vars.bind }}
+  {{ if .Vars.level1 }}
+    {{ if .Vars.rule_2_1_7 }}
+package:
+  bind:
+    title: 2.1.7 | Ensure DNS Server is not installed
+    installed: false
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID:
+      - 2.1.7
+      CISv8:
+      - 4.8
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+    {{ end }}
+  {{ end }}
+{{ end }}

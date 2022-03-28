@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_3_5_2_6 }}
+command:
+  nft_list:
+   title: 3.5.2.6 | Ensure base chains exists
+   exec: nft list ruleset | egrep -c "input|forward|output"
+   exit-status: 0
+   stdout:
+   - '3'
+   meta:
+     server: 1
+     workstation: NA
+     CIS_ID:
+     - 3.5.2.6
+     CISv8:
+     - 4.4
+     CISv8_IG1: true
+     CISv8_IG2: true
+     CISv8_IG3: true
+  {{ end }}
+{{ end }}

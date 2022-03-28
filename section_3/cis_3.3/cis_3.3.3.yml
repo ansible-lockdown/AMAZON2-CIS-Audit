@@ -1,0 +1,29 @@
+{{ if .Vars.rule_3_3_3 }}
+kernel-param:
+  net.ipv4.conf.all.secure_redirects:
+    title: 3.3.3 | Ensure secure ICMP redirects are not accepted | all
+    value: '0'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 3.3.3
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  net.ipv4.conf.default.secure_redirects:
+    title: 3.3.3 | Ensure secure ICMP redirects are not accepted | default
+    value: '0'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 3.3.3
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+{{ end }}
