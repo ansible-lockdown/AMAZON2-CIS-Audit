@@ -6,7 +6,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: Na
+      workstation: NA
       CIS_ID:
       - 1.5.4
       CISv8:
