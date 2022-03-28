@@ -1,7 +1,7 @@
 {{ if .Vars.level1 }}
   {{ if .Vars.config_aide }}
     {{ if .Vars.rule_1_3_2 }}
-      {{ if eq .Vars.rhel7_aide_scan "cron" }}
+      {{ if eq .Vars.aide_scan_type "cron" }}
 command:
   aide_cron:
     title: 1.3.2 | Ensure filesystem integrity is regularly checked (Automated)
@@ -24,7 +24,7 @@ command:
       CISv8_IG3: true
       {{ end }}
 service:
-    {{ if eq .Vars.aide_scan "timer" }}
+    {{ if eq .Vars.aide_scan_type "timer" }}
   aidecheck:
     title: 1.3.2 | Ensure filesystem integrity is regularly checked
     enabled: true

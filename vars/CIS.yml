@@ -296,7 +296,7 @@ config_aide: true
 
 
 # aide setup via - cron, timer
-rhel7_aide_scan: cron
+aide_scan_type: cron
 # AIDE cron settings
 aide_cron:
   cron_user: root

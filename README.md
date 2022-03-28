@@ -150,6 +150,7 @@ In this case installed or skipped using the standard name for a package to be in
 Some sections can have several options in that case the skip flag maybe passed to the test.
 e.g.
 
+- section_1/cis/1.3.2 - aide_scan_type - can be cron or timer depending on site policy
 - section_1/cis/1.8 - need to review the MOTD and issue files for bespoke content
 - section_1/cis_1.10/cis_1.10.yml  - Has gdm either not installed or configured default to not installed and skipped configured.
 - section_2/cis_2.2/cis_chrony_2.2.1.1.yml - this is chosen between ntp of chrony in the goss file
