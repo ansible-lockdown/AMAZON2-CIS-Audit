@@ -7,6 +7,7 @@
 #             - Ability to run as script from remediation role increased consistency
 # 17 Dec 2021 - Added system_type variable - default Server will change to workstations with -w switch
 # 02 Mar 2022 - Updated benchmark variable naming
+# 29 Mar 2022 - amended os_version discovery due to amazon linux
 
 
 #!/bin/bash
@@ -79,7 +80,7 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [ `grep -c rhel /etc/os-release` != 0 ]; then
+if [ `grep -vi like /etc/os-release | grep -c rhel` != 0 ]; then
     os_vendor="RHEL"
 else
     os_vendor=`hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr a-z A-Z`
