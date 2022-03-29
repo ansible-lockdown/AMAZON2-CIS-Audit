@@ -4,6 +4,8 @@
 
 based on CIS 2.0.0 - 28th July 2021
 
+This is bespoke to Amazon due to control IDs and associations. Redhat baselines can be more upto date but IDs and controls are not officially Amazon.
+
 Set of configuration files and directories to run the stages of CIS of Amazon Linux 2 servers
 
 This is configured in a directory structure level.
