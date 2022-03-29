@@ -400,7 +400,7 @@ auditd:
   auditd_backlog_limit: 8192
 
 ## syslog
-run_rsyslog: true
+runs_rsyslog: true
 rsyslog_listener: false
 
 ### Section 5

@@ -1,4 +1,4 @@
-{{ if .Vars.rsyslog }} 
+{{ if .Vars.runs_rsyslog }} 
   {{ if .Vars.rule_4_2_1_1 }}
 package:
   rsyslog:

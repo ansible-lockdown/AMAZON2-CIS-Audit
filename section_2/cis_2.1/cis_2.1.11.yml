@@ -8,7 +8,7 @@ package:
     meta:
       server: 1
       workstation: NA
-      CIS_ID:1
+      CIS_ID:
       - 2.1.11
       CISv8:
       - 4.8
