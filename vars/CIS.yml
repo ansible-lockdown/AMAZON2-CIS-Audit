@@ -2,7 +2,10 @@
 benchmark_version: '2.0.0'
 
 # timeout for each command to run where set - default = 10seconds/10000ms
-timeout_ms: 30000
+timeout_ms: 60000
+
+#
+host_os_distribution: AmazonLinux2
 
 # Taken from LE rhel7-cis
 
@@ -27,7 +30,7 @@ legacy_boot: true
 bootloader_file: /boot/grub2/grub.cfg
 bootloader_user: /boot/grub2/user.cfg
 
-#  if UEFI - note changes from redhat to centos depenadent on OS
+#  if UEFI - note changes from redhat to centos dependant on OS
 #  legacy_boot: false
 #  bootloader_file: /boot/efi/EFI/redhat/grub.cfg
 #  bootloader_user: /boot/efi/EFI/redhat/user.cfg
