@@ -200,12 +200,12 @@ rule_4_2_1_2: true
 rule_4_2_1_3: true
 rule_4_2_1_4: true
 rule_4_2_1_5: true
-rule_4_2_1_6: true ##
+rule_4_2_1_6: true
 rule_4_2_2_1: true
 rule_4_2_2_2: true
 rule_4_2_2_3: true
 rule_4_2_3: true
-rule_4_2_4: true ##
+rule_4_2_4: true
 
 # Section 5
 rule_5_1_1: true
@@ -397,7 +397,8 @@ auditd:
   auditd_backlog_limit: 8192
 
 ## syslog
-rsyslog: true
+run_rsyslog: true
+rsyslog_listener: false
 
 ### Section 5
 sshd_limited: false

@@ -1,0 +1,20 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_5_3_17 }}
+file:
+  /etc/ssh/sshd_config:
+    title: 5.3.17 | Ensure SSH LoginGraceTime is set to one minute or less
+    exists: true
+    contains:
+    - '/^LoginGraceTime ([1-9]|[1-5][0-9])/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.3.17
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

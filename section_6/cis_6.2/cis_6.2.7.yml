@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_6_2_7 }}
+command:
+  no_dup_uid:
+    title: 6.2.7 | Ensure no duplicate UIDs exist
+    exec: "cat /etc/passwd | cut -d: -f3 | uniq -d"
+    exit-status: 0
+    stdout:
+    - '!/./'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.2.7
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

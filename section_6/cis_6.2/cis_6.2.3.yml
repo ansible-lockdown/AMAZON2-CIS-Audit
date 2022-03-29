@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_6_2_3 }}
+command:
+  passwd_group_exist:
+    title: 6.2.3 | Ensure all groups in /etc/passwd exist in /etc/group
+    exec: pwck -r | grep 'no group' | awk '{ gsub("[:\47]",""); print $2}'
+    exit-status: 0
+    stdout:
+    - '!/./'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.2.3
+      CISv8:
+      - 3.3
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

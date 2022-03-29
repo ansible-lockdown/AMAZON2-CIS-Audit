@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_5_3_16 }}
+file:
+  /etc/ssh/sshd_config:
+    title: 5.3.16 | Ensure SSH Idle Timeout Interval is configured
+    exists: true
+    contains:
+    - '/^ClientAliveInterval {{ .Vars.ssh_aliveinterval }}/'
+    - '/^ClientAliveCountMax {{ .Vars.ssh_countmax }}/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.3.16
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

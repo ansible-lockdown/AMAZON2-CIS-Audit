@@ -17,13 +17,13 @@ package:
       CISv8_IG3: true
 service:
   rpcbind:
-    title: 2.2.18 | L1 | Ensure rpcbind is not installed or the rpcbind services are masked | masked
+    title: 2.2.18 | Ensure rpcbind is not installed or the rpcbind services are masked | masked
     enabled: false
     running: false
     skip: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID: 
       - 2.2.18
       CISv8:
@@ -32,13 +32,13 @@ service:
       CISv8_IG2: true
       CISv8_IG3: true
   rpcbind.socket:
-    title: 2.2.18 | L1 | Ensure rpcbind is not installed or the rpcbind services are masked | masked
+    title: 2.2.18 | Ensure rpcbind is not installed or the rpcbind services are masked | masked
     enabled: false
     running: false
     skip: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID: 
       - 2.2.18
       CISv8:

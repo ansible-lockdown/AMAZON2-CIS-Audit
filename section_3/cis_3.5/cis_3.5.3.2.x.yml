@@ -53,7 +53,7 @@ command:
   {{ end }}
   {{ if .Vars.rule_3_5_3_2_3 }}
   iptables_manual:
-   title: 3.5.3.2.3 | L1 | Ensure iptables rules exist for all open ports
+   title: 3.5.3.2.3 | Ensure iptables rules exist for all open ports
    exec: echo "Manual - Ensure iptables rules exist for all open ports"
    exit-status: 0
    stdout:

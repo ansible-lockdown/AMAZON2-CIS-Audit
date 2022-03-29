@@ -1,0 +1,18 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_6_2_4 }}
+group:
+  shadow:
+    title: 6.2.4 | Ensure shadow group is empty
+    exists: false
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.2.4
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_5_3_11 }}
+file:
+  /etc/ssh/sshd_config:
+    title: 5.3.11 | Ensure SSH PermitEmptyPasswords is disabled
+    exists: true
+    contains:
+    - '/^PermitEmptyPasswords no/'
+    - '!/^PermitEmptyPasswords yes/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.3.11
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}

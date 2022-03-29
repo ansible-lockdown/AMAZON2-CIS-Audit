@@ -1,0 +1,21 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_5_5_3 }}
+user:
+  root:
+    title: 5.5.3 | Ensure default group for the root account is GID 0
+    exists: true
+    uid: 0
+    gid: 0
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.5.3
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}
+

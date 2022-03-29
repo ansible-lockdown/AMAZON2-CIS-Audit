@@ -8,7 +8,7 @@ command:
     stdout: ['install /bin/true']
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID: 
       - 3.4.2
       CISv8:

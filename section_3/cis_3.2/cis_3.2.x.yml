@@ -37,7 +37,7 @@ kernel-param:
       value: '0'
       meta:
         server: 1
-        workstation: 1
+        workstation: NA
         CIS_ID:
         - 3.2.2
         CISv8:

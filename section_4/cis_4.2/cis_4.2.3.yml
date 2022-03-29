@@ -1,8 +1,8 @@
 {{ if .Vars.rule_4_2_3 }}
 command:
   logfile_configured:
-    title: 4.2.3 | Ensure permissions on all logfiles are configured
-    exec: find /var/log -type f -perm /g+wx,o+rwx -exec ls -l {} \;
+    title: 4.2.3 | Ensure logrotate is configured
+    exec: echo "Warning - Ensure logrotate is configured according to site policy"
     exit-status: 0
     stdout: ['!/./']
     meta:
@@ -11,8 +11,8 @@ command:
       CIS_ID:
       - 4.2.3
       CISv8:
-      - 3.3
-      CISv8_IG1: true
+      - 8.3
+      CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
 {{ end }}

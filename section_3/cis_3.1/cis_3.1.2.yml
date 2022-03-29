@@ -7,7 +7,7 @@ command:
     exec: iwconfig
     meta:
       server: 1
-      workstation: 2
+      workstation: NA
       CIS_ID:
       - 3.1.2
       CISv8:

@@ -7,7 +7,7 @@ command:
    exit-status: 0
    meta:
      server: 1
-     workstation: 1
+     workstation: NA
      CIS_ID:
      - 3.5.2.11
      CISv8:

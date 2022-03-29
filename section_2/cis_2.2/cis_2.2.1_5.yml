@@ -41,7 +41,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID: 
       - 2.2.3
       CISv8:
@@ -58,7 +58,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.4
       CISv8:
@@ -75,7 +75,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.5
       CISv8:

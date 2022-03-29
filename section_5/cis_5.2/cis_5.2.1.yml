@@ -1,0 +1,18 @@
+{{ if .Vars.level1 }}
+  {{ if .Vars.rule_5_2_1 }}
+package:
+  sudo: 
+    title: 5.2.1 | Ensure sudo is installed
+    installed: true
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.2.1
+      CISv8:
+      - 4.1
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+  {{ end }}
+{{ end }}
