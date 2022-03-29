@@ -25,7 +25,7 @@ AUDIT_CONTENT_LOCATION=/var/tmp  # Location of the audit configuration file as a
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=CIS  # Benchmark Name aligns to the audit
 BENCHMARK_VER=2.0.0
-BENCHMARK_OS=AmazonLinux2
+BENCHMARK_OS=AmazonLinux2  # This is also used to set os_vendor for AmazonLinux2
 
 
 
@@ -80,7 +80,10 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [ `grep -vi like /etc/os-release | grep -c rhel` != 0 ]; then
+if [[] "$BENCHMARK_OS" == AmazonLinux2 ]]; then
+    os_vendor="AMAZON2"
+elif 
+   [ `grep -c rhel /etc/os-release` != 0 ]; then
     os_vendor="RHEL"
 else
     os_vendor=`hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr a-z A-Z`
