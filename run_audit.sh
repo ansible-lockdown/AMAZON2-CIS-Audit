@@ -80,8 +80,8 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [[] "$BENCHMARK_OS" == AmazonLinux2 ]]; then
-    os_vendor="AMAZON2"
+if [[ "$BENCHMARK_OS" == AmazonLinux2 ]]; then
+    os_vendor="AMAZON"
 elif 
    [ `grep -c rhel /etc/os-release` != 0 ]; then
     os_vendor="RHEL"
