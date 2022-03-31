@@ -442,8 +442,7 @@ amznlnx2cis_ssh_countmax: "3"
 amznlnx2cis_pam_password:
   - minclass = 4
 amznlnx2cis_pam_passwd_retry: "3"
-# faillock or tally2
-amznlnx2cis_accountlock: faillock
+
 
 ## note this is to skip tests
 amznlnx2cis_skip_pam_passwd_auth: true
