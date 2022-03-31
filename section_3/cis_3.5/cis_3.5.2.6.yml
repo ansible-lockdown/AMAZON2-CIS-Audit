@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_3_5_2_6 }}
 command:
   nft_list:

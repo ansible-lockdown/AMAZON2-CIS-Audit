@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_6_1_9 }}
 command:
   group-_perms:

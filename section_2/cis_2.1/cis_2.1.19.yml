@@ -1,6 +1,6 @@
-{{ if not .Vars.rsyncd_server }}
+{{ if not Vars.amznlnx2cis_rsyncd_server }}
   {{ if .Vars.amznlnx2cis_rule_2_1_19 }}
-    {{ if .Vars.level1 }}
+    {{ if .Vars.amznlnx2cis_level1 }}
 package:
   rsync:
     title: 2.2.19 | Ensure rsync is not installed or the rsyncd service is masked | Package

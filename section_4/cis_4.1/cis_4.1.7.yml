@@ -7,10 +7,10 @@ command:
     stdout:
     - '/-w /var/log/faillog -p wa -k logins/'
     - '/-w /var/log/lastlog -p wa -k logins/'
-    {{ if eq .Vars.accountlock "faillock" }}
+    {{ if eq Vars.amznlnx2cis_accountlock "faillock" }}
     - '/-w /var/run/faillock/ -p wa -k logins/'
     {{ end }}
-    {{ if eq .Vars.accountlock "tally2" }}
+    {{ if eq Vars.amznlnx2cis_accountlock "tally2" }}
     - '/-w /var/log/tallylog -p wa -k logins/'
     {{ end }}
     meta:
@@ -30,10 +30,10 @@ command:
     stdout:
     - '-w /var/log/faillog -p wa -k logins'
     - '-w /var/log/lastlog -p wa -k logins'
-    {{ if eq .Vars.accountlock "faillock" }}
+    {{ if eq Vars.amznlnx2cis_accountlock "faillock" }}
     - '-w /var/run/faillock -p wa -k logins'
     {{ end }}
-    {{ if eq .Vars.accountlock "tally2" }}
+    {{ if eq Vars.amznlnx2cis_accountlock "tally2" }}
     - '-w /var/log/tallylog -p wa -k logins'
     {{ end }}
     meta:

@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_3_5_1_1 }}
 package:
   firewalld:
@@ -43,7 +43,7 @@ package:
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
-    {{ if .Vars.ipv6_required }}
+    {{ if Vars.amznlnx2cis_ipv6_required }}
   ip6tables-services:
     title: 3.5.1.2 | Ensure iptables-services not installed with firewalld | IPv6
     installed: false
@@ -116,7 +116,7 @@ command:
     exec: firewall-cmd --get-default-zone
     exit-status: 0
     stdout:
-    - '{{ .Vars.default_firewall_zone }}'
+    - '{{ Vars.amznlnx2cis_default_firewall_zone }}'
     meta:
       server: 1
       workstation: NA
@@ -133,7 +133,7 @@ command:
     title: 3.5.1.6 | Ensure network interfaces are assigned to appropriate zone
     exec:  "nmcli -t connection show | awk -F ':' '{if($4){print $4}}' | while read INT; do firewall-cmd --get-active-zones | grep -B1 $INT; done"
     exit-status: 0
-    {{ range .Vars.firewall_interface }}
+    {{ range Vars.amznlnx2cis_firewall_interface }}
     stdout: {{ . }}
     {{ end }}
     meta:

@@ -1,5 +1,5 @@
-{{ if not .Vars.avahi_server }}
-  {{ if .Vars.level1 }}
+{{ if not Vars.amznlnx2cis_avahi_server }}
+  {{ if .Vars.amznlnx2cis_level1 }}
     {{ if .Vars.amznlnx2cis_rule_2_1_3 }}
 package:
   avahi:

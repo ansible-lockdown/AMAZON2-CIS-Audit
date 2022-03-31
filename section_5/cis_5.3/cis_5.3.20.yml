@@ -1,4 +1,4 @@
-{{ if .Vars.level2 }}
+{{ if .Vars.amznlnx2cis_level2 }}
   {{ if .Vars.amznlnx2cis_rule_5_3_20 }}
 file:
   /etc/ssh/sshd_config:

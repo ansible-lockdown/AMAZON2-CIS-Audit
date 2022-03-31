@@ -1,11 +1,11 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_5_5_1_2 }}
 file:
   /etc/login.defs:
     title: 5.5.1.2 | Ensure minimum days between password changes is configured
     exists: true
     contains:
-    - '/^PASS_MIN_DAYS\s*{{ .Vars.pass_min_days }}/'
+    - '/^PASS_MIN_DAYS\s*{{ Vars.amznlnx2cis_pass_min_days }}/'
     - '!/^PASS_MIN_DAYS\s*([2-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9])/'
     meta:
       server: 1

@@ -1,5 +1,5 @@
-{{ if not .Vars.bind }}
-  {{ if .Vars.level1 }}
+{{ if not Vars.amznlnx2cis_bind }}
+  {{ if .Vars.amznlnx2cis_level1 }}
     {{ if .Vars.amznlnx2cis_rule_2_1_7 }}
 package:
   bind:

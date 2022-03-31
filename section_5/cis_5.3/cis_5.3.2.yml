@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_5_3_2 }}
 command:
   /etc/ssh/ssh_host_key_user:

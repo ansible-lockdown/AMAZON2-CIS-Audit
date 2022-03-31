@@ -1,41 +1,41 @@
 gossfile:
-  {{ if .Vars.section1 }}
+  {{ if .Vars.amznlnx2cissection1 }}
   section_1/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section2 }}
+  {{ if .Vars.amznlnx2cissection2 }}
   section_2/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section3 }}
+  {{ if .Vars.amznlnx2cissection3 }}
   section_3/cis_3.1/*.yml: {}
   section_3/cis_3.2/*.yml: {}
   section_3/cis_3.3/*.yml: {}
   section_3/cis_3.4/*.yml: {}
   {{ end }}
   
-  {{ if eq .Vars.firewall "firewalld" }}
+  {{ if eq .Vars.amznlnx2cisfirewall "firewalld" }}
   section_3/cis_3.5/cis_3.5.1.*.yml: {}
   {{ end }}
-  {{ if eq .Vars.firewall "nftables" }}
+  {{ if eq .Vars.amznlnx2cisfirewall "nftables" }}
   section_3/cis_3.5/cis_3.5.2.*.yml: {}
   {{ end }}
-  {{ if eq .Vars.firewall "iptables" }}
+  {{ if eq .Vars.amznlnx2cisfirewall "iptables" }}
   section_3/cis_3.5/cis_3.5.3.*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section4 }}
-  {{ if .Vars.level2 }}
+  {{ if .Vars.amznlnx2cissection4 }}
+  {{ if .Vars.amznlnx2cislevel2 }}
   section_4/cis_4.1/*.yml: {}
   {{ end }}
   section_4/cis_4.2/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section5 }}
+  {{ if .Vars.amznlnx2cissection5 }}
   section_5/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section6 }}
+  {{ if .Vars.amznlnx2cissection6 }}
   section_6/*/*.yml: {}
   {{ end }}
 
@@ -45,14 +45,14 @@ command:
     exec: echo BenchMark MetaData
     exit-status: 0
     meta:
-      host_machine_uuid: {{ .Vars.machine_uuid }}
-      host_epoch: {{ .Vars.epoch }}
-      host_os_locale: {{ .Vars.os_locale }}
-      host_os_release: {{ .Vars.os_release }}
-      host_os_distribution: {{ .Vars.os_distribution }}
-      host_automation_group: {{ .Vars.auto_group }}
-      host_hostname: {{ .Vars.os_hostname }}
-      host_system_type: {{ .Vars.system_type }}
-      benchmark_type: {{ .Vars.benchmark_type }}
-      benchmark_version: {{ .Vars.benchmark_version }}
-      benchmark_os: {{ .Vars.benchmark_os }}
+      host_machine_uuid: {{ .Vars.amznlnx2cismachine_uuid }}
+      host_epoch: {{ .Vars.amznlnx2cisepoch }}
+      host_os_locale: {{ .Vars.amznlnx2cisos_locale }}
+      host_os_release: {{ .Vars.amznlnx2cisos_release }}
+      host_os_distribution: {{ .Vars.amznlnx2cisos_distribution }}
+      host_automation_group: {{ .Vars.amznlnx2cisauto_group }}
+      host_hostname: {{ .Vars.amznlnx2cisos_hostname }}
+      host_system_type: {{ .Vars.amznlnx2cissystem_type }}
+      benchmark_type: {{ .Vars.amznlnx2cisbenchmark_type }}
+      benchmark_version: {{ .Vars.amznlnx2cisbenchmark_version }}
+      benchmark_os: {{ .Vars.amznlnx2cisbenchmark_os }}
