@@ -1,11 +1,11 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 command:
   {{ if .Vars.amznlnx2cis_rule_1_2_3 }}
   gpg_check_global:
     title: 1.2.3 | Ensure gpgcheck is globally active | yum.conf
     exit-status: 0
     exec: "if [ `grep -c -E '^\\s*gpgcheck.*0' /etc/yum.conf` -ge 1 ]; then echo FAIL; elif [ `grep -c -E '^\\s*gpgcheck.*1' /etc/yum.conf` -ge 1 ]; then echo Passed_Check;fi"
-    timeout: {{ .Vars.timeout_ms }}
+    timeout: {{ .Vars.amznlnx2cis_timeout_ms }}
     meta:
       server: 1
       workstation: NA
@@ -20,7 +20,7 @@ command:
     title: 1.2.3 | Ensure gpgcheck is globally active | yum.conf.d
     exit-status: 0
     exec: "if [ `grep -c -E '^\\s*gpgcheck.*0' /etc/yum.repos.d/*.repo` -ge 1 ]; then echo FAIL; elif [ `grep -c -E '^\\s*gpgcheck.*1' /etc/yum.repos.d/*.repo` -ge 1 ]; then echo Passed_Check;fi"
-    timeout: {{ .Vars.timeout_ms }}
+    timeout: {{ .Vars.amznlnx2cis_timeout_ms }}
     meta:
       server: 1
       workstation: NA

@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
   {{ if .Vars.amznlnx2cis_rule_1_5_1 }}
 command:
   core_dumps_limits:

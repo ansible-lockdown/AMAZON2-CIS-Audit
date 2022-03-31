@@ -1,6 +1,6 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 command:
-  {{ if .Vars.run_heavy_tests }}
+  {{ if .Vars.amznlnx2cis_run_heavy_tests }}
     {{ if .Vars.amznlnx2cis_rule_1_2_1 }}
   gpg_keys:
     title: 1.2.1 | Ensure GPG keys are configured

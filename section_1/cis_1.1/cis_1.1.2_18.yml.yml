@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 mount:
   {{ if .Vars.amznlnx2cis_rule_1_1_2 }}
   /tmp:
@@ -105,7 +105,7 @@ mount:
       CISv8_IG3: true
   {{ end }}
 {{ end }}
-{{ if .Vars.level2 }}
+{{ if .Vars.amznlnx2cis_level2 }}
   {{ if .Vars.amznlnx2cis_rule_1_1_10 }}
   /var:
     title: 1.1.10 | Ensure separate partition exists for /var

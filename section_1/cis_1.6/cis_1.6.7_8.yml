@@ -1,4 +1,4 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 package:
   {{ if .Vars.amznlnx2cis_rule_1_6_1_7 }}
   setroubleshoot:

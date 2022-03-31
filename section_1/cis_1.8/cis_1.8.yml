@@ -1,11 +1,11 @@
-{{ if .Vars.run_heavy_tests }}
-  {{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_run_heavy_tests }}
+  {{ if .Vars.amznlnx2cis_level1 }}
     {{ if .Vars.amznlnx2cis_rule_1_8}}
 command:
   security-updates:
     title: 1.8 | Ensure updates, patches, and additional security software are installed
     exit-status: 0
-    timeout: {{ .Vars.timeout_ms }}
+    timeout: {{ .Vars.amznlnx2cis_timeout_ms }}
     exec: yum check-update
     stdout: 
     - "![0-9].* packages available"
