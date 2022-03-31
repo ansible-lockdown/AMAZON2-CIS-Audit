@@ -1,11 +1,11 @@
 {{ if .Vars.amznlnx2cis_level1 }}
-  {{ if Vars.amznlnx2cis_ipv6_required }}
-  {{ if eq Vars.amznlnx2cis_firewall "iptables" }}
+  {{ if .Vars.amznlnx2cis_ipv6_required }}
+  {{ if eq .Vars.amznlnx2cis_firewall "iptables" }}
   {{ if .Vars.amznlnx2cis_rule_3_5_3_3_1 }}
 command:
   ip6tables_loopback:
     title: 3.5.3.3.1 | Ensure ip6tables loopback traffic is configured
-    exec: cat {{ Vars.amznlnx2cis_ip6tables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_ip6tables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -i lo -j ACCEPT/'
@@ -28,7 +28,7 @@ command:
   {{ if .Vars.amznlnx2cis_rule_3_5_3_3_2 }}
   ip6tables_outbound_est:
     title: 3.5.3.3.2 | Ensure ip6tables outbound and established connections are configured
-    exec: cat {{ Vars.amznlnx2cis_ip6tables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_ip6tables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT/'
@@ -94,7 +94,7 @@ command:
   {{ end }}
   {{ if .Vars.amznlnx2cis_rule_3_5_3_3_5 }}
 file:
-  {{ Vars.amznlnx2cis_ip6tables_boot_config }}:
+  {{ .Vars.amznlnx2cis_ip6tables_boot_config }}:
     title: 3.5.3.3.5 | Ensure ip6tables rules are saved
     exists: true
     meta:

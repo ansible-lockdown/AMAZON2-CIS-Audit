@@ -5,7 +5,7 @@ file:
     title: 5.4.1 | Ensure password creation requirements are configured | pwquality
     exists: true
     contains:
-    {{ range Vars.amznlnx2cis_pam_password }}
+    {{ range .Vars.amznlnx2cis_pam_password }}
     - {{ . }}
     {{ end }}
     meta:
@@ -21,9 +21,9 @@ file:
   /etc/pam.d/password-auth:
     title: 5.4.1 | Ensure password creation requirements are configured | password-auth
     exists: true
-    skip: {{ Vars.amznlnx2cis_skip_pam_passwd_auth }}
+    skip: {{ .Vars.amznlnx2cis_skip_pam_passwd_auth }}
     contains:
-    - password requisite pam_pwquality.so try_first_pass retry={{ Vars.amznlnx2cis_pam_passwd_retry }}
+    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.amznlnx2cis_pam_passwd_retry }}
     meta:
       server: 1
       workstation: NA
@@ -37,9 +37,9 @@ file:
   /etc/pam.d/system-auth:
     title: 5.4.1 | Ensure password creation requirements are configured | system-auth
     exists: true
-    skip: {{ Vars.amznlnx2cis_skip_pam_system_auth }}
+    skip: {{ .Vars.amznlnx2cis_skip_pam_system_auth }}
     contains:
-    - password requisite pam_pwquality.so try_first_pass retry={{ Vars.amznlnx2cis_pam_passwd_retry }}
+    - password requisite pam_pwquality.so try_first_pass retry={{ .Vars.amznlnx2cis_pam_passwd_retry }}
     meta:
       server: 1
       workstation: NA

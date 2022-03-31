@@ -3,7 +3,7 @@
 command:
   iptables_loopback:
     title: 3.5.3.2.1 | Ensure iptables loopback traffic is configured
-    exec: cat {{ Vars.amznlnx2cis_iptables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_iptables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -i lo -j ACCEPT/'
@@ -26,7 +26,7 @@ command:
   {{ if .Vars.amznlnx2cis_rule_3_5_3_2_2 }}
   iptables_outbound_est:
     title: 3.5.3.2.2 | Ensure iptables outbound and established connections are configured
-    exec: cat {{ Vars.amznlnx2cis_iptables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_iptables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT/'
@@ -92,7 +92,7 @@ command:
   {{ end }}
   {{ if .Vars.amznlnx2cis_rule_3_5_3_2_5 }}
 file:
-  {{ Vars.amznlnx2cis_iptables_boot_config }}:
+  {{ .Vars.amznlnx2cis_iptables_boot_config }}:
     title: 3.5.3.2.5 | Ensure iptables rules are saved
     exists: true
     meta:

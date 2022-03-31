@@ -5,8 +5,8 @@ file:
     title: 5.3.16 | Ensure SSH Idle Timeout Interval is configured
     exists: true
     contains:
-    - '/^ClientAliveInterval {{ Vars.amznlnx2cis_ssh_aliveinterval }}/'
-    - '/^ClientAliveCountMax {{ Vars.amznlnx2cis_ssh_countmax }}/'
+    - '/^ClientAliveInterval {{ .Vars.amznlnx2cis_ssh_aliveinterval }}/'
+    - '/^ClientAliveCountMax {{ .Vars.amznlnx2cis_ssh_countmax }}/'
     meta:
       server: 1
       workstation: NA

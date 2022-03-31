@@ -5,8 +5,8 @@ file:
     title: 5.3.13 | Ensure only strong Ciphers are used
     exists: true
     contains:
-    - {{ Vars.amznlnx2cis_ssh_strong_ciphers }}
-    {{ range Vars.amznlnx2cis_ssh_weak_ciphers }}
+    - {{ .Vars.amznlnx2cis_ssh_strong_ciphers }}
+    {{ range .Vars.amznlnx2cis_ssh_weak_ciphers }}
     - '!/{{ . }}/'
     {{ end }}
     meta:

@@ -1,5 +1,5 @@
 # CIS for Chrony
-{{ if eq Vars.amznlnx2cis_time_synchronization "chrony" }}
+{{ if eq .Vars.amznlnx2cis_time_synchronization "chrony" }}
   {{ if .Vars.amznlnx2cis_level1 }}
     {{ if .Vars.amznlnx2cis_rule_2_1_1_1 }}
 package:

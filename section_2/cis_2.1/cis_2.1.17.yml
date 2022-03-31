@@ -1,4 +1,4 @@
-{{ if not Vars.amznlnx2cis_nfs_server }}
+{{ if not .Vars.amznlnx2cis_nfs_server }}
   {{ if .Vars.amznlnx2cis_rule_2_1_17  }}
     {{ if .Vars.amznlnx2cis_level1 }}
 package:

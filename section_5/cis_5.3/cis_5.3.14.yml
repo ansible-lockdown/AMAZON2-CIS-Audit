@@ -5,8 +5,8 @@ file:
     title: 5.3.14 | Ensure only strong MACs are used
     exists: true
     contains:
-    - {{ Vars.amznlnx2cis_ssh_strong_macs }}
-    {{ range Vars.amznlnx2cis_ssh_weak_macs }}
+    - {{ .Vars.amznlnx2cis_ssh_strong_macs }}
+    {{ range .Vars.amznlnx2cis_ssh_weak_macs }}
     - '!/{{ . }}/'
     {{ end }}
     meta:

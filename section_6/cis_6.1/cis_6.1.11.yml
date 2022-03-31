@@ -8,7 +8,7 @@ command:
     exit-status: 0
     stdout:
     - '!/./'
-    timeout: {{ .Vars.amznlnx2cis_timeout_ms }}
+    timeout: {{ .Vars.timeout_ms }}
     meta:
       server: 1
       workstation: NA

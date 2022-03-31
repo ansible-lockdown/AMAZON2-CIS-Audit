@@ -2,10 +2,10 @@
   {{ if .Vars.amznlnx2cis_rule_5_4_2 }}
 file:
   /etc/pam.d/password-auth:
-    title: 5.4.2 | Ensure lockout for failed password attempts is configured for {{ Vars.amznlnx2cis_accountlock }} | password-auth
+    title: 5.4.2 | Ensure lockout for failed password attempts is configured for {{ .Vars.amznlnx2cis_accountlock }} | password-auth
     exists: true
     contains:
-    - '/^account\s*required\s*pam_{{ Vars.amznlnx2cis_accountlock }}.so/'
+    - '/^account\s*required\s*pam_{{ .Vars.amznlnx2cis_accountlock }}.so/'
     meta:
       server: 1
       workstation: NA
@@ -17,10 +17,10 @@ file:
       CISv8_IG2: true
       CISv8_IG3: true
   /etc/pam.d/system-auth:
-    title: 5.4.2 | Ensure lockout for failed password attempts is configured for {{ Vars.amznlnx2cis_accountlock }} | system-auth
+    title: 5.4.2 | Ensure lockout for failed password attempts is configured for {{ .Vars.amznlnx2cis_accountlock }} | system-auth
     exists: true
     contains:
-    - '/^account\s*required\s*pam_{{ Vars.amznlnx2cis_accountlock }}.so/'
+    - '/^account\s*required\s*pam_{{ .Vars.amznlnx2cis_accountlock }}.so/'
     meta:
       server: 1
       workstation: NA

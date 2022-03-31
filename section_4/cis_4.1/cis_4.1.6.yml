@@ -1,4 +1,4 @@
-{{ if not Vars.amznlnx2cis_selinux_disable }}
+{{ if not .Vars.amznlnx2cis_selinux_disable }}
 command:
   {{ if .Vars.amznlnx2cis_rule_4_1_6 }}
   auditd_MAC_cnf:

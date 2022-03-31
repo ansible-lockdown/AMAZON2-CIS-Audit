@@ -5,7 +5,7 @@ command:
   repos_configured:
     title: 1.2.2 | Ensure Package manager repositories are configured
     exit-status: 0
-    timeout: {{ .Vars.amznlnx2cis_timeout_ms }}
+    timeout: {{ .Vars.timeout_ms }}
     exec: "yum repolist"
     meta:
       server: 1

@@ -1,4 +1,4 @@
-{{ if not Vars.amznlnx2cis_selinux_disable }}
+{{ if not .Vars.amznlnx2cis_selinux_disable }}
   {{ if .Vars.amznlnx2cis_level1 }}
     {{ if  .Vars.amznlnx2cis_rule_1_6_1_1 }}
 package:
@@ -21,7 +21,7 @@ command:
   selinux_disabled_boot:
     title: 1.6.1.2 | Ensure SELinux is not disabled in bootloader configuration
     exit-status: 1
-    exec: 'grep "^\s*linux" {{ Vars.amznlnx2cis_bootloader_file }} | grep -E "(selinux=0|enforcing=0)"'
+    exec: 'grep "^\s*linux" {{ .Vars.amznlnx2cis_bootloader_file }} | grep -E "(selinux=0|enforcing=0)"'
     # looking for it not to return anything
     # will error if anything is returned
     stdout: ['!/./']
@@ -122,7 +122,7 @@ command:
     {{ end }}
   {{ end }}
 {{ if .Vars.amznlnx2cis_level2 }}
-  {{ if eq Vars.amznlnx2cis_selinux_state "enforcing" }}
+  {{ if eq .Vars.amznlnx2cis_selinux_state "enforcing" }}
     {{ if .Vars.amznlnx2cis_rule_1_6_1_5 }}
   selinux_run_enforcing:
     title: 1.6.1.5 | Ensure the SELinux mode is enforcing | running

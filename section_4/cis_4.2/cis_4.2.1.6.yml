@@ -5,10 +5,10 @@ command:
     exec: grep '$ModLoad imtcp' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
     exit-status: 0
     stdout:
-    {{ if Vars.amznlnx2cis_rsyslog_listener }}
+    {{ if .Vars.amznlnx2cis_rsyslog_listener }}
     - '/.*[^#]?(| )\$ModLoad imtcp/'
     {{ end }}
-    {{ if not Vars.amznlnx2cis_rsyslog_listener }}
+    {{ if not .Vars.amznlnx2cis_rsyslog_listener }}
     - '/.*:#(| )\$ModLoad imtcp/'
     {{ end }}
     meta:
@@ -26,10 +26,10 @@ command:
     exec: grep '$InputTCPServerRun' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
     exit-status: 0
     stdout:
-    {{ if Vars.amznlnx2cis_rsyslog_listener }}
+    {{ if .Vars.amznlnx2cis_rsyslog_listener }}
     - '/.*[^#]?(| )\$InputTCPServerRun/'
     {{ end }}
-    {{ if not Vars.amznlnx2cis_rsyslog_listener }}
+    {{ if not .Vars.amznlnx2cis_rsyslog_listener }}
     - '/.*:#(| )\$InputTCPServerRun/'
     {{ end }}
     meta:
