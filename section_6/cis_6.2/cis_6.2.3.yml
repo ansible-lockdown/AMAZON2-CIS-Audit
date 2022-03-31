@@ -5,6 +5,7 @@ command:
     title: 6.2.3 | Ensure all groups in /etc/passwd exist in /etc/group
     exec: pwck -r | grep 'no group' | awk '{ gsub("[:\47]",""); print $2}'
     exit-status: 0
+    timeout: {{ .Vars.timeout_ms }}
     stdout:
     - '!/./'
     meta:

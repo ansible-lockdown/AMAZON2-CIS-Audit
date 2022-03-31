@@ -4,6 +4,7 @@ command:
   home_dirs_exist:
     title: 6.2.11 | Ensure all users' home directories exist
     exec: "set -o pipefail; pwck -r | grep -P \"^user '(?P<user>.*)': directory '(?P<dir>.*)' does not exist$\""
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 2
     stdout:
     - '!/./'

@@ -11,6 +11,7 @@ command:
       - 123
     stdout:
     - '!/./'
+    timeout: {{ .Vars.timeout_ms }}
     meta:
       server: 1
       workstation: NA

@@ -4,6 +4,7 @@ command:
   dot_netrc_files:
     title: 6.2.16 | Ensure no users have .netrc files
     exec: 'find /home/ -name .netrc'
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout: 
     - '!/./'
