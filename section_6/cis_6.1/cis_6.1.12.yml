@@ -5,7 +5,10 @@ command:
   ungrouped:
     title: 6.1.12 | Ensure no ungrouped files or directories exist
     exec: "df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nogroup"
-    exit-status: 0
+    exit-status: 
+      or:
+      - 0
+      - 123
     stdout:
     - '!/./'
     timeout: {{ .Vars.timeout_ms }}

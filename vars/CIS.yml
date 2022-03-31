@@ -325,8 +325,6 @@ amznlnx2cis_xwindows_required: false
 # Whether or not to run tasks related to auditing/patching the desktop environment
 amznlnx2cis_gui: false
 
-# xinetd required
-amznlnx2cis_xinetd_required: false
 
 # IPv6 required
 amznlnx2cis_ipv6_required: false
@@ -346,9 +344,7 @@ amznlnx2cis_ldap_server: false
 amznlnx2cis_telnet_server: false
 amznlnx2cis_nfs_server: true
 amznlnx2cis_rpc_server: true
-amznlnx2cis_ntalk_server: false
 amznlnx2cis_rsyncd_server: true
-amznlnx2cis_tftp_server: false
 amznlnx2cis_rsh_server: false
 amznlnx2cis_nis_server: false
 amznlnx2cis_snmp_server: false
@@ -379,9 +375,6 @@ amznlnx2cis_default_firewall_zone: 'public'
 amznlnx2cis_firewall_interface:
   - ['ens224']
   - ['ens192']
-amznlnx2cis_firewall_services:
-  - ssh
-  - dhcpv6-client
 
 
 ### Section 4

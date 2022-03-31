@@ -18,7 +18,10 @@ command:
       CISv8_IG3: true
   lsmod_dccp:
     title: 3.4.1 | Ensure SCTP is disabled | loaded
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 1
     exec: 'lsmod | grep sctp'
     stdout:
     - '!/^.*/'

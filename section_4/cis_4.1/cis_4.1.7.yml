@@ -5,7 +5,7 @@ command:
     exec: grep logins /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
-    - '/-w /var/log/faillog -p wa -k logins/'
+    - '/-w /var/log/faillock -p wa -k logins/'
     - '/-w /var/log/lastlog -p wa -k logins/'
     {{ if eq .Vars.amznlnx2cis_accountlock "faillock" }}
     - '/-w /var/run/faillock/ -p wa -k logins/'
@@ -28,7 +28,7 @@ command:
     exec: auditctl -l | grep logins
     exit-status: 0
     stdout:
-    - '-w /var/log/faillog -p wa -k logins'
+    - '-w /var/log/faillock -p wa -k logins'
     - '-w /var/log/lastlog -p wa -k logins'
     {{ if eq .Vars.amznlnx2cis_accountlock "faillock" }}
     - '-w /var/run/faillock -p wa -k logins'
