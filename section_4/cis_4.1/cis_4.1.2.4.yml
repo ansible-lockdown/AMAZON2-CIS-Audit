@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_2_4 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_2_4 }}
 file:
   /etc/default/grub:
     exists: true

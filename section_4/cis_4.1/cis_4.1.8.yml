@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_8 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_8 }}
 command:
   auditd_sessions_cnf:
     title: 4.1.8 | Ensure session initiation information is collected | Config

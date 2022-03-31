@@ -1,7 +1,7 @@
 {{ if .Vars.level1 }}
 command:
   {{ if .Vars.run_heavy_tests }}
-    {{ if .Vars.rule_1_2_2 }}
+    {{ if .Vars.amznlnx2cis_rule_1_2_2 }}
   repos_configured:
     title: 1.2.2 | Ensure Package manager repositories are configured
     exit-status: 0

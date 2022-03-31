@@ -1,6 +1,6 @@
 {{ if .Vars.level1 }}
   {{ if .Vars.config_aide }}
-    {{ if .Vars.rule_1_3_2 }}
+    {{ if .Vars.amznlnx2cis_rule_1_3_2 }}
       {{ if eq .Vars.aide_scan_type "cron" }}
 command:
   aide_cron:

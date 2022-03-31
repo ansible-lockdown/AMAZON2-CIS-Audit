@@ -1,5 +1,5 @@
 {{ if .Vars.level1 }}
-  {{ if .Vars.rule_5_4_3 }}
+  {{ if .Vars.amznlnx2cis_rule_5_4_3 }}
 file:
   /etc/pam.d/password-auth:
     title: 5.4.3 | Ensure password hashing algorithm is SHA-512 | password-auth

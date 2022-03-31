@@ -1,5 +1,5 @@
 {{ if .Vars.level1 }}
-  {{ if .Vars.rule_6_2_15 }}
+  {{ if .Vars.amznlnx2cis_rule_6_2_15 }}
 command:
   dot_forward_files:
     title: 6.2.15 | Ensure no users have .forward files

@@ -1,6 +1,6 @@
 {{ if .Vars.level1 }}
 command:
-  {{ if .Vars.rule_1_2_3 }}
+  {{ if .Vars.amznlnx2cis_rule_1_2_3 }}
   gpg_check_global:
     title: 1.2.3 | Ensure gpgcheck is globally active | yum.conf
     exit-status: 0

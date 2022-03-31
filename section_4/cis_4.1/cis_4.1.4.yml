@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_4 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_4 }}
 command:
   auditd_identity_cnf:
     title: 4.1.4 | Ensure events that modify user/group information are collected | Config

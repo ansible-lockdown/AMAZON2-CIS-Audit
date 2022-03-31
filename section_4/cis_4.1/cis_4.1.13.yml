@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_13 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_13 }}
 command:
   auditd_delete_cnf:
     title: 4.1.13 | Ensure file deletion events by users are collected | Conf

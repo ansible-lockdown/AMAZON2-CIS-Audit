@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_2_1_4 }}
+{{ if .Vars.amznlnx2cis_rule_4_2_1_4 }}
 file:
   /etc/rsyslog.conf:
     title: 4.2.1.4 | Ensure logging is configured

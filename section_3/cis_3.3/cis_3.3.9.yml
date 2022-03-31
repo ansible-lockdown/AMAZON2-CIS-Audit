@@ -1,5 +1,5 @@
 {{ if .Vars.level1 }}
-  {{ if .Vars.rule_3_3_9 }}
+  {{ if .Vars.amznlnx2cis_rule_3_3_9 }}
     {{ if .Vars.ipv6_required }}
 kernel-param:
   net.ipv6.conf.all.accept_ra:

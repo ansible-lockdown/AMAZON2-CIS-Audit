@@ -1,5 +1,5 @@
 {{ if not .Vars.nfs_server }}
-  {{ if .Vars.rule_2_1_17  }}
+  {{ if .Vars.amznlnx2cis_rule_2_1_17  }}
     {{ if .Vars.level1 }}
 package:
   nfs-utils:

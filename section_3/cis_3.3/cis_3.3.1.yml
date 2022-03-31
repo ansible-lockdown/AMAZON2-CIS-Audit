@@ -1,4 +1,4 @@
-{{ if .Vars.rule_3_3_1 }}
+{{ if .Vars.amznlnx2cis_rule_3_3_1 }}
 kernel-param:
   net.ipv4.conf.all.accept_source_route:
     title: 3.3.1 | Ensure source routed packets are not accepted  | IPv4_all

@@ -1,5 +1,5 @@
 {{ if .Vars.level1 }}
-  {{ if .Vars.rule_6_1_8 }}
+  {{ if .Vars.amznlnx2cis_rule_6_1_8 }}
 command:
   group_perms:
     title: 6.1.8 | Ensure permissions on /etc/group are configured

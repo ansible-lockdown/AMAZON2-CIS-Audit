@@ -1,6 +1,6 @@
 {{ if .Vars.level2 }}
 {{ if not .Vars.ipv6_required }}
-  {{ if .Vars.rule_3_1_1 }}
+  {{ if .Vars.amznlnx2cis_rule_3_1_1 }}
 command:
   ipv6_grub:
     title: 3.1.1 | disable IPv6 | grub

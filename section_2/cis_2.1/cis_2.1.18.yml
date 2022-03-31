@@ -1,5 +1,5 @@
 {{ if not .Vars.rpc_server }}
-  {{ if .Vars.rule_2_1_18 }}
+  {{ if .Vars.amznlnx2cis_rule_2_1_18 }}
     {{ if .Vars.level1 }}
 package:
   rpcbind:

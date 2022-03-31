@@ -1,4 +1,4 @@
-{{ if .Vars.rule_3_3_7 }}
+{{ if .Vars.amznlnx2cis_rule_3_3_7 }}
 kernel-param:
   net.ipv4.conf.all.rp_filter:
     title: 3.3.7 | Ensure Reverse Path Filtering is enabled | all

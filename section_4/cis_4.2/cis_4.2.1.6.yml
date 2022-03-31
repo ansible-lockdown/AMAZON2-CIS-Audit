@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_2_1_6 }}
+{{ if .Vars.amznlnx2cis_rule_4_2_1_6 }}
 command:
   syslog_imtcp:
     title: 4.2.1.6 | Ensure remote rsyslog messages are only accepted on designated log hosts | imtcp

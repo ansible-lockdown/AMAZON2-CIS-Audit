@@ -1,7 +1,7 @@
 {{ if .Vars.level1 }}
   {{ if not .Vars.is_router }}
 kernel-param:
-    {{ if .Vars.rule_3_2_1 }}
+    {{ if .Vars.amznlnx2cis_rule_3_2_1 }}
     net.ipv4.ip_forward:
       title: 3.2.1 | Ensure IP forwarding is disabled | IPv4
       value: '0'
@@ -31,7 +31,7 @@ kernel-param:
         CISv8_IG3: true
       {{ end }}
     {{ end }}
-    {{ if .Vars.rule_3_2_2 }}
+    {{ if .Vars.amznlnx2cis_rule_3_2_2 }}
     net.ipv4.conf.all.send_redirects:
       title: 3.2.2 | Ensure packet redirect sending is disabled | all
       value: '0'

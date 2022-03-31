@@ -1,6 +1,6 @@
 {{ if .Vars.level1 }}
 command:
-  {{ if .Vars.rule_1_1_19 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_19 }}
   floppy_noexec:
     title: 1.1.19 | Ensure removable media partitions include noexec option
     exit-status: 0
@@ -34,7 +34,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_20 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_20 }}
   floppy_nodev:
     title: 1.1.20 | Ensure nodev option set on removable media partitions
     exit-status: 0
@@ -69,7 +69,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_21 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_21 }}
   floppy_nosuid:
     title: 1.1.21 | Ensure nosuid option set on removable media partitions
     exit-status: 0

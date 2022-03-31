@@ -1,6 +1,6 @@
 {{ if .Vars.level1 }}
   {{ if .Vars.run_heavy_tests }}
-    {{ if .Vars.rule_6_1_12 }}
+    {{ if .Vars.amznlnx2cis_rule_6_1_12 }}
 command:
   ungrouped:
     title: 6.1.12 | Ensure no ungrouped files or directories exist
