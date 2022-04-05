@@ -1,5 +1,5 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_2_1_16 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_2_1_16 }}
 command:
   mta_installed:
     title: 2.1.16 | Ensure mail transfer agent is configured for local-only mode

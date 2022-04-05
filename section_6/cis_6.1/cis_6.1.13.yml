@@ -1,6 +1,6 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.run_heavy_tests }}
-    {{ if .Vars.rule_6_1_13 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_run_heavy_tests }}
+    {{ if .Vars.amznlnx2cis_rule_6_1_13 }}
 command:
   suid_executables:
     title: 6.1.13 | Audit SUID executables

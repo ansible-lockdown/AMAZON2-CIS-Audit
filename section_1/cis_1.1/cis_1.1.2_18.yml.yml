@@ -1,17 +1,17 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 mount:
-  {{ if .Vars.rule_1_1_2 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_2 }}
   /tmp:
     title: 1.1.2_5 | Ensure /tmp is configured with mount options
     exists: true
     opts:
-    {{ if .Vars.rule_1_1_3 }} 
+    {{ if .Vars.amznlnx2cis_rule_1_1_3 }} 
     - noexec
     {{ end }}
-    {{ if .Vars.rule_1_1_4 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_4 }}
     - nodev
     {{ end }}
-    {{ if .Vars.rule_1_1_5 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_5 }}
     - nosuid
     {{ end }}
     meta:
@@ -29,18 +29,18 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_6 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_6 }}
   /dev/shm:
     title: 1.1.6_9 | Ensure /dev/shm is configured
     exists: true
     opts:
-    {{ if .Vars.rule_1_1_7 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_7 }}
     - noexec
     {{ end }}
-    {{ if .Vars.rule_1_1_8 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_8 }}
     - nodev
     {{ end }}
-    {{ if .Vars.rule_1_1_9 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_9 }}
     - nosuid
     {{ end }}
     meta:
@@ -58,18 +58,18 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_11 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_11 }}
   /var/tmp:
     title: 1.1.12_14 | /var/tmp with mount options
     exists: true
     opts:
-    {{ if .Vars.rule_1_1_12 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_12 }}
     - noexec
     {{ end }}
-    {{ if .Vars.rule_1_1_13 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_13 }}
     - nodev
     {{ end }}
-    {{ if .Vars.rule_1_1_14 }}
+    {{ if .Vars.amznlnx2cis_rule_1_1_14 }}
     - nosuid
     {{ end }}
     meta:
@@ -86,7 +86,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_18 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_18 }}
   /home:
     title: 1.1.18 | /home with mount options
     exists: true
@@ -105,8 +105,8 @@ mount:
       CISv8_IG3: true
   {{ end }}
 {{ end }}
-{{ if .Vars.level2 }}
-  {{ if .Vars.rule_1_1_10 }}
+{{ if .Vars.amznlnx2cis_level2 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_10 }}
   /var:
     title: 1.1.10 | Ensure separate partition exists for /var
     exists: true
@@ -121,7 +121,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_11 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_11 }}
   /var/tmp:
     title: 1.1.11 | Ensure separate partition exists for /var/tmp
     exists: true
@@ -137,7 +137,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_15 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_15 }}
   /var/log:
     title: 1.1.15 | Ensure separate partition exists for /var/log
     exists: true
@@ -153,7 +153,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_16 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_16 }}
   /var/log/audit:
     title: 1.1.16 |  Ensure separate partition exists for /var/log/audit
     exists: true
@@ -168,7 +168,7 @@ mount:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_17 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_17 }}
   /home:
     title: 1.1.17 | Ensure separate partition exists for /home
     exists: true

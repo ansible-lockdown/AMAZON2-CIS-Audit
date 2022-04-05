@@ -1,41 +1,41 @@
 gossfile:
-  {{ if .Vars.section1 }}
+  {{ if .Vars.amznlnx2cis_section1 }}
   section_1/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section2 }}
+  {{ if .Vars.amznlnx2cis_section2 }}
   section_2/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section3 }}
+  {{ if .Vars.amznlnx2cis_section3 }}
   section_3/cis_3.1/*.yml: {}
   section_3/cis_3.2/*.yml: {}
   section_3/cis_3.3/*.yml: {}
   section_3/cis_3.4/*.yml: {}
   {{ end }}
   
-  {{ if eq .Vars.firewall "firewalld" }}
+  {{ if eq .Vars.amznlnx2cis_firewall "firewalld" }}
   section_3/cis_3.5/cis_3.5.1.*.yml: {}
   {{ end }}
-  {{ if eq .Vars.firewall "nftables" }}
+  {{ if eq .Vars.amznlnx2cis_firewall "nftables" }}
   section_3/cis_3.5/cis_3.5.2.*.yml: {}
   {{ end }}
-  {{ if eq .Vars.firewall "iptables" }}
+  {{ if eq .Vars.amznlnx2cis_firewall "iptables" }}
   section_3/cis_3.5/cis_3.5.3.*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section4 }}
-  {{ if .Vars.level2 }}
+  {{ if .Vars.amznlnx2cis_section4 }}
+  {{ if .Vars.amznlnx2cis_level2 }}
   section_4/cis_4.1/*.yml: {}
   {{ end }}
   section_4/cis_4.2/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section5 }}
+  {{ if .Vars.amznlnx2cis_section5 }}
   section_5/*/*.yml: {}
   {{ end }}
 
-  {{ if .Vars.section6 }}
+  {{ if .Vars.amznlnx2cis_section6 }}
   section_6/*/*.yml: {}
   {{ end }}
 

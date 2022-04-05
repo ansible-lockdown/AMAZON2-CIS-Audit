@@ -1,6 +1,6 @@
-{{ if not .Vars.ldap_server }}
-  {{ if .Vars.level1 }}
-    {{ if .Vars.rule_2_1_6 }}
+{{ if not .Vars.amznlnx2cis_ldap_server }}
+  {{ if .Vars.amznlnx2cis_level1 }}
+    {{ if .Vars.amznlnx2cis_rule_2_1_6 }}
 package:
   openldap-servers:
     title: 2.1.6 | Ensure LDAP server is not installed

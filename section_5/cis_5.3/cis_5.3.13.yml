@@ -1,12 +1,12 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_5_3_13 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_5_3_13 }}
 file:
   /etc/ssh/sshd_config:
     title: 5.3.13 | Ensure only strong Ciphers are used
     exists: true
     contains:
-    - {{ .Vars.ssh_strong_ciphers }}
-    {{ range .Vars.ssh_weak_ciphers }}
+    - {{ .Vars.amznlnx2cis_ssh_strong_ciphers }}
+    {{ range .Vars.amznlnx2cis_ssh_weak_ciphers }}
     - '!/{{ . }}/'
     {{ end }}
     meta:

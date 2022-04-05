@@ -1,6 +1,6 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 package:
-  {{ if .Vars.rule_1_6_1_7 }}
+  {{ if .Vars.amznlnx2cis_rule_1_6_1_7 }}
   setroubleshoot:
     title: 1.6.1.7 | Ensure SETroubleshoot is not installed
     installed: false
@@ -15,7 +15,7 @@ package:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_6_1_8 }}
+  {{ if .Vars.amznlnx2cis_rule_1_6_1_8 }}
   mcstrans:
     title: 1.6.1.8 | Ensure the MCS Translation Service (mcstrans) is not installed
     installed: false

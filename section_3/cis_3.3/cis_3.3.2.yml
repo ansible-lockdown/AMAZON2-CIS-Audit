@@ -1,4 +1,4 @@
-{{ if .Vars.rule_3_3_2 }}
+{{ if .Vars.amznlnx2cis_rule_3_3_2 }}
 kernel-param:
   net.ipv4.conf.all.accept_redirects:
     title: 3.3.2 | Ensure ICMP redirects are not accepted | IPv4
@@ -26,7 +26,7 @@ kernel-param:
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
-  {{ if .Vars.ipv6_required }}
+  {{ if .Vars.amznlnx2cis_ipv6_required }}
   net.ipv6.conf.all.accept_redirects:
     title: 3.3.2 | Ensure ICMP redirects are not accepted | IPv6
     value: '0'

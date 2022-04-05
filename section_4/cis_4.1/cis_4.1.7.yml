@@ -1,18 +1,12 @@
-{{ if .Vars.rule_4_1_7 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_7 }}
 command:
   auditd_logins_cnf:
     title: 4.1.7 | Ensure login and logout events are collected | Config
     exec: grep logins /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
-    - '/-w /var/log/faillog -p wa -k logins/'
     - '/-w /var/log/lastlog -p wa -k logins/'
-    {{ if eq .Vars.accountlock "faillock" }}
     - '/-w /var/run/faillock/ -p wa -k logins/'
-    {{ end }}
-    {{ if eq .Vars.accountlock "tally2" }}
-    - '/-w /var/log/tallylog -p wa -k logins/'
-    {{ end }}
     meta:
       server: 2
       workstation: NA
@@ -28,14 +22,8 @@ command:
     exec: auditctl -l | grep logins
     exit-status: 0
     stdout:
-    - '-w /var/log/faillog -p wa -k logins'
     - '-w /var/log/lastlog -p wa -k logins'
-    {{ if eq .Vars.accountlock "faillock" }}
     - '-w /var/run/faillock -p wa -k logins'
-    {{ end }}
-    {{ if eq .Vars.accountlock "tally2" }}
-    - '-w /var/log/tallylog -p wa -k logins'
-    {{ end }}
     meta:
       server: 2
       workstation: NA

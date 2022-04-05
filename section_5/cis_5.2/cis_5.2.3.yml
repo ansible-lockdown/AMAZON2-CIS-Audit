@@ -1,5 +1,5 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_5_2_3 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_5_2_3 }}
 file:
   /etc/sudoers:
     title: 5.2.3 | Ensure sudo log file exists | config

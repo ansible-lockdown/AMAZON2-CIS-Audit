@@ -1,10 +1,10 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_1_5_1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_1_5_1 }}
 command:
   core_dumps_limits:
     title: 1.5.1 | Ensure core dumps are restricted | security/limits.conf
     exit-status: 0
-    exec: 'grep -E "\*.*hard.*core.*0" /etc/security/limits.conf /etc/security/limits.d/*'
+    exec: 'grep -RE "\*.*hard.*core.*0" /etc/security/limits.*'
     stdout: 
     - '/^\/*.*\shard.*core.*0/'
     meta:

@@ -1,5 +1,5 @@
-{{ if .Vars.level2 }}
-  {{ if .Vars.rule_3_4_1 }}
+{{ if .Vars.amznlnx2cis_level2 }}
+  {{ if .Vars.amznlnx2cis_rule_3_4_1 }}
 command:
   modprobe_dccp:
     title: 3.4.1 | Ensure DCCP is disabled | config
@@ -18,7 +18,10 @@ command:
       CISv8_IG3: true
   lsmod_dccp:
     title: 3.4.1 | Ensure DCCP is disabled | loaded
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 1
     exec: 'lsmod | grep dccp'
     stdout:
     - '!/^.*/'

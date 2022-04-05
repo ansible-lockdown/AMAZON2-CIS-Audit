@@ -1,6 +1,6 @@
-{{ if not .Vars.selinux_disable }}
+{{ if not .Vars.amznlnx2cis_selinux_disable }}
 command:
-  {{ if .Vars.rule_4_1_6 }}
+  {{ if .Vars.amznlnx2cis_rule_4_1_6 }}
   auditd_MAC_cnf:
     title: 4.1.6 | Ensure events that modify the system's Mandatory Access Controls are collected | Config
     exec: grep MAC-policy /etc/audit/rules.d/*.rules

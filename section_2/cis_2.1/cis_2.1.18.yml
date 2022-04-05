@@ -1,6 +1,6 @@
-{{ if not .Vars.rpc_server }}
-  {{ if .Vars.rule_2_1_18 }}
-    {{ if .Vars.level1 }}
+{{ if not .Vars.amznlnx2cis_rpc_server }}
+  {{ if .Vars.amznlnx2cis_rule_2_1_18 }}
+    {{ if .Vars.amznlnx2cis_level1 }}
 package:
   rpcbind:
     title: 2.1.18 | Ensure rpcbind is not installed or the rpcbind services are masked | installed
@@ -31,11 +31,13 @@ service:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+command:
   rpcbind.socket:
     title: 2.2.18 | Ensure rpcbind is not installed or the rpcbind services are masked | masked
-    enabled: false
-    running: false
-    skip: false
+    exec: systemctl is-enabled rpcbind.socket
+    exit-status: 0
+    stdout:
+    - '/^masked/'
     meta:
       server: 1
       workstation: NA

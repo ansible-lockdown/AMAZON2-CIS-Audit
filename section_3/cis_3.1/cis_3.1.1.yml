@@ -1,11 +1,11 @@
-{{ if .Vars.level2 }}
-{{ if not .Vars.ipv6_required }}
-  {{ if .Vars.rule_3_1_1 }}
+{{ if .Vars.amznlnx2cis_level2 }}
+{{ if not .Vars.amznlnx2cis_ipv6_required }}
+  {{ if .Vars.amznlnx2cis_rule_3_1_1 }}
 command:
   ipv6_grub:
     title: 3.1.1 | disable IPv6 | grub
     exit-status: 0
-    exec: 'grep "^\s*linux" {{ .Vars.bootloader_file }} | grep -v ipv6.disable=1'
+    exec: 'grep "^\s*linux" {{ .Vars.amznlnx2cis_bootloader_file }} | grep -v ipv6.disable=1'
     stdout: ['!/./']
     meta:
       server: 2

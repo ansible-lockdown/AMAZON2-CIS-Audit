@@ -1,9 +1,10 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_6_2_14 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_6_2_14 }}
 command:
   dot_file_perms:
     title: 6.2.14 | Ensure users dot files are not group or world writable
     exec: 'find /home/ -name "\.*" -perm /g+w,o+w'
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout: 
     - '!/./'

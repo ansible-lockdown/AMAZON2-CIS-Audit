@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_9 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_9 }}
 command:
   auditd_perms_cnf:
     title: 4.1.9 | Ensure discretionary access control permission modification events are collected | Config

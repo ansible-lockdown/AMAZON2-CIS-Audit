@@ -1,6 +1,6 @@
-{{ if not .Vars.xwindows_required }}
-  {{ if .Vars.level1 }}
-    {{ if .Vars.rule_2_3 }}
+{{ if not .Vars.amznlnx2cis_xwindows_required }}
+  {{ if .Vars.amznlnx2cis_level1 }}
+    {{ if .Vars.amznlnx2cis_rule_2_3 }}
 command:
   essential_pkgs:
     title: 2.3 | Ensure nonessential services are removed or masked

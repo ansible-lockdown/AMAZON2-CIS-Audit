@@ -1,6 +1,6 @@
-{{ if .Vars.level1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
 command:
-  {{ if .Vars.rule_1_1_1_1 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_1_1 }}
   cramfs:
     title: 1.1.1.1 | Ensure mounting of cramfs filesystems is disabled
     exit-status: 0
@@ -17,7 +17,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_1_1_1_3 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_1_3 }}
   udf:
     title: 1.1.1.3 | Ensure mounting of udf filesystems is disabled
     exit-status: 0
@@ -35,8 +35,8 @@ command:
       CISv8_IG3: true
   {{ end }}
 {{ end }}
-{{ if .Vars.level2 }}
-  {{ if .Vars.rule_1_1_1_2 }}
+{{ if .Vars.amznlnx2cis_level2 }}
+  {{ if .Vars.amznlnx2cis_rule_1_1_1_2 }}
   squashfs:
     title: 1.1.1.2 | Ensure mounting of squashfs filesystems is disabled
     exit-status: 0

@@ -1,11 +1,11 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.ipv6_required }}
-  {{ if eq .Vars.firewall "iptables" }}
-  {{ if .Vars.rule_3_5_3_3_1 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_ipv6_required }}
+  {{ if eq .Vars.amznlnx2cis_firewall "iptables" }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_1 }}
 command:
   ip6tables_loopback:
     title: 3.5.3.3.1 | Ensure ip6tables loopback traffic is configured
-    exec: cat {{ .Vars.ip6tables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_ip6tables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -i lo -j ACCEPT/'
@@ -25,10 +25,10 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_3_5_3_3_2 }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_2 }}
   ip6tables_outbound_est:
     title: 3.5.3.3.2 | Ensure ip6tables outbound and established connections are configured
-    exec: cat {{ .Vars.ip6tables_boot_config }}
+    exec: cat {{ .Vars.amznlnx2cis_ip6tables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT/'
@@ -53,7 +53,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_3_5_3_3_3 }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_3 }}
   ip6tables_manual:
    title: 3.5.3.3.3 | Ensure ip6tables rules exist for all open ports
    exec: echo "Manual - Ensure ip6tables rules exist for all open ports"
@@ -71,7 +71,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_3_5_3_3_4 }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_4 }}
   iptable_def_deny:
     title: 3.5.3.3.4 | Ensure ip6tables default deny firewall policy
     exec: ip6tables -L | grep Chain
@@ -92,9 +92,9 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.rule_3_5_3_3_5 }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_5 }}
 file:
-  {{ .Vars.ip6tables_boot_config }}:
+  {{ .Vars.amznlnx2cis_ip6tables_boot_config }}:
     title: 3.5.3.3.5 | Ensure ip6tables rules are saved
     exists: true
     meta:
@@ -109,7 +109,7 @@ file:
       CISv8_IG3: true
   {{ end }}
   {{ end }}
-  {{ if .Vars.rule_3_5_3_3_6 }}
+  {{ if .Vars.amznlnx2cis_rule_3_5_3_3_6 }}
 service:
   ip6tables:
      title: 3.5.3.3.6 | Ensure iptables is enabled and running

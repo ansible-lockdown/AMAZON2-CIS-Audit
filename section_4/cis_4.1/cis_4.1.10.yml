@@ -1,4 +1,4 @@
-{{ if .Vars.rule_4_1_10 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_10 }}
 command:
   auditd_access_cnf:
     title: 4.1.10 | Ensure unsuccessful unauthorized file access attempts are collected | Conf

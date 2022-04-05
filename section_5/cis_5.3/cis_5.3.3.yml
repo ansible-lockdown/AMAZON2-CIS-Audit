@@ -1,5 +1,5 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_5_3_3 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_5_3_3 }}
 command:
   /etc/ssh/ssh_host_key_user:
     title: 5.3.3 | Ensure permissions on SSH pub host key files are configured | user

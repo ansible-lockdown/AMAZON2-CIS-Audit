@@ -1,9 +1,10 @@
-{{ if .Vars.level1 }}
-  {{ if .Vars.rule_6_2_17 }}
+{{ if .Vars.amznlnx2cis_level1 }}
+  {{ if .Vars.amznlnx2cis_rule_6_2_17 }}
 command:
   dot_rhosts_files:
     title: 6.2.17 | Ensure no users have .rhosts files
     exec: 'find /home/ -name .rhosts'
+    timeout: {{ .Vars.timeout_ms }}
     exit-status: 0
     stdout: 
     - '!/./'

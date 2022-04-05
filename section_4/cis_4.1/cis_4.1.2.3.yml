@@ -1,12 +1,12 @@
-{{ if .Vars.rule_4_1_2_3 }}
+{{ if .Vars.amznlnx2cis_rule_4_1_2_3 }}
 file:
   /etc/audit/auditd.conf:
     title: 4.1.2.3 | Ensure system is disabled when audit logs are full
     exists: true
     contains:
-    - '/^space_left_action = {{ .Vars.auditd.space_left_action }}/'
-    - '/^action_mail_acct = {{ .Vars.auditd.action_mail_acct }}/'
-    - '/^admin_space_left_action = {{ .Vars.auditd.admin_space_left_action }}/'
+    - '/^space_left_action = {{ .Vars.amznlnx2cis_auditd.space_left_action }}/'
+    - '/^action_mail_acct = {{ .Vars.amznlnx2cis_auditd.action_mail_acct }}/'
+    - '/^admin_space_left_action = {{ .Vars.amznlnx2cis_auditd.admin_space_left_action }}/'
     meta:
       server: 2
       workstation: NA
