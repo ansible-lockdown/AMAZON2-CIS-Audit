@@ -1,6 +1,6 @@
-{{ if not .Vars.amznlnx2cis_smb_server }}
-  {{ if .Vars.amznlnx2cis_level1 }}
-    {{ if .Vars.amznlnx2cis_rule_2_1_11 }}
+{{ if not .Vars.amazon2cis_smb_server }}
+  {{ if .Vars.amazon2cis_level1 }}
+    {{ if .Vars.amazon2cis_rule_2_1_11 }}
 package:
   samba:
     title: 2.1.11 | Ensure Samba is not installed

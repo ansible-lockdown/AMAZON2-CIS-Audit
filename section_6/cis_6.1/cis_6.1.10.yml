@@ -1,6 +1,6 @@
-{{ if .Vars.amznlnx2cis_run_heavy_tests }}
-  {{ if .Vars.amznlnx2cis_level1 }}
-    {{ if .Vars.amznlnx2cis_rule_6_1_10 }}
+{{ if .Vars.amazon2cis_run_heavy_tests }}
+  {{ if .Vars.amazon2cis_level1 }}
+    {{ if .Vars.amazon2cis_rule_6_1_10 }}
 command:
   world_writable:
     title: 6.1.10 | Ensure no world writable files exist

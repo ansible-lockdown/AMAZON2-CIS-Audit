@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_1_7 }}
+{{ if .Vars.amazon2cis_rule_4_1_7 }}
 command:
   auditd_logins_cnf:
     title: 4.1.7 | Ensure login and logout events are collected | Config

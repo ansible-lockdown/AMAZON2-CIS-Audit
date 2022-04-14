@@ -1,9 +1,9 @@
-{{ if .Vars.amznlnx2cis_level1 }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_1 }}
+{{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_1 }}
 command:
   iptables_loopback:
     title: 3.5.3.2.1 | Ensure iptables loopback traffic is configured
-    exec: cat {{ .Vars.amznlnx2cis_iptables_boot_config }}
+    exec: cat {{ .Vars.amazon2cis_iptables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -i lo -j ACCEPT/'
@@ -23,10 +23,10 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_2 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_2 }}
   iptables_outbound_est:
     title: 3.5.3.2.2 | Ensure iptables outbound and established connections are configured
-    exec: cat {{ .Vars.amznlnx2cis_iptables_boot_config }}
+    exec: cat {{ .Vars.amazon2cis_iptables_boot_config }}
     exit-status: 0
     stdout:
     - '/^-A INPUT -p tcp -m state --state ESTABLISHED -j ACCEPT/'
@@ -51,7 +51,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_3 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_3 }}
   iptables_manual:
    title: 3.5.3.2.3 | Ensure iptables rules exist for all open ports
    exec: echo "Manual - Ensure iptables rules exist for all open ports"
@@ -69,7 +69,7 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_4 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_4 }}
   iptable_def_deny:
     title: 3.5.3.2.4 | Ensure iptables default deny firewall policy
     exec: iptables -L | grep Chain
@@ -90,9 +90,9 @@ command:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_5 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_5 }}
 file:
-  {{ .Vars.amznlnx2cis_iptables_boot_config }}:
+  {{ .Vars.amazon2cis_iptables_boot_config }}:
     title: 3.5.3.2.5 | Ensure iptables rules are saved
     exists: true
     meta:
@@ -106,7 +106,7 @@ file:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_3_2_6 }}
+  {{ if .Vars.amazon2cis_rule_3_5_3_2_6 }}
 service:
   iptables:
     title: 3.5.3.2.5 | Ensure iptables is enabled and running

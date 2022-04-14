@@ -1,7 +1,7 @@
-{{ if .Vars.amznlnx2cis_level1 }}
-  {{ if .Vars.amznlnx2cis_run_heavy_tests }}
+{{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_run_heavy_tests }}
 command:
-  {{ if .Vars.amznlnx2cis_rule_1_1_22 }}
+  {{ if .Vars.amazon2cis_rule_1_1_22 }}
   sticky_bit:
     title: 1.1.22 | Ensure sticky bit is set on all world-writable directories
     exit-status:

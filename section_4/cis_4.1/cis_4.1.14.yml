@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_1_14 }}
+{{ if .Vars.amazon2cis_rule_4_1_14 }}
 command:
   auditd_admin_scope_cnf:
     title: 4.1.14 | Ensure changes to system administration scope (sudoers) is collected | Config

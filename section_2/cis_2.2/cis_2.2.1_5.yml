@@ -1,7 +1,7 @@
-{{ if .Vars.amznlnx2cis_level1 }}
+{{ if .Vars.amazon2cis_level1 }}
 package:
-  {{ if not .Vars.amznlnx2cis_ypbind_required }}
-    {{ if .Vars.amznlnx2cis_rule_2_2_1 }}
+  {{ if not .Vars.amazon2cis_ypbind_required }}
+    {{ if .Vars.amazon2cis_rule_2_2_1 }}
   ypbind:
     title: 2.2.1 | Ensure NIS Client is not installed
     installed: false
@@ -17,8 +17,8 @@ package:
       CISv8_IG3: true
     {{ end }}
   {{ end }}
-  {{ if not .Vars.amznlnx2cis_rsh_required }}
-    {{ if .Vars.amznlnx2cis_rule_2_2_2 }}
+  {{ if not .Vars.amazon2cis_rsh_required }}
+    {{ if .Vars.amazon2cis_rule_2_2_2 }}
   rsh:
     title: 2.2.2 | Ensure rsh client is not installed
     installed: false
@@ -34,8 +34,8 @@ package:
       CISv8_IG3: true
     {{ end }}
   {{ end }}
-  {{ if not .Vars.amznlnx2cis_talk_required }}
-    {{ if .Vars.amznlnx2cis_rule_2_2_3 }}
+  {{ if not .Vars.amazon2cis_talk_required }}
+    {{ if .Vars.amazon2cis_rule_2_2_3 }}
   talk:
     title: 2.2.3 | Ensure talk client is not installed
     installed: false
@@ -51,8 +51,8 @@ package:
       CISv8_IG3: true
     {{ end }}
   {{ end }}
-  {{ if not .Vars.amznlnx2cis_telnet_required }}
-    {{ if .Vars.amznlnx2cis_rule_2_2_4 }}
+  {{ if not .Vars.amazon2cis_telnet_required }}
+    {{ if .Vars.amazon2cis_rule_2_2_4 }}
   telnet:
     title: 2.2.4 | Ensure telnet client is not installed
     installed: false
@@ -68,8 +68,8 @@ package:
       CISv8_IG3: true
     {{ end }}
   {{ end }}
-  {{ if not .Vars.amznlnx2cis_openldap_clients_required }}
-    {{ if .Vars.amznlnx2cis_rule_2_2_5 }}  
+  {{ if not .Vars.amazon2cis_openldap_clients_required }}
+    {{ if .Vars.amazon2cis_rule_2_2_5 }}  
   openldap-clients:
     title: 2.2.5 | Ensure LDAP client is not installed
     installed: false
