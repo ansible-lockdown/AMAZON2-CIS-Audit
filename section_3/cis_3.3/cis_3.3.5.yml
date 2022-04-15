@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_3_3_5 }}
+{{ if .Vars.amazon2cis_rule_3_3_5 }}
 kernel-param:
   net.ipv4.icmp_echo_ignore_broadcasts:
     title: 3.3.5 | Ensure broadcast ICMP requests are ignored

@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_1_17 }}
+{{ if .Vars.amazon2cis_rule_4_1_17 }}
 command:
   auditd_immutable:
     title: 4.1.17 | Ensure the audit configuration is immutable

@@ -1,6 +1,6 @@
-{{ if .Vars.amznlnx2cis_run_heavy_tests }}
-  {{ if .Vars.amznlnx2cis_level2 }}
-    {{ if .Vars.amznlnx2cis_rule_6_1_1 }}
+{{ if .Vars.amazon2cis_run_heavy_tests }}
+  {{ if .Vars.amazon2cis_level2 }}
+    {{ if .Vars.amazon2cis_rule_6_1_1 }}
 command:
   rpm_filecheck:
     title: 6.1.1 | Audit system file permissions

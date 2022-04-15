@@ -1,12 +1,12 @@
-{{ if .Vars.amznlnx2cis_level1 }}
-  {{ if .Vars.amznlnx2cis_rule_5_3_15 }}
+{{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_rule_5_3_15 }}
 file:
   /etc/ssh/sshd_config:
     title: 5.3.15 | Ensure only strong Key Exchange algorithms are used
     exists: true
     contains:
-    - {{ .Vars.amznlnx2cis_ssh_strong_kex }}
-    {{ range .Vars.amznlnx2cis_ssh_weak_kex }}
+    - {{ .Vars.amazon2cis_ssh_strong_kex }}
+    {{ range .Vars.amazon2cis_ssh_weak_kex }}
     - '!/{{ . }}/'
     {{ end }}
     meta:

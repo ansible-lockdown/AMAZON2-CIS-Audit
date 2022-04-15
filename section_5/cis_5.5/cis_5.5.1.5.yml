@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_5_5_1_5 }}
+{{ if .Vars.amazon2cis_rule_5_5_1_5 }}
 command:
   passwd_chg_past:
     title: 5.5.1.5 | Ensure all users last password change date is in the past

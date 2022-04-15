@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_3_3_4 }}
+{{ if .Vars.amazon2cis_rule_3_3_4 }}
 kernel-param:
   net.ipv4.conf.all.log_martians:
     title: 3.3.4 | Ensure suspicious packets are logged | all

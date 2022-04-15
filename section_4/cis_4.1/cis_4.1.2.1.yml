@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_1_2_1 }}
+{{ if .Vars.amazon2cis_rule_4_1_2_1 }}
 file:
   /etc/audit/auditd.conf:
     exists: true

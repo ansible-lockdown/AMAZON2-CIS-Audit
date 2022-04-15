@@ -1,5 +1,5 @@
-{{ if .Vars.amznlnx2cis_level1 }}
-  {{ if .Vars.amznlnx2cis_rule_1_1_24 }}
+{{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_24 }}
 command:
   cramfs:
     title: 1.1.24 | Disable USB Storage
