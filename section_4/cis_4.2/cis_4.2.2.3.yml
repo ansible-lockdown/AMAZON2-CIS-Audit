@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_2_2_3 }}
+{{ if .Vars.amazon2cis_rule_4_2_2_3 }}
 file:
   /etc/systemd/journald.conf:
     title: 4.2.2.3 | Ensure journald is configured to write logfiles to persistent disk

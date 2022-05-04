@@ -1,6 +1,6 @@
-{{ if .Vars.amznlnx2cis_run_heavy_tests }}
-  {{ if .Vars.amznlnx2cis_level1 }}
-    {{ if .Vars.amznlnx2cis_rule_1_8}}
+{{ if .Vars.amazon2cis_run_heavy_tests }}
+  {{ if .Vars.amazon2cis_level1 }}
+    {{ if .Vars.amazon2cis_rule_1_8}}
 command:
   security-updates:
     title: 1.8 | Ensure updates, patches, and additional security software are installed

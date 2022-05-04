@@ -1,5 +1,5 @@
-{{ if .Vars.amznlnx2cis_level1 }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_2_1 }}
+{{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_rule_3_5_2_1 }}
 package:
   nftables:
     title: 3.5.2.1 | Ensure nftables is installed
@@ -15,7 +15,7 @@ package:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_2_2 }}
+  {{ if .Vars.amazon2cis_rule_3_5_2_2 }}
   firewalld:
     title: 3.5.2.2 | Ensure firewalld is not installed or stopped and masked
     installed: false
@@ -31,7 +31,7 @@ package:
       CISv8_IG2: true
       CISv8_IG3: true
   {{ end }}
-  {{ if .Vars.amznlnx2cis_rule_3_5_2_3 }}
+  {{ if .Vars.amazon2cis_rule_3_5_2_3 }}
   iptables-services:
     title: 3.5.2.3 | Ensure iptables-services package is not installed | IPv4
     installed: false

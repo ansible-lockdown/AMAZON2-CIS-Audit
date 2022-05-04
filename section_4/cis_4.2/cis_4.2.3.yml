@@ -1,4 +1,4 @@
-{{ if .Vars.amznlnx2cis_rule_4_2_3 }}
+{{ if .Vars.amazon2cis_rule_4_2_3 }}
 command:
   logfile_configured:
     title: 4.2.3 | Ensure logrotate is configured
