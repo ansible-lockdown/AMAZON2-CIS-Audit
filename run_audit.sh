@@ -53,7 +53,7 @@ host_system_type=Server
 ## option statement
 while getopts f:g:o:v::wh option; do
    case "${option}" in
-        f ) OUTFORMAT=${OPTARG} ;;
+        f ) FORMAT=${OPTARG} ;;
         g ) GROUP=${OPTARG} ;;
         o ) OUTFILE=${OPTARG} ;;
         v ) VARS_PATH=${OPTARG} ;;
@@ -134,10 +134,10 @@ else
 fi
 
 ## Set variable OUTFORMAT
-if [ -z $OUTFORMAT ]; then
-  export output_format="json"
+if [ -z $FORMAT ]; then
+  export format="json"
 else
-  export output_format=$OUTFORMAT
+  export format=$OUTFORMAT
 fi
 
 ## Set the AUDIT json string
@@ -178,7 +178,7 @@ echo "#############"
 echo "Audit Started"
 echo "#############"
 echo
-$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f $output_format -o pretty > $audit_out
+$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f $format -o pretty > $audit_out
 
 # create screen output
 if [ `grep -c $BENCHMARK $audit_out` != 0 ]; then
