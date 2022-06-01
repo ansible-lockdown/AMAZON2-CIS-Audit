@@ -35,8 +35,9 @@ Help()
    # Display Help
    echo "Script to run the goss audit"
    echo
-   echo "Syntax: $0 [-g|-o|-v|-w|-h]"
+   echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
    echo "options:"
+   echo "-f     optional - Adjust the output report format (default value = json)"
    echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
    echo "-o     optional - file to output audit data"
    echo "-v     optional - relative path to thevars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
@@ -50,8 +51,9 @@ Help()
 host_system_type=Server
 
 ## option statement
-while getopts g:o:v::wh option; do
+while getopts f:g:o:v::wh option; do
    case "${option}" in
+        f ) OUTFORMAT=${OPTARG} ;;
         g ) GROUP=${OPTARG} ;;
         o ) OUTFILE=${OPTARG} ;;
         v ) VARS_PATH=${OPTARG} ;;
@@ -131,6 +133,12 @@ else
   export audit_out=$OUTFILE
 fi
 
+## Set variable OUTFORMAT
+if [ -z $OUTFORMAT ]; then
+  export output_format="json"
+else
+  export output_format=$OUTFORMAT
+fi
 
 ## Set the AUDIT json string
 audit_json_vars='{"benchmark_type":"'"$BENCHMARK"'","benchmark_os":"'"$BENCHMARK_OS"'","benchmark_version":"'"$BENCHMARK_VER"'","machine_uuid":"'"$host_machine_uuid"'","epoch":"'"$host_epoch"'","os_locale":"'"$host_os_locale"'","os_release":"'"$host_os_version"'","os_distribution":"'"$host_os_name"'","os_hostname":"'"$host_os_hostname"'","auto_group":"'"$host_auto_group"'","system_type":"'"$host_system_type"'"}'
@@ -170,7 +178,7 @@ echo "#############"
 echo "Audit Started"
 echo "#############"
 echo
-$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f json -o pretty > $audit_out
+$AUDIT_BIN -g $audit_content_dir/$AUDIT_FILE --vars $varfile_path  --vars-inline $audit_json_vars v -f $output_format -o pretty > $audit_out
 
 # create screen output
 if [ `grep -c $BENCHMARK $audit_out` != 0 ]; then
