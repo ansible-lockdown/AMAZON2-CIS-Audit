@@ -137,7 +137,7 @@ fi
 if [ -z $FORMAT ]; then
   export format="json"
 else
-  export format=$OUTFORMAT
+  export format=$FORMAT
 fi
 
 ## Set the AUDIT json string
