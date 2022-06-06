@@ -7,7 +7,7 @@
 #             - Ability to run as script from remediation role increased consistency
 # 17 Dec 2021 - Added system_type variable - default Server will change to workstations with -w switch
 # 02 Mar 2022 - Updated benchmark variable naming
-# 29 Mar 2022 - amended os_version discovery due to amazon linux
+# 06 Apr 2022 - Added format option in output inline with goss options e.g. json documentation this is for fault finding
 
 
 #!/bin/bash
@@ -17,15 +17,15 @@
 # lower case variables are discovered or built from other variables
 
 # Goss host Variables
-AUDIT_BIN=/usr/local/bin/goss  # location of the goss executable
-AUDIT_FILE=goss.yml  # the default goss file used by the audit provided by the audit configuration
-AUDIT_CONTENT_LOCATION=/var/tmp  # Location of the audit configuration file as available to the OS
+AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
+AUDIT_FILE="${AUDIT_FILE:-goss.yml}"  # the default goss file used by the audit provided by the audit configuration
+AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/var/tmp}"  # Location of the audit configuration file as available to the OS
 
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=CIS  # Benchmark Name aligns to the audit
 BENCHMARK_VER=2.0.0
-BENCHMARK_OS=AmazonLinux2  # This is also used to set os_vendor for AmazonLinux2
+BENCHMARK_OS=RHEL8
 
 
 
@@ -37,7 +37,7 @@ Help()
    echo
    echo "Syntax: $0 [-f|-g|-o|-v|-w|-h]"
    echo "options:"
-   echo "-f     optional - Adjust the output report format (default value = json)"
+   echo "-f     optional - change the format output (default value = json)"
    echo "-g     optional - Add a group that the server should be grouped with (default value = ungrouped)"
    echo "-o     optional - file to output audit data"
    echo "-v     optional - relative path to thevars file to load (default e.g. $AUDIT_CONTENT_LOCATION/RHEL7-$BENCHMARK/vars/$BENCHMARK.yml)"
@@ -76,16 +76,11 @@ if [ $(/usr/bin/id -u) -ne 0 ]; then
   exit 1
 fi
 
-
 #### Main Script
-
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [[ "$BENCHMARK_OS" == AmazonLinux2 ]]; then
-    os_vendor="AMAZON"
-elif 
-   [ `grep -c rhel /etc/os-release` != 0 ]; then
+if [ `grep -c rhel /etc/os-release` != 0 ]; then
     os_vendor="RHEL"
 else
     os_vendor=`hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr a-z A-Z`
@@ -95,6 +90,13 @@ os_maj_ver=`grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
+
+# Set variable for format output
+if [ -z $FORMAT ]; then
+  export format="json"
+else
+  export format=$FORMAT
+fi
 
 # Set variable for autogroup
 if [ -z $GROUP ]; then
@@ -128,17 +130,11 @@ host_os_hostname=`hostname`
 
 ## Set variable audit_out
 if [ -z $OUTFILE ]; then
-  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.json
+  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.$format
 else
   export audit_out=$OUTFILE
 fi
 
-## Set variable OUTFORMAT
-if [ -z $FORMAT ]; then
-  export format="json"
-else
-  export format=$FORMAT
-fi
 
 ## Set the AUDIT json string
 audit_json_vars='{"benchmark_type":"'"$BENCHMARK"'","benchmark_os":"'"$BENCHMARK_OS"'","benchmark_version":"'"$BENCHMARK_VER"'","machine_uuid":"'"$host_machine_uuid"'","epoch":"'"$host_epoch"'","os_locale":"'"$host_os_locale"'","os_release":"'"$host_os_version"'","os_distribution":"'"$host_os_name"'","os_hostname":"'"$host_os_hostname"'","auto_group":"'"$host_auto_group"'","system_type":"'"$host_system_type"'"}'
