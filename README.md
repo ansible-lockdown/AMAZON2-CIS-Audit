@@ -26,7 +26,7 @@ Assuming you have already clone this repository you can run goss from where you 
 
 Please refer to the audit documentation for usage.
 
-- [Audit Documents](https://github.com/ansible-lockdown/AMZNLNX2-CIS-Audit/docs/Security_remediation_and_auditing.md)
+- [Audit Documents](https://github.com/ansible-lockdown/AMAZON2-CIS-Audit/docs/Security_remediation_and_auditing.md)
 
 This also works alongside the [Ansible Lockdown AMAZON2-CIS role](https://github.com/ansible-lockdown/AMAZON2-CIS)
 
