@@ -8,6 +8,8 @@
 # 17 Dec 2021 - Added system_type variable - default Server will change to workstations with -w switch
 # 02 Mar 2022 - Updated benchmark variable naming
 # 06 Apr 2022 - Added format option in output inline with goss options e.g. json documentation this is for fault finding
+# 03 May 2022 - update for audit variables improvement added by @pavloos - https://github.com/ansible-lockdown/RHEL8-CIS-Audit/pull/29
+# 04 Oct 2022 - Changed default content location to /opt
 
 
 #!/bin/bash
@@ -19,15 +21,13 @@
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
 AUDIT_FILE="${AUDIT_FILE:-goss.yml}"  # the default goss file used by the audit provided by the audit configuration
-AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/var/tmp}"  # Location of the audit configuration file as available to the OS
+AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/opt}"  # Location of the audit configuration file as available to the OS
 
 
 # Goss benchmark variables (these should not need changing unless new release)
-BENCHMARK=CIS  # Benchmark Name aligns to the audit
+BENCHMARK=CIS # Benchmark Name aligns to the audit
 BENCHMARK_VER=2.0.0
-BENCHMARK_OS=AmazonLinux2  # This is also used to set os_vendor for AmazonLinux2
-
-
+BENCHMARK_OS=AmazonLinux2
 
 # help output
 Help()
@@ -80,10 +80,7 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [[ "$BENCHMARK_OS" == AmazonLinux2 ]]; then
-   os_vendor="AMAZON"
-elif
-   [ `grep -c rhel /etc/os-release` != 0 ]; then
+if [ `grep -c rhel /etc/os-release` != 0 ]; then
     os_vendor="RHEL"
 else
     os_vendor=`hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr a-z A-Z`
@@ -133,7 +130,7 @@ host_os_hostname=`hostname`
 
 ## Set variable audit_out
 if [ -z $OUTFILE ]; then
-  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}_${host_epoch}.$format
+  export audit_out=$AUDIT_CONTENT_LOCATION/audit_${host_os_hostname}-${BENCHMARK}-${BENCHMARK_OS}_${host_epoch}.$format
 else
   export audit_out=$OUTFILE
 fi
