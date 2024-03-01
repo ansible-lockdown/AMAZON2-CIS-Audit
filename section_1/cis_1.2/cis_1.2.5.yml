@@ -1,25 +1,31 @@
 {{ if .Vars.amazon2cis_run_heavy_tests }}
   {{ if .Vars.amazon2cis_level1 }}
-    {{ if .Vars.amazon2cis_rule_1_8}}
+    {{ if .Vars.amazon2cis_rule_1_2_5 }}
 command:
   security-updates:
-    title: 1.8 | Ensure updates, patches, and additional security software are installed
-    exit-status: 0
+    title: 1.2.5 | Ensure updates, patches, and additional security software are installed
+    exit-status:
+      or:
+      - 0
+      - 1
     timeout: {{ .Vars.timeout_ms }}
-    exec: yum check-update
-    stdout: 
-    - "![0-9].* packages available"
+    exec: yum check-update | grep -c amzn2-core
+    stdout:
+    - '0'
+    - '!/^[1-9]/'
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.8
+      - 1.2.5
       CISv8:
       - 7.3
       - 7.4
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - SI-2
     {{ end }}
   {{ end }}
 {{ end }}

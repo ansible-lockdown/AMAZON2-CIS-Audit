@@ -13,7 +13,7 @@ gossfile:
   section_3/cis_3.3/*.yml: {}
   section_3/cis_3.4/*.yml: {}
   {{ end }}
-  
+
   {{ if eq .Vars.amazon2cis_firewall "firewalld" }}
   section_3/cis_3.5/cis_3.5.1.*.yml: {}
   {{ end }}

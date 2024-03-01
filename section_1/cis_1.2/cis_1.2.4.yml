@@ -1,16 +1,20 @@
 {{ if .Vars.amazon2cis_level1 }}
-command:
   {{ if .Vars.amazon2cis_run_heavy_tests }}
-    {{ if .Vars.amazon2cis_rule_1_2_1 }}
-  gpg_keys:
-    title: 1.2.1 | Ensure GPG keys are configured
+    {{ if .Vars.amazon2cis_rule_1_2_4 }}
+command:
+  repos_configured:
+    title: 1.2.4 | Ensure Package manager repositories are configured
     exit-status: 0
-    exec: "rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\n'"
+    timeout: {{ .Vars.timeout_ms }}
+    exec: "yum repolist"
+    stdout:
+    - '/amzn2-core\/2\/x86_64/'
+    - '/amzn2extra-docker\/2\/x86_64/'
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.2.1
+      - 1.2.4
       CISv8:
       - 7.3
       - 7.4

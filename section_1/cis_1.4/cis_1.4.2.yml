@@ -1,37 +1,45 @@
 {{ if .Vars.amazon2cis_level1 }}
   {{ if .Vars.amazon2cis_rule_1_4_2 }}
+kernel-param:
+  ptrace_scope:
+    title: 1.4.2 | Ensure ptrace_scope is restricted | sysctl_live
+    name: kernel.yama.ptrace_scope
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.4.2
+      CISv8:
+      - 10.5
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5:
+      - CM-6
+      - CM-6b
 command:
-  single_user_1:
-    title: 1.4.2 | Ensure authentication required for single user mode
-    exit-status: 0
-    exec: "grep /sbin/sulogin /usr/lib/systemd/system/rescue.service"
+  ptrace_scope_conf:
+    title: 1.4.2 | Ensure ptrace_scope is restricted | sysctl_configured
+    exit-status:
+      or:
+      - 0
+      - 1
+    exec: 'grep -h "kernel\.yama\.ptrace_scope" /etc/sysctl.conf /etc/sysctl.d/*'
     stdout:
-    - '/^ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default/'
+    - '/^kernel.yama.ptrace_scope\s*=\s*1/'
     meta:
       server: 1
       workstation: NA
-      CIS_ID: 
+      CIS_ID:
       - 1.4.2
       CISv8:
-      - 4.1
+      - 10.5
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
-  single_user_2:
-    title: 1.4.2 | Ensure authentication required for single user mode
-    exit-status: 0
-    exec: "grep /sbin/sulogin /usr/lib/systemd/system/emergency.service"
-    stdout:
-    - '/^ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default/'
-    meta:
-      server: 1
-      workstation: NA
-      CIS_ID: 
-      - 1.4.2
-      CISv8:
-      - 4.1
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
+      NIST800-53R5:
+      - CM-6
+      - CM-6b
   {{ end }}
 {{ end }}
