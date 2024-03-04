@@ -1,4 +1,4 @@
-{{ if .Vars.amazon2cis_level2 }}
+{{ if .Vars.amazon2cis_level_2 }}
   {{ if .Vars.amazon2cis_rule_3_4_1 }}
 command:
   modprobe_dccp:

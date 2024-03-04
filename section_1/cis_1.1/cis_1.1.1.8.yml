@@ -1,4 +1,4 @@
-{{ if .Vars.amazon2cis_level2 }}
+{{ if .Vars.amazon2cis_level_2 }}
   {{ if .Vars.amazon2cis_rule_1_1_1_8 }}
 command:
   usb-storage_modprobe:

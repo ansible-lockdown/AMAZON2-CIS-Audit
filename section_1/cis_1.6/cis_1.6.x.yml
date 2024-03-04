@@ -1,4 +1,4 @@
-{{ if .Vars.amazon2cis_level1 }}
+{{ if .Vars.amazon2cis_level_1 }}
 file:
   {{ if .Vars.amazon2cis_rule_1_6_1 }}
   motd:

@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.amazon2cis_level2 }}
+{{ if .Vars.amazon2cis_level_2 }}
   {{ if eq .Vars.amazon2cis_selinux_state "enforcing" }}
     {{ if .Vars.amazon2cis_rule_1_5_1_5 }}
 command:

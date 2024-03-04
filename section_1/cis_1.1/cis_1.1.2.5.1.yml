@@ -1,4 +1,4 @@
-{{ if .Vars.amazon2cis_level2 }}
+{{ if .Vars.amazon2cis_level_2 }}
   {{ if .Vars.amazon2cis_rule_1_1_2_5_1 }}
 mount:
   var_tmp_mount:

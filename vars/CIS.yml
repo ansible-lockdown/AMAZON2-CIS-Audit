@@ -17,8 +17,8 @@ amazon2cis_section6: true
 amazon2cis_selinux_disable: false
 amazon2cis_selinux_state: enforcing
 
-amazon2cis_level1: true
-amazon2cis_level2: true
+amazon2cis_level_1: true
+amazon2cis_level_2: true
 # to enable rules that may have IO impact on a system e.g. full filesystem scans or CPU heavy
 amazon2cis_run_heavy_tests: true
 
@@ -125,35 +125,46 @@ amazon2cis_rule_1_6_4: true
 amazon2cis_rule_1_6_5: true
 amazon2cis_rule_1_6_6: true
 
-# section 2 rules
+##
+## Section 2 rules
+##
+# Section 2 is Services (inetd Services, Special Purpose Services, and Service Clients)
 
-amazon2cis_rule_2_1_1_1: true
-amazon2cis_rule_2_1_1_2: true
-amazon2cis_rule_2_1_1_3: true
+# Time Service (Chrony)
+amazon2cis_rule_2_1_1: true
 amazon2cis_rule_2_1_2: true
 amazon2cis_rule_2_1_3: true
-amazon2cis_rule_2_1_4: true
-amazon2cis_rule_2_1_5: true
-amazon2cis_rule_2_1_6: true
-amazon2cis_rule_2_1_7: true
-amazon2cis_rule_2_1_8: true
-amazon2cis_rule_2_1_9: true
-amazon2cis_rule_2_1_10: true
-amazon2cis_rule_2_1_11: true
-amazon2cis_rule_2_1_12: true
-amazon2cis_rule_2_1_13: true
-amazon2cis_rule_2_1_14: true
-amazon2cis_rule_2_1_15: true
-amazon2cis_rule_2_1_16: true
-amazon2cis_rule_2_1_17: true
-amazon2cis_rule_2_1_18: true
-amazon2cis_rule_2_1_19: true
+
+# Special purpose services
 amazon2cis_rule_2_2_1: true
 amazon2cis_rule_2_2_2: true
 amazon2cis_rule_2_2_3: true
 amazon2cis_rule_2_2_4: true
 amazon2cis_rule_2_2_5: true
-amazon2cis_rule_2_3: true
+amazon2cis_rule_2_2_6: true
+amazon2cis_rule_2_2_7: true
+amazon2cis_rule_2_2_8: true
+amazon2cis_rule_2_2_9: true
+amazon2cis_rule_2_2_10: true
+amazon2cis_rule_2_2_11: true
+amazon2cis_rule_2_2_12: true
+amazon2cis_rule_2_2_13: true
+amazon2cis_rule_2_2_14: true
+amazon2cis_rule_2_2_15: true
+amazon2cis_rule_2_2_16: true
+amazon2cis_rule_2_2_17: true
+amazon2cis_rule_2_2_18: true
+amazon2cis_rule_2_2_19: true
+amazon2cis_rule_2_2_20: true
+amazon2cis_rule_2_2_21: true
+amazon2cis_rule_2_2_22: true
+
+# Client Services
+amazon2cis_rule_2_3_1: true
+amazon2cis_rule_2_3_2: true
+amazon2cis_rule_2_3_3: true
+amazon2cis_rule_2_3_4: true
+amazon2cis_rule_2_3_5: true
 
 # Section 3 rules
 amazon2cis_rule_3_1_1: true
@@ -338,148 +349,225 @@ amazon2cis_set_boot_pass: false
 amazon2cis_warning_banner: Authorized uses only. All activity may be monitored and reported.
 # End Banner
 
-####
-## Section 2
-####
-
-# Set to 'true' if X Windows is needed in your environment
-amazon2cis_xwindows_required: false
-
-# Whether or not to run tasks related to auditing/patching the desktop environment
-amazon2cis_gui: false
-
-
-# IPv6 required
-amazon2cis_ipv6_required: false
-
-# System network parameters (host only OR host and router)
-amazon2cis_is_router: false
-
-# Time Synchronization
+## Section 2 variables
 amazon2cis_time_synchronization: chrony
-#  amazon2cis_time_synchronization: ntp
+amazon2cis_time_synchronization_servers:
+    - 0.pool.ntp.org
+    - 1.pool.ntp.org
+    - 2.pool.ntp.org
+    - 3.pool.ntp.org
 
+amazon2cis_chrony_server_options: "minpoll 8"
+amazon2cis_ntp_server_options: "iburst"
+
+## Optional settings not part of CIS but can assist systems
+# Disable ipv6 on Chrony if ipv6 not required
+amazon2cis_ipv6_chrony_disable: false
+
+# 2.2.x
 # Service configuration booleans set true to keep service
+# Service configuration
+# Options are
+# true to leave installed if exists not changes take place
+# false - this removes the package
+# mask - if a dependancy for product so cannot be removed
+# Server Services
+amazon2cis_autofs_services: false
+amazon2cis_autofs_mask: true
 amazon2cis_avahi_server: false
-amazon2cis_cups_server: false
+amazon2cis_avahi_mask: false
 amazon2cis_dhcp_server: false
-amazon2cis_ldap_server: false
-amazon2cis_telnet_server: false
+amazon2cis_dhcp_mask: false
+amazon2cis_dns_server: false
+amazon2cis_dns_mask: false
+amazon2cis_dnsmasq_server: false
+amazon2cis_dnsmasq_mask: false
+amazon2cis_samba_server: false
+amazon2cis_samba_mask: false
+amazon2cis_ftp_server: false
+amazon2cis_ftp_mask: false
+amazon2cis_message_server: false  # This is for messaging dovecot and cyrus-imap
+amazon2cis_message_mask: false
 amazon2cis_nfs_server: true
+amazon2cis_nfs_mask: true
+amazon2cis_nis_server: true  # set to mask if nis client required
+amazon2cis_nis_mask: false
+amazon2cis_print_server: false  # replaces cups
+amazon2cis_print_mask: false
 amazon2cis_rpc_server: true
-amazon2cis_rsyncd_server: true
-amazon2cis_rsh_server: false
-amazon2cis_nis_server: false
-amazon2cis_snmp_server: false
+amazon2cis_rpc_mask: true
+amazon2cis_rsync_server: false
+amazon2cis_rsync_mask: false
+amazon2cis_net_snmp_server: false
+amazon2cis_net_snmp_mask: false
+amazon2cis_telnet_server: false
+amazon2cis_telnet_mask: false
+amazon2cis_tftp_server: false
+amazon2cis_tftp_mask: false
 amazon2cis_squid_server: false
-amazon2cis_smb_server: false
-amazon2cis_dovecot_server: false
+amazon2cis_squid_mask: false
 amazon2cis_httpd_server: false
-amazon2cis_vsftpd_server: false
-amazon2cis_named_server: false
-amazon2cis_nfs_rpc_server: false
+amazon2cis_httpd_mask: false
+amazon2cis_nginx_server: false
+amazon2cis_nginx_mask: false
+amazon2cis_xinetd_server: false
+amazon2cis_xinetd_mask: false
+amazon2cis_xwindow_server: false  # will remove mask not an option
 amazon2cis_is_mail_server: false
-amazon2cis_bind: false
 
-
-# client services
+# Service Clients
+# Client Services
+amazon2cis_ftp_client: false
 amazon2cis_openldap_clients_required: false
+amazon2cis_ypbind_required: false  # Same package as NIS server
 amazon2cis_telnet_required: false
-amazon2cis_talk_required: false
-amazon2cis_rsh_required: false
-amazon2cis_ypbind_required: false
+amazon2cis_tftp_client: false
 
 
 ####
 ## Section 3
 ####
+# Section 3 Variables
+# 3.1.x
+# IPv6 required
+amazon2cis_ipv6_required: false
+amazon2cis_ipv6_sysctl_force: true
+amazon2cis_ipv6_sysctl_file: /etc/sysctl.d/60-ipv6.conf
+# Setting this will stop ipv6 listening on ::1 and will remove from /etc/hosts
+amazon2cis_ipv6_disable_localhost: false
 
-amazon2cis_firewall: firewalld
-# firewall: iptables
-amazon2cis_iptables_boot_config: /etc/sysconfig/iptables
-amazon2cis_ip6tables_boot_config: /etc/sysconfig/ip6tables
+# service = true removes package - mask = true will just mask package
+amazon2cis_bluetooth_service: true
+amazon2cis_bluetooth_mask: false
 
-amazon2cis_default_firewall_zone: 'public'
-amazon2cis_firewall_interface:
-  - ['ens224']
-  - ['ens192']
+# 3.3.x
+# System network parameters (host only OR host and router)
+amazon2cis_is_router: false
+amazon2cis_ipv4_sysctl_file: /etc/sysctl.d/60-ipv4.conf
 
-####
-## Section 4
-####
-amazon2cis_sshd_limited: false
-# Note the following to understand precedence and layout
-amazon2cis_sshd_access:
-  - AllowUser
-  - AllowGroup
-  - DenyUser
-  - DenyGroup
+# Firewall Service - either firewalld, iptables or nftables
+# multiple options for removal or masking of services
+# The firewall to be configured
+amazon2cis_system_firewall: firewalld
+# Set the following to remove or mask - note will not effect system_firewall # set to none
+amazon2cis_nftables: mask
+amazon2cis_iptables: mask
+amazon2cis_firewalld: none
 
-amazon2cis_ssh_strong_ciphers: Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-amazon2cis_ssh_weak_ciphers:
-  - 3des-cbc
-  - aes128-cbc
-  - aes192-cbc
-  - aes256-cbc
-  - arcfour
-  - arcfour128
-  - arcfour256
-  - blowfish-cbc
-  - cast128-cbc
-  - rijndael-cbc@lysator.liu.se
+# Allow automated creation of nftables table
+amazon2cis_nft_tables_autonewtable: false
+# give that table a name
+amazon2cis_nft_tables_tablename: cis
 
-amazon2cis_ssh_strong_macs: MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
-amazon2cis_ssh_weak_macs:
-  - hmac-md5
-  - hmac-md5-96
-  - hmac-ripemd160
-  - hmac-sha1
-  - hmac-sha1-96
-  - umac-64@openssh.com
-  - umac-128@openssh.com
-  - hmac-md5-etm@openssh.com
-  - hmac-md5-96-etm@openssh.com
-  - hmac-ripemd160-etm@openssh.com
-  - hmac-sha1-etm@openssh.com
-  - hmac-sha1-96-etm@openssh.com
-  - umac-64-etm@openssh.com
-  - umac-128-etm@openssh.com
+# Allow creation of chains
+amazon2cis_nft_tables_autochaincreate: false
 
-amazon2cis_ssh_strong_kex: KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
-amazon2cis_ssh_weak_kex:
-  - diffie-hellman-group1-sha1
-  - diffie-hellman-group14-sha1
-  - diffie-hellman-group-exchange-sha1
+##
+## Section 4 Variables
+##
 
-amazon2cis_ssh_aliveinterval: "300"
-amazon2cis_ssh_countmax: "3"
+# SSH variables
 
-## PAM
-amazon2cis_pam_password:
-  - minclass = 4
-amazon2cis_pam_passwd_retry: "3"
+## Can be VERBOSE or INFO
+amazon2cis_ssh_loglevel: INFO
+# amazon2cis_ssh_maxsessions is the max number of sessions
+# To conform to CIS standards this value nees to be 10 or less
 
+amazon2cis_sshd:
+    clientalivecountmax: 3
+    # clientaliveinterval shoudl be between 1 and 900
+    clientaliveinterval: 15
+    ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+    macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
+    kex: "curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256"
+    # logingracetime value is in seconds and needs to be set to 1 minute or less
+    logingracetime: 60
+    # WARNING: make sure you understand the precedence when working with these values!!
+    # allowusers:
+    # allowgroups: systems dba
+    # denyusers:
+    # denygroups:
 
-## note this is to skip tests
-amazon2cis_skip_pam_passwd_auth: true
-amazon2cis_skip_pam_system_auth: true
+amazon2cis_ssh_maxsessions: 10
+amazon2cis_ssh_maxauthtries: 4
 
-# choose one of below
-amazon2cis_pwhistory_so: "14"
-amazon2cis_unix_so: false
-amazon2cis_passwd_remember: "5"
+## Optional settings not part of CIS but can assist systems
+# Disable ipv6 on ssh if ipv6 not required
+amazon2cis_ipv6_sshd_disable: false
 
-# logins.def password settings
-amazon2cis_pass_max_days: 365
-amazon2cis_pass_min_days: 1
-amazon2cis_pass_warn_age: 7
+## Sudo
+amazon2cis_sudolog_location: "/var/log/sudo.log"
+amazon2cis_sudo_timestamp_timeout: 15
 
-# set sugroup if differs from wheel
+# Group to be used for su
+# this group needs to exists groups will not be created for remediation this is considered sys admins
+
 amazon2cis_sugroup: wheel
 
-# sugroup users list
-amazon2cis_sugroup_users: "root"
+# pam variables
+amazon2cis_pam_faillock:
+    deny: 5
+    interval: 900
+    unlock_time: 900
+    fail_for_root: "no"
+    remember: 5
+    pwhash: sha512
+amazon2cis_inactivelock:
+    lock_days: 30
 
+amazon2cis_pwquality_difok: 2  # 2 or more required
+amazon2cis_pwquality_maxrepeat: 3  # 3 or less not 0 required
+amazon2cis_pwquality_maxsequence: 3  # 3 or less not 0 required
+amazon2cis_pwquality_minlen: 14  # 14 or more required
+# Setting minclass true - mincalls used instead of seperated values
+amazon2cis_pwquality_minclass: true
+amazon2cis_pwquality_minclass_value: '4'  # Not less than 4
+amazon2cis_pwquality:
+    - key: '#minclass'
+      value: "{{ ubtu22cis_pwquality_minclass_value }}"
+    - key: 'dcredit'
+      value: '-1'  # not 0 or greater
+    - key: 'ucredit'
+      value: '-1'  # not 0 or greater
+    - key: 'ocredit'
+      value: '-1'  # not 0 or greater
+    - key: 'lcredit'
+      value: '-1'  # not 0 or greater
+
+# pwhistory
+amazon2cis_pwhistory_remember: 24  # 24 or more recommended
+
+## Users and environments
+amazon2cis_encryption: sha512
+# If encryption method changes foce users to change password at next login
+amazon2cis_force_user_passwd_change: true
+# Accounts listed below will not have INACTIVE field set in shadow file
+
+# Allow synmic discovery of user accounts minimum and maximun from /etc/login.defs
+# findings will override the uid_min|max below
+amazon2cis_uid_info_dynamic: true
+amazon2cis_uid_min: 1000
+amazon2cis_uid_max: 60000
+
+amazon2cis_inactive_whitelist:
+    - root
+    - vagrant
+
+amazon2cis_pass:
+    max_days: 365
+    min_days: 1
+    warn_age: 7
+    inactive: 30  # should not be 0 or -1 (little details in control)
+
+# Session timeout setting file (TMOUT setting can be set in multiple files)
+# Timeout value is in seconds. (60 seconds * 10 = 600)
+amazon2cis_shell_session_timeout:
+    file: /etc/profile.d/tmout.sh
+    timeout: 600
+# Allow ansible to expire password for account with a last changed date in the future. False will just display users in violation, true will expire those users passwords
+amazon2cis_futurepwchgdate_autofix: true
+
+amazon2cis_root_umask: '0027'  # 0027 or more restrictive
 
 ####
 ## Section 5

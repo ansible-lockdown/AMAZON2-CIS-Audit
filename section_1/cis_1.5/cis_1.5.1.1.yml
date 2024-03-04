@@ -1,5 +1,5 @@
 {{ if not .Vars.amazon2cis_selinux_disable }}
-  {{ if .Vars.amazon2cis_level1 }}
+  {{ if .Vars.amazon2cis_level_1 }}
     {{ if .Vars.amazon2cis_rule_1_5_1_1 }}
 package:
   libselinux:
