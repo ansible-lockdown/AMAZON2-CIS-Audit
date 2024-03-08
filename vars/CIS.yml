@@ -166,11 +166,22 @@ amazon2cis_rule_2_3_3: true
 amazon2cis_rule_2_3_4: true
 amazon2cis_rule_2_3_5: true
 
-# Section 3 rules
+##
+## Section 3 rules
+##
+# Section 3 is Network Configuration (Disable unused network protocols, Network parameters (host), Network parameters (Host and Router), Uncommon Network Protocols, Firewall Configuration, and Configure iptables)
+# ipv6, bluettoth and wireless
 amazon2cis_rule_3_1_1: true
 amazon2cis_rule_3_1_2: true
+amazon2cis_rule_3_1_3: true
+
+# network kernel modules
 amazon2cis_rule_3_2_1: true
 amazon2cis_rule_3_2_2: true
+amazon2cis_rule_3_2_3: true
+amazon2cis_rule_3_2_4: true
+
+# network kernel parameters
 amazon2cis_rule_3_3_1: true
 amazon2cis_rule_3_3_2: true
 amazon2cis_rule_3_3_3: true
@@ -180,42 +191,48 @@ amazon2cis_rule_3_3_6: true
 amazon2cis_rule_3_3_7: true
 amazon2cis_rule_3_3_8: true
 amazon2cis_rule_3_3_9: true
-amazon2cis_rule_3_4_1: true
-amazon2cis_rule_3_4_2: true
+amazon2cis_rule_3_3_10: true
+amazon2cis_rule_3_3_11: true
 
-amazon2cis_rule_3_5_1_1: true
-amazon2cis_rule_3_5_1_2: true
-amazon2cis_rule_3_5_1_3: true
-amazon2cis_rule_3_5_1_4: true
-amazon2cis_rule_3_5_1_5: true
-amazon2cis_rule_3_5_1_6: true
-amazon2cis_rule_3_5_1_7: true
-amazon2cis_rule_3_5_2_1: true
-amazon2cis_rule_3_5_2_2: true
-amazon2cis_rule_3_5_2_3: true
-amazon2cis_rule_3_5_2_4: false
-amazon2cis_rule_3_5_2_5: false
-amazon2cis_rule_3_5_2_6: false
-amazon2cis_rule_3_5_2_7: false
-amazon2cis_rule_3_5_2_8: false
-amazon2cis_rule_3_5_2_9: false
-amazon2cis_rule_3_5_2_10: true
-amazon2cis_rule_3_5_2_11: true
-amazon2cis_rule_3_5_3_1_1: true
-amazon2cis_rule_3_5_3_1_2: true
-amazon2cis_rule_3_5_3_1_3: true
-amazon2cis_rule_3_5_3_2_1: true
-amazon2cis_rule_3_5_3_2_2: true
-amazon2cis_rule_3_5_3_2_3: true
-amazon2cis_rule_3_5_3_2_4: true
-amazon2cis_rule_3_5_3_2_5: true
-amazon2cis_rule_3_5_3_2_6: true
-amazon2cis_rule_3_5_3_3_1: true
-amazon2cis_rule_3_5_3_3_2: true
-amazon2cis_rule_3_5_3_3_3: true
-amazon2cis_rule_3_5_3_3_4: true
-amazon2cis_rule_3_5_3_3_5: true
-amazon2cis_rule_3_5_3_3_6: true
+# Configure firewall utility
+amazon2cis_rule_3_4_1_1: true
+amazon2cis_rule_3_4_1_2: true
+
+# firewalld
+amazon2cis_rule_3_4_2_1: true
+amazon2cis_rule_3_4_2_2: true
+amazon2cis_rule_3_4_2_3: true
+amazon2cis_rule_3_4_2_4: true
+
+# nftables
+amazon2cis_rule_3_4_3_1: true
+amazon2cis_rule_3_4_3_2: true
+amazon2cis_rule_3_4_3_3: true
+amazon2cis_rule_3_4_3_4: true
+amazon2cis_rule_3_4_3_5: true
+amazon2cis_rule_3_4_3_6: true
+amazon2cis_rule_3_4_3_7: true
+amazon2cis_rule_3_4_3_8: true
+amazon2cis_rule_3_4_3_9: true
+
+# iptables
+amazon2cis_rule_3_4_4_1_1: true
+
+# ip4tables
+amazon2cis_rule_3_4_4_2_1: true
+amazon2cis_rule_3_4_4_2_2: true
+amazon2cis_rule_3_4_4_2_3: true
+amazon2cis_rule_3_4_4_2_4: true
+amazon2cis_rule_3_4_4_2_5: true
+amazon2cis_rule_3_4_4_2_6: true
+
+# ip6tables
+amazon2cis_rule_3_4_4_3_1: true
+amazon2cis_rule_3_4_4_3_2: true
+amazon2cis_rule_3_4_4_3_3: true
+amazon2cis_rule_3_4_4_3_4: true
+amazon2cis_rule_3_4_4_3_5: true
+amazon2cis_rule_3_4_4_3_6: true
 
 # Section 4 rules
 amazon2cis_rule_4_1_1_1: true

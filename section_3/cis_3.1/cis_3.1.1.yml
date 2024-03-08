@@ -1,6 +1,6 @@
 {{ if .Vars.amazon2cis_level_2 }}
-{{ if not .Vars.amazon2cis_ipv6_required }}
-  {{ if .Vars.amazon2cis_rule_3_1_1 }}
+  {{ if not .Vars.amazon2cis_ipv6_required }}
+    {{ if .Vars.amazon2cis_rule_3_1_1 }}
 command:
   ipv6_grub:
     title: 3.1.1 | disable IPv6 | grub
@@ -10,13 +10,15 @@ command:
     meta:
       server: 2
       workstation: NA
-      CIS_ID: 
+      CIS_ID:
       - 3.1.1
       CISv8:
       - 4.8
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
 kernel-param:
   net.ipv6.conf.all.disable_ipv6:
     title: 3.1.1 | disable IPv6 | kernel
@@ -24,25 +26,29 @@ kernel-param:
     meta:
       server: 2
       workstation: NA
-      CIS_ID: 
+      CIS_ID:
       - 3.1.1
       CISv8:
       - 4.8
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
   net.ipv6.conf.default.disable_ipv6:
     value: '1'
     meta:
       server: 2
       workstation: NA
-      CIS_ID: 
+      CIS_ID:
       - 3.1.1
       CISv8:
       - 4.8
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
 file:
   /etc/default/grub:
     title: 3.1.1 | Disable IPv6 | default_grub
@@ -59,8 +65,10 @@ file:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
+    {{ end }}
   {{ end }}
-{{ end }}
 {{ end }}
 
 

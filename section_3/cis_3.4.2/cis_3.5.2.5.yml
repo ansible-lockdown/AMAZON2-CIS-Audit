@@ -1,21 +1,22 @@
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_5_2_6 }}
+  {{ if .Vars.amazon2cis_rule_3_4_3_3 }}
 command:
   nft_list:
-   title: 3.5.2.6 | Ensure base chains exists
-   exec: nft list ruleset | egrep -c "input|forward|output"
+   title: 3.4.3.3 | Ensure an nftable table exists
+   exec: nft list tables
    exit-status: 0
-   stdout:
-   - '3'
+   stdout:  ['inet filter']
    meta:
      server: 1
      workstation: NA
      CIS_ID:
-     - 3.5.2.6
+     - 3.4.3.3
      CISv8:
      - 4.4
      CISv8_IG1: true
      CISv8_IG2: true
      CISv8_IG3: true
+     NIST800-53R5:
+      - CA-9
   {{ end }}
 {{ end }}
