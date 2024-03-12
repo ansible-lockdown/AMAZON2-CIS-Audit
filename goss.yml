@@ -29,13 +29,19 @@ gossfile:
   {{ end }}
 
   {{ if .Vars.amazon2cis_section4 }}
-  {{ if .Vars.amazon2cis_level_2 }}
-  section_4/cis_4.1/*.yml: {}
-  {{ end }}
+  section_4/cis_4.1.x/*.yml: {}
   section_4/cis_4.2/*.yml: {}
+  section_4/cis_4.3/*.yml: {}
+  section_4/cis_4.4.1.x/*.yml: {}
+  section_4/cis_4.4.2.1.x/*.yml: {}
+  section_4/cis_4.4.2.2.x/*.yml: {}
+  section_4/cis_4.4.2.3.x/*.yml: {}
+  section_4/cis_4.4.2.4.x/*.yml: {}
   {{ end }}
 
   {{ if .Vars.amazon2cis_section5 }}
+  {{ if .Vars.amazon2cis_level_2 }}
+  {{ end }}
   section_5/*/*.yml: {}
   {{ end }}
 

@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_4_4_1_2 }}
+package:
+  libpwquality_installed:
+    title: 4.4.1.2 | Ensure libpwquality is installed
+    installed: true
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 4.4.1.2
+      CISv8:
+      - 5.2
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5:
+      - IA-5
+  {{ end }}
+{{ end }}

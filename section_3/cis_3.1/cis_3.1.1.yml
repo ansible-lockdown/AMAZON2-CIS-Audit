@@ -53,7 +53,7 @@ file:
   /etc/default/grub:
     title: 3.1.1 | Disable IPv6 | default_grub
     exists: true
-    contains:
+    contents:
     - '/(?=\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'
     meta:
       server: 2
