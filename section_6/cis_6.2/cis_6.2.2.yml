@@ -1,21 +1,22 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_2_2 }}
-file:
-  /etc/passwd:
+command:
+  notempty_passwd_shadow:
     title: 6.2.2 | Ensure /etc/shadow password fields are not empty
-    exists: true
-    contains:
-    - "!/^.*:\\!\\!:.*/"
+    exec: awk -F':' '($2 == "") { print $1 }' /etc/passwd
+    exit-status: 0
+    stdout:
+    - '!/^.*/'
     meta:
       server: 1
-      workstation: NA
+      workstation: 1
       CIS_ID:
       - 6.2.2
-      CISv8:
-      - 5.2
+      CISv8: 5.2
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - IA-5
   {{ end }}
 {{ end }}
-
