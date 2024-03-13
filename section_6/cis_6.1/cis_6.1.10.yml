@@ -1,10 +1,12 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_1_10 }}
 file:
-  /etc/shells_perms:
-    title: 6.1.10 | Ensure permissions on /etc/shells are configured
+  /etc/security/opasswd_perms:
+    title: 6.1.10 | Ensure permissions on /etc/security/opasswd are configured
     exists: true
-    path: /etc/shells
+    path: /etc/security/opasswd
     mode:
       or:
       - '0644'
@@ -27,4 +29,3 @@ file:
       - MP-2
   {{ end }}
 {{ end }}
-

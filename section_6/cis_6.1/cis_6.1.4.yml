@@ -1,10 +1,12 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_1_4 }}
 file:
-  /etc/group_perms:
-    title: 6.1.4 | Ensure permissions on /etc/group are configured
+  /etc/group-_perms:
+    title: 6.1.4 | Ensure permissions on /etc/group- are configured
     exists: true
-    path: /etc/group
+    path: /etc/group-
     mode:
       or:
       - '0644'

@@ -1,10 +1,12 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_1_7 }}
 file:
-  /etc/shadow-_perms:
-    title: 6.1.7 | Ensure permissions on /etc/shadow- are configured
+  /etc/gshadow:
+    title: 6.1.7 | Ensure permissions on /etc/gshadow are configured
     exists: true
-    path: /etc/shadow-
+    path: /etc/gshadow
     mode: '0000'
     owner: root
     group: root
@@ -22,3 +24,4 @@ file:
       - MP-2
   {{ end }}
 {{ end }}
+

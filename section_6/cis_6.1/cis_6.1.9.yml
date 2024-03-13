@@ -1,11 +1,18 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_1_9 }}
 file:
-  /etc/gshadow-_perms:
-    title: 6.1.9 | Ensure permissions on /etc/gshadow- are configured
+  /etc/shells_perms:
+    title: 6.1.9 | Ensure permissions on /etc/shells are configured
     exists: true
-    path: /etc/gshadow-
-    mode: '0000'
+    path: /etc/shells
+    mode:
+      or:
+      - '0644'
+      - '0640'
+      - '0600'
+      - '0400'
     owner: root
     group: root
     meta:

@@ -1,10 +1,12 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_6_1_8 }}
 file:
-  /etc/gshadow:
-    title: 6.1.8 | Ensure permissions on /etc/gshadow are configured
+  /etc/gshadow-_perms:
+    title: 6.1.8 | Ensure permissions on /etc/gshadow- are configured
     exists: true
-    path: /etc/gshadow
+    path: /etc/gshadow-
     mode: '0000'
     owner: root
     group: root
