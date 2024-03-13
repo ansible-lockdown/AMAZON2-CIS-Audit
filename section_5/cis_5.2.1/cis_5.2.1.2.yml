@@ -5,11 +5,11 @@
 command:
   boot_audit_on:
     title: 5.2.1.2 | Ensure auditing for processes that start prior to auditd is enabled | bootloader file
-    exec: grep "audit=" /boot/grub2/grubenv
+    exec: grep "audit=" /boot/grub2/grub.cfg
     exit-status: 0
     stdout:
-    - '/^kernelopts=.*\saudit=1.*/'
-    - '!/^kernelopts=.*\saudit=0.*/'
+    - '/^\s*linux /boot/vmlinuz-.*\saudit=1.*/'
+    - '!/^\s*linux /boot/vmlinuz-.*\saudit=0.*/'
     meta:
       server: 2
       workstation: 2
@@ -25,8 +25,8 @@ command:
     exec: grep "audit=" /etc/default/grub
     exit-status: 0
     stdout:
-    - '/^GRUB_CMDLINE_LINUX=.*\saudit=1.*/'
-    - '!/^GRUB_CMDLINE_LINUX=.*audit=0/'
+    - '/^GRUB_CMDLINE_LINUX_DEFAULT=.*\saudit=1.*/'
+    - '!/^GRUB_CMDLINE_LINUX_DEFAULT=.*audit=0/'
     meta:
       server: 2
       workstation: 2

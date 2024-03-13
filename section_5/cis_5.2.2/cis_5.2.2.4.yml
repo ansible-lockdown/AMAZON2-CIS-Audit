@@ -8,8 +8,8 @@ file:
     path: /etc/audit/auditd.conf
     exists: true
     contents:
-    - '/^space_left_action = (email|exec|single|halt)/'
-    - '/^admin_space_left_action = (single|halt)/'
+    - '/^space_left_action\s*=\s*(email|exec|single|halt)/'
+    - '/^admin_space_left_action\s*=\s*(single|halt)/'
     meta:
       server: 2
       workstation: 2

@@ -10,6 +10,7 @@ command:
     exit-status:
       or:
       - 0
+      - 1
       - 2
     stdout:
     - '!/.*/'
@@ -31,6 +32,7 @@ command:
     exit-status:
       or:
       - 0
+      - 1
       - 2
     stdout:
     - '!/.*/'
