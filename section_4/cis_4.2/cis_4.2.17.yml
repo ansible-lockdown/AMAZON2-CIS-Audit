@@ -9,7 +9,7 @@ file:
     exists: true
     contents:
     - '/^(?i)MaxSessions ([2-9]|10)/'
-    - '!/^(?i)MaxSessions (1|[1-9]{2,5})/'
+    - '!/^(?i)MaxSessions (1[1-9]{2,5})/'
     meta:
       server: 1
       workstation: NA

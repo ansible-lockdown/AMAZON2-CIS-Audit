@@ -6,8 +6,9 @@ file:
   remember_pwhistory_system_auth:
     title: 4.4.2.3.2 | Ensure password history remember is configured | system-auth
     path: /etc/pam.d/system-auth
+    exists: true
     contents:
-    - '/^password\s+required\s+pam_pwhistory.so.*remember(2[4-9]|[3-5][0-9])/'
+    - '/^password\s+required\s+pam_pwhistory.so.*remember=(2[4-9]|[3-5][0-9])/'
     meta:
       server: 1
       workstation: NA
@@ -22,8 +23,9 @@ file:
   remember_pwquality_password_auth:
     title: 4.4.2.3.2 | Ensure password history remember is configured | password-auth
     path: /etc/pam.d/password-auth
+    exists: true
     contents:
-    - '/^password\s+required\s+pam_pwhistory.so.*remember(2[4-9]|[3-5][0-9])/'
+    - '/^password\s+required\s+pam_pwhistory.so.*remember=(2[4-9]|[3-5][0-9])/'
     meta:
       server: 1
       workstation: NA

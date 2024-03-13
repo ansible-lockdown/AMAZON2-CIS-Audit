@@ -5,6 +5,7 @@
 command:
   pam_latest:
     title: 4.4.1.1 | Ensure latest version of pam is installed
+    exec: yum update pam
     exit-status: 0
     stdout:
     - '/^No packages marked for update/'

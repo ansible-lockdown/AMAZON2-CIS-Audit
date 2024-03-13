@@ -6,13 +6,11 @@ file:
   faillock_system_auth:
     title: 4.4.2.1.1 | Ensure pam_faillock module is enabled | system-auth
     path: /etc/pam.d/system-auth
+    exists: true
     contents:
-    - '/^auth\s+required\s+pam_env.so
-        auth\s+required\s+pam_faillock.so\s+preauth/'
-    - '/^(auth\s+sufficient\s+pam_unix.so try_first_pass|auth\s+(required|sufficient|requisite)pam_sss.so)
-        auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
-    - '/^auth\s+requisite\s+pam_succeed_if.so
-        account\s+required\s+pam_faillock.so/'
+    - '/^auth\s+required\s+pam_faillock.so\s+preauth/'
+    - '/^auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
+    - '/^account\s+required\s+pam_faillock.so/'
     meta:
       server: 1
       workstation: NA
@@ -31,13 +29,11 @@ file:
   faillock_password_auth:
     title: 4.4.2.1.1 | Ensure pam_faillock module is enabled | password-auth
     path: /etc/pam.d/password-auth
+    exists: true
     contents:
-    - '/^auth\s+required\s+pam_env.so
-        auth\s+required\s+pam_faillock.so\s+preauth/'
-    - '/^(auth\s+sufficient\s+pam_unix.so try_first_pass|auth\s+(required|sufficient|requisite)pam_sss.so)
-        auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
-    - '/^auth\s+requisite\s+pam_succeed_if.so
-        account\s+required\s+pam_faillock.so/'
+    - '/^auth\s+required\s+pam_faillock.so\s+preauth/'
+    - '/^auth\s+\[default=die\]\s+pam_faillock.so\s+authfail/'
+    - '/^account\s+required\s+pam_faillock.so/'
     meta:
       server: 1
       workstation: NA

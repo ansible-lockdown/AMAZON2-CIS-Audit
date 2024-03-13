@@ -39,6 +39,7 @@ file:
 service:
   fw_fwd_fwd_running:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | firewalld running and enabled
+    name: firewalld
     enabled: true
     running: true
     meta:
@@ -54,6 +55,7 @@ service:
       CISv8_IG3: true
   fw_fwd_nft_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | nftables stopped
+    name: nftables
     enabled: false
     running: false
     meta:

@@ -6,6 +6,7 @@ file:
   enforce_root_pwhistory_system_auth:
     title: 4.4.2.3.3 | Ensure password history is enforced for the root user | system-auth
     path: /etc/pam.d/system-auth
+    exists: true
     contents:
     - '/^password\s+required\s+pam_pwhistory.so.*enforce_for_root/'
     meta:
@@ -22,6 +23,7 @@ file:
   enforce_root_pwquality_password_auth:
     title: 4.4.2.3.3 | Ensure password history is enforced for the root user | password-auth
     path: /etc/pam.d/password-auth
+    exists: true
     contents:
     - '/^password\s+required\s+pam_pwhistory.so.*enforce_for_root/'
     meta:

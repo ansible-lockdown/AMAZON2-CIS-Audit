@@ -5,6 +5,7 @@
 package:
   libpwquality_installed:
     title: 4.4.1.2 | Ensure libpwquality is installed
+    name: libpwquality
     installed: true
     meta:
       server: 1

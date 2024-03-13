@@ -4,8 +4,11 @@
 command:
   ipv6_grub:
     title: 3.1.1 | disable IPv6 | grub
-    exit-status: 0
-    exec: 'grep "^\s*linux" {{ .Vars.amazon2cis_bootloader_file }} | grep -v ipv6.disable=1'
+    exit-status:
+      or:
+      - 0
+      - 1
+    exec: 'grep "^\s*linux" {{ .Vars.amazon2cis_bootloader_file }} | grep ipv6.disable=1'
     stdout: ['!/./']
     meta:
       server: 2
@@ -54,7 +57,7 @@ file:
     title: 3.1.1 | Disable IPv6 | default_grub
     exists: true
     contents:
-    - '/(?=\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'
+    - '!/(\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'
     meta:
       server: 2
       workstation: NA

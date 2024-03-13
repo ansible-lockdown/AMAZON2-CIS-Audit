@@ -6,6 +6,7 @@ file:
   authtok_pwhistory_system_auth:
     title: 4.4.2.3.4 | Ensure pam_pwhistory includes use_authtok | system-auth
     path: /etc/pam.d/system-auth
+    exists: true
     contents:
     - '/^password\s+required\s+pam_pwhistory.so.*use_authtok/'
     meta:
@@ -22,6 +23,7 @@ file:
   authtok_pwquality_password_auth:
     title: 4.4.2.3.4 | Ensure pam_pwhistory includes use_authtok | password-auth
     path: /etc/pam.d/password-auth
+    exists: true
     contents:
     - '/^password\s+required\s+pam_pwhistory.so.*use_authtok/'
     meta:
