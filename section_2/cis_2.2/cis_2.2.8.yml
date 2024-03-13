@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_8 }}
     {{ if not .Vars.amazon2cis_message_server }}
-      {{ if not .Vars.amazon2cis_message_mask }}
 package:
   dovecot_pkg:
     title: 2.2.8 | Ensure message access server services are not in use | pkg removed
@@ -74,7 +73,6 @@ file:
       CISv8_IG3: true
       NIST800-53R5:
       - CM-7
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

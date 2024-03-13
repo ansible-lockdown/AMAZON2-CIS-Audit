@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_17 }}
     {{ if not .Vars.amazon2cis_squid_server }}
-      {{ if not .Vars.amazon2cis_squid_mask }}
 package:
   squid_pkg:
     title: 2.2.17 | Ensure web proxy server services are not in use | pkg removed
@@ -42,7 +41,6 @@ file:
       NIST800-53R5:
       - CM-6
       - CM-7
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

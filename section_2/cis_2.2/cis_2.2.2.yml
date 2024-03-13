@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_2 }}
     {{ if not .Vars.amazon2cis_avahi_server }}
-      {{ if not .Vars.amazon2cis_avahi_mask }}
 package:
   avahi_pkg:
     title: 2.2.2 | Ensure avahi daemon services are not in use | pkg removed
@@ -58,7 +57,6 @@ file:
       CISv8_IG3: true
       NIST800-53R5:
       - SI-4
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

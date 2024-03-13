@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_13 }}
     {{ if not .Vars.amazon2cis_rsync_server }}
-      {{ if not .Vars.amazon2cis_rsync_mask }}
 package:
   rsync_pkg:
     title: 2.2.13 | Ensure rsync services are not in use | pkg removed
@@ -61,7 +60,6 @@ file:
       NIST800-53R5:
       - CM-6
       - CM-7
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

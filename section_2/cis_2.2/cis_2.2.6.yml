@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_6 }}
     {{ if not .Vars.amazon2cis_samba_server }}
-      {{ if not .Vars.amazon2cis_samba_mask }}
 package:
   samba_pkg:
     title: 2.2.6 | Ensure samba file server services are not in use | pkg removed
@@ -42,7 +41,6 @@ file:
       NIST800-53R5:
       - CM-6
       - CM-7
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

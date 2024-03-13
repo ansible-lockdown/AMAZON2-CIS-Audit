@@ -1,7 +1,6 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_11 }}
     {{ if not .Vars.amazon2cis_print_server }}
-      {{ if not .Vars.amazon2cis_print_mask }}
 package:
   cups_pkg:
     title: 2.2.11 | Ensure print server services are not in use | pkg removed
@@ -58,7 +57,6 @@ file:
       CISv8_IG3: true
       NIST800-53R5:
       - CM-7
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
