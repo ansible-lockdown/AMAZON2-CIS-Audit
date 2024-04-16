@@ -24,7 +24,7 @@ file:
     title: 5.7 | Ensure access to the su command is restricted | /etc/group
     exists: true
     contains:
-    - '/^{{ .Vars.amazon2cis_sugroup }}:x:10:vagrant,root$/'
+    - '/^{{ .Vars.amazon2cis_sugroup }}:x:10:ec2-user,root$/'
     meta:
       server: 1
       workstation: NA
