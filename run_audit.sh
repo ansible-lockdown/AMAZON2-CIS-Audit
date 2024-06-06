@@ -23,9 +23,8 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=CIS # Benchmark Name aligns to the audit
-BENCHMARK_VER=3.0.0
-BENCHMARK_OS=Amazon2
-
+BENCHMARK_VER=1.0.0
+BENCHMARK_OS=Amazon2023
 
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
@@ -83,12 +82,12 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [ "$(uname -a | grep -cw amzn)" -ge 1 ]; then
+if [ "$(uname -a | grep -c amzn)" -ge 1 ]; then
     os_vendor="AMAZON"
 elif [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
   os_vendor="RHEL"
 else
-  os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print $1}' | tr '[:lower:]' '[:upper:]' )"
+  os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print tolower($1)}')"
 fi
 
 os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
