@@ -1,3 +1,5 @@
+---
+
 {{ if not .Vars.amazon2cis_is_router }}
   {{ if .Vars.amazon2cis_level_1 }}
     {{ if .Vars.amazon2cis_rule_3_3_1 }}

@@ -1,4 +1,3 @@
-
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}

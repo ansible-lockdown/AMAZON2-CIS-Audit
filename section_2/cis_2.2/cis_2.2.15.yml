@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_15 }}
     {{ if not .Vars.amazon2cis_telnet_server }}

@@ -1,4 +1,6 @@
 ---
+
+---
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_3_4_2_4 }}
   nic_assigned:

@@ -1,3 +1,5 @@
+---
+
 # CIS for Chrony
 {{ if eq .Vars.amazon2cis_time_synchronization "chrony" }}
   {{ if .Vars.amazon2cis_level_1 }}

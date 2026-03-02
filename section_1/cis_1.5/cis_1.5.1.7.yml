@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
 package:
   {{ if .Vars.amazon2cis_rule_1_5_1_7 }}
