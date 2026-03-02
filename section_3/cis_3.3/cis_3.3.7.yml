@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_3_7 }}
 kernel-param:
   net.ipv4.conf.all.rp_filter:
-    title: 3.3.7 | Ensure Reverse Path Filtering is enabled
+    title: 3.3.7 | Ensure reverse path filtering is enabled
     value: '1'
     meta:
       server: 1
@@ -22,7 +22,7 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv4.conf.default.rp_filter:
-    title: 3.3.7 | Ensure Reverse Path Filtering is enabled
+    title: 3.3.7 | Ensure reverse path filtering is enabled
     value: '1'
     meta:
       server: 1

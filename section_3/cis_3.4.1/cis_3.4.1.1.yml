@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_4_1_1 }}
 package:
   iptables_installed:
-    title: 3.4.1.1 | Ensure iptables package is installed
+    title: 3.4.1.1 | Ensure iptables is installed
     name: iptables
     installed: true
     meta:

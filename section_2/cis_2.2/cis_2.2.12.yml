@@ -25,7 +25,7 @@ package:
       {{ if .Vars.amazon2cis_rpc_mask }}
 file:
   rpcbind_service_masked:
-    title: 2.2.12 | Ensure rpc services are not in use | masked
+    title: 2.2.12 | Ensure rpcbind services are not in use | masked
     path: /etc/systemd/system/rpcbind.service
     exists: true
     filetype: symlink
@@ -44,7 +44,7 @@ file:
       - CM-6
       - CM-7
   rpcbind_socket_masked:
-    title: 2.2.12 | Ensure rpc services are not in use | masked
+    title: 2.2.12 | Ensure rpcbind services are not in use | masked
     path: /etc/systemd/system/rpcbind.socket
     exists: true
     filetype: symlink

@@ -1,11 +1,11 @@
 ---
 
-{{ if .Vars.amazon2cis_level_2 }}
+{{ if .Vars.amazon2cis_level_1 }}
   {{ if not .Vars.amazon2cis_ipv6_required }}
     {{ if .Vars.amazon2cis_rule_3_1_1 }}
 command:
   ipv6_grub:
-    title: 3.1.1 | disable IPv6 | grub
+    title: 3.1.1 | Ensure IPv6 status is identified | grub
     exit-status:
       or:
       - 0
@@ -26,7 +26,7 @@ command:
       - CM-7
 kernel-param:
   net.ipv6.conf.all.disable_ipv6:
-    title: 3.1.1 | disable IPv6 | kernel
+    title: 3.1.1 | Ensure IPv6 status is identified | kernel
     value: '1'
     meta:
       server: 2
@@ -56,7 +56,7 @@ kernel-param:
       - CM-7
 file:
   /etc/default/grub:
-    title: 3.1.1 | Disable IPv6 | default_grub
+    title: 3.1.1 | Ensure IPv6 status is identified | default_grub
     exists: true
     contents:
     - '!/(\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'

@@ -25,7 +25,7 @@ package:
       {{ if .Vars.amazon2cis_samba_mask }}
 file:
   samba_service_masked:
-    title: 2.2.6 | Ensure samba server services are not in use | masked
+    title: 2.2.6 | Ensure samba file server services are not in use | masked
     path: /etc/systemd/system/smb.service
     exists: true
     filetype: symlink

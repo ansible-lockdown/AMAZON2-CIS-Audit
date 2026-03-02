@@ -20,7 +20,7 @@ command:
       CISv8_IG3: true
       NIST800-53R5: NA
   auditd_setfacl_live:
-    title: 5.2.3.16 |Ensure successful and unsuccessful attempts to use the setfacl command are recorded | running
+    title: 5.2.3.16 | Ensure successful and unsuccessful attempts to use the setfacl command are recorded | running
     exec: auditctl -l | grep setfacl
     exit-status: 0
     stdout:

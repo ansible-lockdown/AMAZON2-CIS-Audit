@@ -36,6 +36,9 @@ service:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - AU-3
+      - AU-12
     {{ end }}
   {{ end }}
 {{ end }}

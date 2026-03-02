@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_5_2_2_4 }}
 file:
   auditd_space_left:
-    title: 5.2.2.4 | Ensure system is disabled when audit logs are full
+    title: 5.2.2.4 | Ensure system warns when audit logs are low on space
     path: /etc/audit/auditd.conf
     exists: true
     contents:
