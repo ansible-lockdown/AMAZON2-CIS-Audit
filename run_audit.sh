@@ -26,8 +26,9 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=CIS # Benchmark Name aligns to the audit
-BENCHMARK_VER=1.0.0
+BENCHMARK_VER=3.0.0
 BENCHMARK_OS=AMAZON2
+
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
 AUDIT_BIN_MIN_VER="0.4.4"
