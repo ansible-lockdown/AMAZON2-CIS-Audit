@@ -12,11 +12,6 @@ kernel-param:
       workstation: NA
       CIS_ID:
       - 1.4.2
-      CISv8:
-      - 10.5
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-6b
@@ -35,11 +30,6 @@ command:
       workstation: NA
       CIS_ID:
       - 1.4.2
-      CISv8:
-      - 10.5
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-6b

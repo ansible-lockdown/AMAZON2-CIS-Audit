@@ -19,12 +19,7 @@ file:
       CIS_ID:
       - 1.6.1
       - 1.6.4
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3
@@ -47,12 +42,7 @@ file:
       CIS_ID:
       - 1.6.2
       - 1.6.5
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3
@@ -75,12 +65,7 @@ file:
       CIS_ID:
       - 1.6.3
       - 1.6.6
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3

@@ -12,10 +12,6 @@ package:
       workstation: 1
       CIS_ID:
       - 3.4.2.1
-      CISv8: 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CA-9
   fwd_iptables_installed:
@@ -27,10 +23,6 @@ package:
       workstation: 1
       CIS_ID:
       - 3.4.2.1
-      CISv8: 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CA-9
   {{ end }}
