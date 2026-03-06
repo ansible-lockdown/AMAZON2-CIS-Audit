@@ -2,7 +2,7 @@
 
 {{ if .Vars.amazon2cis_level_2 }}
   {{ if .Vars.amazon2cis_run_heavy_tests }}
-    {{ if .Vars.amazon2cis_rule_6_1_4 }}
+    {{ if .Vars.amazon2cis_rule_6_1_14 }}
 command:
   rpm_filecheck:
     title: 6.1.14 | Audit system file permissions
