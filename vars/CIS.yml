@@ -466,7 +466,7 @@ amazon2cis_ipv6_chrony_disable: false
 # Options are
 # true to leave installed if exists not changes take place
 # false - this removes the package
-# mask - if a dependancy for product so cannot be removed
+# mask - if a dependency for product so cannot be removed
 # Server Services
 amazon2cis_autofs_services: false
 amazon2cis_autofs_mask: true
