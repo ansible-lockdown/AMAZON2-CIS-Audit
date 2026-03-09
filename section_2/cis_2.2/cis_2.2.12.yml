@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_12 }}
     {{ if not .Vars.amazon2cis_rpc_server }}
@@ -11,11 +13,6 @@ package:
       workstation: 1
       CIS_ID:
       - 2.2.12
-      CISv8:
-      - 4.8
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-7
@@ -23,7 +20,7 @@ package:
       {{ if .Vars.amazon2cis_rpc_mask }}
 file:
   rpcbind_service_masked:
-    title: 2.2.12 | Ensure rpc services are not in use | masked
+    title: 2.2.12 | Ensure rpcbind services are not in use | masked
     path: /etc/systemd/system/rpcbind.service
     exists: true
     filetype: symlink
@@ -33,16 +30,11 @@ file:
       workstation: 1
       CIS_ID:
       - 2.2.12
-      CISv8:
-      - 4.8
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-7
   rpcbind_socket_masked:
-    title: 2.2.12 | Ensure rpc services are not in use | masked
+    title: 2.2.12 | Ensure rpcbind services are not in use | masked
     path: /etc/systemd/system/rpcbind.socket
     exists: true
     filetype: symlink
@@ -52,11 +44,6 @@ file:
       workstation: 1
       CIS_ID:
       - 2.2.12
-      CISv8:
-      - 4.8
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-7

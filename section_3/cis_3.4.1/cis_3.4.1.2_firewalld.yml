@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_3_4_1_2 }}
     {{ if eq .Vars.amazon2cis_system_firewall "firewalld" }}
@@ -13,12 +15,7 @@ file:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   fw_fwd_ipt_masked:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | iptables masked
     path: /etc/systemd/system/iptables.service
@@ -30,12 +27,7 @@ file:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
 service:
   fw_fwd_fwd_running:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | firewalld running and enabled
@@ -47,12 +39,7 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   fw_fwd_nft_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | nftables stopped
     name: nftables
@@ -63,12 +50,7 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   fw_iptables_ipt_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | iptables stopped and disabled
     name: iptables
@@ -79,12 +61,7 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   {{ if .Vars.amazon2cis_ipv6_required }}
   fw_iptables_ipt6_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | ip6tables stopped and disabled
@@ -96,12 +73,7 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      CISv8:
-      - 4.4
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       {{ end }}
     {{ end }}
   {{ end }}

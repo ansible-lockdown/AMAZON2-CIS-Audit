@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: '3.0.0'
+benchmark_version: 'v3.0.0'
 
 # timeout for each command to run where set - default = 10seconds/10000ms
 timeout_ms: 120000
@@ -466,7 +466,7 @@ amazon2cis_ipv6_chrony_disable: false
 # Options are
 # true to leave installed if exists not changes take place
 # false - this removes the package
-# mask - if a dependancy for product so cannot be removed
+# mask - if a dependency for product so cannot be removed
 # Server Services
 amazon2cis_autofs_services: false
 amazon2cis_autofs_mask: true
@@ -484,13 +484,13 @@ amazon2cis_ftp_server: false
 amazon2cis_ftp_mask: false
 amazon2cis_message_server: false  # This is for messaging dovecot and cyrus-imap
 amazon2cis_message_mask: false
-amazon2cis_nfs_server: true
+amazon2cis_nfs_server: false
 amazon2cis_nfs_mask: true
 amazon2cis_nis_server: true  # set to mask if nis client required
 amazon2cis_nis_mask: false
 amazon2cis_print_server: false  # replaces cups
 amazon2cis_print_mask: false
-amazon2cis_rpc_server: true
+amazon2cis_rpc_server: false
 amazon2cis_rpc_mask: true
 amazon2cis_rsync_server: false
 amazon2cis_rsync_mask: false
@@ -551,6 +551,11 @@ amazon2cis_firewalld: none
 
 amazon2cis_firewall_interface:
 - eth0
+
+# Used by some Goss tests (align with amazon2cis_system_firewall)
+amazon2cis_firewall: firewalld
+amazon2cis_iptables_boot_config: false
+amazon2cis_ip6tables_boot_config: false
 
 ####
 ## Section 4 Variables
@@ -627,6 +632,10 @@ amazon2cis_pwquality_minclass: true
 amazon2cis_pass:
     max_days: 365
     warn_age: 7
+
+# Used by Goss tests (align with amazon2cis_pass)
+amazon2cis_pass_max_days: 365
+amazon2cis_pass_warn_age: 7
 
 ####
 ## Section 5 Variables

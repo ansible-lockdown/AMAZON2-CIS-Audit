@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
 file:
   {{ if .Vars.amazon2cis_rule_1_6_1 }}
@@ -17,12 +19,7 @@ file:
       CIS_ID:
       - 1.6.1
       - 1.6.4
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3
@@ -30,7 +27,7 @@ file:
   {{ end }}
   {{ if .Vars.amazon2cis_rule_1_6_2 }}
   etc_issue:
-    title: 1.6.2 & 5 | Ensure local login warning banner is configured properly
+    title: 1.6.2 | Ensure local login warning banner is configured properly
     path: /etc/issue
     exists: true
     mode: '0644'
@@ -45,12 +42,7 @@ file:
       CIS_ID:
       - 1.6.2
       - 1.6.5
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3
@@ -58,7 +50,7 @@ file:
   {{ end }}
   {{ if .Vars.amazon2cis_rule_1_6_3 }}
   etc_issue.net:
-    title: 1.6.3 & 6 | Ensure remote login warning banner is configured properly
+    title: 1.6.3 | Ensure remote login warning banner is configured properly
     path: /etc/issue.net
     exists: true
     mode: '0644'
@@ -73,15 +65,61 @@ file:
       CIS_ID:
       - 1.6.3
       - 1.6.6
-      CISv8:
-      - 3.3
       - 4.8
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-3
       - CM-6
+  {{ end }}
+  {{ if .Vars.amazon2cis_rule_1_6_4 }}
+  motd:
+    title: 1.6.4 | Ensure access to /etc/motd is configured
+    path: /etc/motd
+    exists: true
+    mode: '0644'
+    owner: root
+    group: root
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.6.4
+      NIST800-53R5:
+      - AC-3
+      - MP-2
+  {{ end }}
+  {{ if .Vars.amazon2cis_rule_1_6_5 }}
+  etc_issue:
+    title: 1.6.5 | Ensure permissions on /etc/issue are configured
+    path: /etc/issue
+    exists: true
+    mode: '0644'
+    owner: root
+    group: root
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.6.5
+      NIST800-53R5:
+      - AC-3
+      - MP-2
+  {{ end }}
+  {{ if .Vars.amazon2cis_rule_1_6_6 }}
+  etc_issue.net:
+    title: 1.6.6 | Ensure permissions on /etc/issue.net are configured
+    path: /etc/issue.net
+    exists: true
+    mode: '0644'
+    owner: root
+    group: root
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.6.6
+      NIST800-53R5:
+      - AC-3
+      - MP-2
   {{ end }}
 {{ end }}

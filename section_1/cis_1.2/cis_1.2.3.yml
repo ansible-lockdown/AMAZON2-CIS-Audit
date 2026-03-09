@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_2 }}
   {{ if .Vars.amazon2cis_rule_1_2_3 }}
 file:
@@ -13,11 +15,6 @@ file:
       workstation: NA
       CIS_ID:
       - 1.2.3
-      CISv8:
-      - 7.3
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - SI-2
 command:
@@ -33,11 +30,6 @@ command:
       workstation: NA
       CIS_ID:
       - 1.2.3
-      CISv8:
-      - 7.3
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - SI-2
   {{ end }}
