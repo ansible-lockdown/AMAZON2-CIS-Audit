@@ -14,4 +14,4 @@ package:
       NIST800-53R5:
       - CA-9
   {{ end }}
-{[ end ]}
+{{ end }}
