@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_4_1_1_7 }}
+file:
+  /etc/cron.d:
+    title: 4.1.1.7 | Ensure permissions on /etc/cron.d are configured
+    path: /etc/cron.d
+    exists: true
+    owner: root
+    group: root
+    mode: '0700'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 4.1.1.7
+      NIST800-53R5:
+      - AC-3
+      - MP-2
+  {{ end }}
+{{ end }}
