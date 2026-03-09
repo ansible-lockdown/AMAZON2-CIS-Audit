@@ -5,7 +5,7 @@
 file:
   etc_profile_umask:
     title: 4.5.3.3 | Ensure default user umask is configured
-    file: /etc/profile
+    path: /etc/profile
     exists: true
     contents:
     - '/^(?i)\s+umask\s0(2|7)(2|7)/'
@@ -20,7 +20,7 @@ file:
       - MP-2
   etc_login_defs_umask:
     title: 4.5.3.3 | Ensure default user umask is configured
-    file: /etc/login.defs
+    path: /etc/login.defs
     exists: true
     contents:
     - '/^(?i)\s+umask\s0(2|7)(2|7)/'
@@ -35,7 +35,7 @@ file:
       - MP-2
   etc_bashrc_umask:
     title: 4.5.3.3 | Ensure default user umask is configured
-    file: /etc/bashrc
+    path: /etc/bashrc
     exists: true
     contents:
     - '/^(?i)\s+umask\s0(2|7)(2|7)/'
