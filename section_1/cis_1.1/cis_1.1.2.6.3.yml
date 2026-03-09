@@ -1,54 +1,34 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_1_1_2_6_1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_2_6_3 }}
 mount:
-  var_log_options:
-    title: |
-      1.1.2.6.2 | Ensure nodev option set on /var/log partition
-      1.1.2.6.3 | Ensure nosuid option set on /var/log partition
-      1.1.2.6.4 | Ensure noexec option set on /var/log partition
+  var_log_options_nosuid:
+    title: 1.1.2.6.3 | Ensure nosuid option set on /var/log partition
     mountpoint: '/var/log'
     exists: true
     opts:
-    {{ if .Vars.amazon2cis_rule_1_1_2_6_2 }}
-    - nodev
-    {{ end }}
-    {{ if .Vars.amazon2cis_rule_1_1_2_6_3 }}
     - nosuid
-    {{ end }}
-    {{ if .Vars.amazon2cis_rule_1_1_2_6_4 }}
-    - noexec
-    {{ end }}
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.1.2.6.2
       - 1.1.2.6.3
-      - 1.1.2.6.4
       NIST800-53R5:
       - AC-3
       - MP-2
 file:
-  var_log_fstab_options:
-     title: |
-        1.1.2.6.2 | Ensure nodev option set on /var/log partition
-        1.1.2.6.3 | Ensure nosuid option set on /var/log partition
-        1.1.2.6.4 | Ensure noexec option set on /var/log partition
+  var_log_fstab_options_nosuid:
+     title: 1.1.2.6.3 | Ensure nosuid option set on /var/log partition
      exists: true
      path: /etc/fstab
      contents:
-     - '/\s\/var\/log\s.*{{ if .Vars.amazon2cis_rule_1_1_2_6_2 }}nodev{{ end }}/'
-     - '/\s\/var\/log\s.*{{ if .Vars.amazon2cis_rule_1_1_2_6_3 }}nosuid{{ end }}.*/'
-     - '/\s\/var\/log\s.*{{ if .Vars.amazon2cis_rule_1_1_2_6_4 }}noexec{{ end }}.*/'
+     - '/\s\/var\/log\s.*nosuid/'
      meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.1.2.6.2
       - 1.1.2.6.3
-      - 1.1.2.6.4
       NIST800-53R5:
       - AC-3
       - MP-2
