@@ -13,7 +13,7 @@ mount:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.1.2.3.2
+      - 1.1.2.3.3
       NIST800-53R5:
       - AC-3
       - MP-2
