@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_3_10 }}
 kernel-param:
   net.ipv4.tcp_syncookies:
-    title: 3.3.10 | Ensure TCP SYN Cookies is enabled
+    title: 3.3.10 | Ensure tcp syn cookies is enabled
     value: '1'
     meta:
       server: 1

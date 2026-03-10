@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_5_2_1_4 }}
 service:
   auditd_enabled:
-    title: 5.2.1.4 | Ensure auditd service is enabled and running
+    title: 5.2.1.4 | Ensure auditd service is enabled
     name: auditd
     enabled: true
     running: true

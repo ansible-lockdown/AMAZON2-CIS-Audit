@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_5_1_1_4 }}
 command:
   perms_rsyslog_d:
-    title: 5.1.1.4 | Ensure rsyslog default file permissions configured
+    title: 5.1.1.4 | Ensure rsyslog default file permissions are configured
     exec: 'grep -s ^\$FileCreateMode /etc/rsyslog.conf /etc/rsyslog.d/*.conf | cut -f2 -d:'
     exit-status: 0
     stdout:

@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_4_2_10 }}
 file:
   sshd_hostbasedauth:
-    title: 4.2.10 | Ensure SSH HostbasedAuthentication is disabled
+    title: 4.2.10 | Ensure sshd HostbasedAuthentication is disabled
     path: /etc/ssh/sshd_config
     exists: true
     contents:

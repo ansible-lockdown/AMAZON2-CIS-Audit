@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_6_2_1 }}
 command:
   nopasswd_shadow:
-    title: 6.2.1 | Ensure /etc/shadow password fields are not empty
+    title: 6.2.1 | Ensure accounts in /etc/passwd use shadowed passwords
     exec: awk -F':' '($2 != "x") { print $1 }' /etc/passwd
     exit-status: 0
     stdout:

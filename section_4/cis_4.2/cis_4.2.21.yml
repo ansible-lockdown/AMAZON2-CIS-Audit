@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_4_2_21 }}
 file:
   sshd_permituserenv:
-    title: 4.2.21 | Ensure SSH PermitUserEnvironment is disabled
+    title: 4.2.21 | Ensure sshd PermitUserEnvironment is disabled
     path: /etc/ssh/sshd_config
     exists: true
     contents:

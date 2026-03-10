@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_5_2_1_1 }}
 package:
   audit_installed:
-    title: 5.2.1.1 | Ensure auditd is installed | auditd
+    title: 5.2.1.1 | Ensure audit is installed | auditd
     installed: true
     name: audit
     meta:
@@ -19,7 +19,7 @@ package:
       - AU-12
       - SI-5
   audit-libs_installed:
-    title: 5.2.1.1 | Ensure auditd is installed | audit-libs
+    title: 5.2.1.1 | Ensure audit is installed | audit-libs
     installed: true
     name: audit-libs
     meta:

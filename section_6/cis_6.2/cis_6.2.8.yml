@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_6_2_8 }}
 command:
   root_path_check:
-    title: 6.2.8 | Ensure root PATH Integrity
+    title: 6.2.8 | Ensure root path integrity
     exec: "/bin/bash --login -c 'env | grep ^PATH=' | sed -e 's/PATH=//' -e 's/::/:/' -e 's/:$//' -e 's/:/\\n/g'"
     exit-status: 0
     stdout:
