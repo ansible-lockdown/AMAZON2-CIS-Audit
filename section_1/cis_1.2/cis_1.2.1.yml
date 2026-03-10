@@ -13,7 +13,6 @@ command:
       workstation: NA
       CIS_ID:
       - 1.2.1
-      - 7.4
       NIST800-53R5:
       - SI-2
     {{ end }}

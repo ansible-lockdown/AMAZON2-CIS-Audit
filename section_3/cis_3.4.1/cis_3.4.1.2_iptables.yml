@@ -15,7 +15,6 @@ file:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
   fw_iptables_nft_masked:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | nftables masked
     path: /etc/systemd/system/nftables.service
@@ -27,7 +26,6 @@ file:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
 service:
   fw_iptables_ipt_running:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | iptables running and enabled
@@ -39,7 +37,6 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
   fw_iptables_fwd_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | firewalld service stopped and disabled
     name: firewalld
@@ -50,7 +47,6 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
   fw_iptables_nft_stopped:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | nftables service stopped and disabled
     name: nftables
@@ -61,7 +57,6 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
   {{ if .Vars.amazon2cis_ipv6_required }}
   fw_iptables_ipt6_running:
     title: 3.4.1.2 | Ensure a single firewall configuration utility is in use | ip6tables running and enabled
@@ -73,7 +68,6 @@ service:
       workstation: 1
       CIS_ID:
       - 3.4.1.2
-      - 4.8
       {{ end }}
     {{ end }}
   {{ end }}

@@ -4,7 +4,7 @@
 file:
   {{ if .Vars.amazon2cis_rule_1_6_1 }}
   motd:
-    title: 1.6.1 & 4 | Ensure message of the day is configured properly
+    title: 1.6.1 | Ensure message of the day is configured properly
     path: /etc/motd
     exists: true
     mode: '0644'
@@ -19,7 +19,6 @@ file:
       CIS_ID:
       - 1.6.1
       - 1.6.4
-      - 4.8
       NIST800-53R5:
       - CM-1
       - CM-3
