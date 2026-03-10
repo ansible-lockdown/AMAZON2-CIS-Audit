@@ -18,7 +18,6 @@ file:
       workstation: NA
       CIS_ID:
       - 1.6.1
-      - 1.6.4
       NIST800-53R5:
       - CM-1
       - CM-3
