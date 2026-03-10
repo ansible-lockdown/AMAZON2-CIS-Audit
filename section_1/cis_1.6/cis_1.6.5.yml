@@ -4,7 +4,7 @@
 file:
   {{ if .Vars.amazon2cis_rule_1_6_5 }}
   etc_issue_perms:
-    title: 1.6.5 | Ensure permissions on /etc/issue are configured
+    title: 1.6.5 | Ensure access to /etc/issue is configured
     path: /etc/issue
     exists: true
     mode: '0644'

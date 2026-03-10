@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_3_3 }}
 kernel-param:
   net.ipv4.icmp_ignore_bogus_error_responses:
-    title: 3.3.3 | Ensure bogus ICMP responses are ignored
+    title: 3.3.3 | Ensure bogus icmp responses are ignored
     value: '1'
     meta:
       server: 1

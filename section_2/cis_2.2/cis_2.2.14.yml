@@ -19,7 +19,7 @@ package:
       {{ if .Vars.amazon2cis_net_snmp_mask }}
 file:
   snmp_service_masked:
-    title: 2.2.14 | Ensure net_snmp services are not in use | masked
+    title: 2.2.14 | Ensure snmp services are not in use | masked
     path: /etc/systemd/system/snmpd.service
     exists: true
     filetype: symlink

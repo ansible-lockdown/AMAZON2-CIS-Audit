@@ -19,7 +19,7 @@ file:
       - SI-2
 command:
   gpg_check_repo:
-    title: 1.2.2 | Ensure gpgcheck is globally active | yum.conf.d
+    title: 1.2.2 | Ensure gpgcheck is globally activated | yum.conf.d
     exit-status: 0
     exec: if [[ $(grep -Ehw "gpgcheck\s*=\s*0" /etc/yum.repos.d/*) ]]; then echo FAIL; else echo PASS; fi
     stdout:

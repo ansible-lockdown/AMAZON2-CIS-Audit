@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_1_4_3 }}
 file:
   core_dumps_procsizemax:
-    title: 1.4.3 | Ensure core dumps are restricted | security/limits.conf
+    title: 1.4.3 | Ensure core dump backtraces are disabled | security/limits.conf
     path: /etc/systemd/coredump.conf
     exists: true
     contents:
