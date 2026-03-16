@@ -1,3 +1,5 @@
+---
+
 gossfile:
   {{ if .Vars.amazon2cis_section1 }}
   section_1/*/*.yml: {}
