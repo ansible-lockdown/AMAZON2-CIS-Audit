@@ -2,7 +2,6 @@
 
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_4_2_4 }}
-   {{ if .Vars.amazon2cis_sshd_limited }}
 command:
   sshd_access_limited:
     title: 4.2.4 | Ensure sshd access is configured
@@ -23,6 +22,5 @@ command:
       NIST800-53R5:
       - AC-3
       - MP-2
-    {{ end }}
   {{ end }}
 {{ end }}

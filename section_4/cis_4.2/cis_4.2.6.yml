@@ -8,10 +8,7 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - {{ .Vars.amazon2cis_sshd.ciphers }}
-    {{ range .Vars.amazon2cis_ssh_weak_ciphers }}
-    - '!/{{ . }}/'
-    {{ end }}
+    - 'Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr'
     meta:
       server: 1
       workstation: NA

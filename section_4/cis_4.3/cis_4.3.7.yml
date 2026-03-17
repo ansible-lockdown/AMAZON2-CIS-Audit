@@ -21,19 +21,5 @@ file:
       NIST800-53R5:
       - AC-3
       - MP-2
-  su_group:
-    title: 4.3.7 | Ensure access to the su command is restricted
-    path: /etc/group
-    exists: true
-    contents:
-    - '/^{{ .Vars.amazon2cis_sugroup }}:x:\d+:{{ .Vars.amazon2cis_sugroup_users }}/'
-    meta:
-      server: 1
-      workstation: 1
-      CIS_ID:
-      - 4.3.7
-      NIST800-53R5:
-      - AC-3
-      - MP-2
   {{ end }}
 {{ end }}
