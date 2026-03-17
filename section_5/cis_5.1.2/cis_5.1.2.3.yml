@@ -15,7 +15,6 @@ command:
       workstation: 1
       CIS_ID:
       - 5.1.2.3
-      - 8.3
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_4_4_2_6 }}
 service:
   iptables_running:
-    title: 3.4.4.2.6 | Ensure iptables is enabled and active
+    title: 3.4.4.2.6 | Ensure iptables service is enabled and active
     name: iptables
     enabled: true
     running: true

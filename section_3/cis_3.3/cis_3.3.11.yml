@@ -5,7 +5,7 @@
     {{ if .Vars.amazon2cis_rule_3_3_11 }}
 kernel-param:
   net.ipv6.conf.all.accept_ra:
-    title: 3.3.11 | Ensure IPv6 router advertisements are not accepted
+    title: 3.3.11 | Ensure ipv6 router advertisements are not accepted
     value: '0'
     meta:
       server: 1
@@ -19,7 +19,7 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv6.conf.default.accept_ra:
-    title: 3.3.11 | Ensure IPv6 router advertisements are not accepted
+    title: 3.3.11 | Ensure ipv6 router advertisements are not accepted
     value: '0'
     meta:
       server: 1

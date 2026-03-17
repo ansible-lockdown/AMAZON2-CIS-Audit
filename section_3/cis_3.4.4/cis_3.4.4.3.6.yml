@@ -2,9 +2,10 @@
 
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_3_4_4_3_6 }}
-fservice:
+service:
   ip6tables:
-     title: 3.4.4.3.6 | Ensure iptables is enabled and running
+    title: 3.4.4.3.6 | Ensure ip6tables is enabled and active
+    name: ip6tables
     enabled: true
     running: true
     meta:

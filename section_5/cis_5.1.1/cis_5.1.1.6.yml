@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_5_1_1_6 }}
 command:
   remote_syslog:
-    title: 5.1.1.6 | Ensure rsyslog is configured to send logs to a remote host
+    title: 5.1.1.6 | Ensure rsyslog is configured to send logs to a remote log host
     exec: 'grep -E "action.*omfwd.*target" /etc/rsyslog.conf /etc/rsyslog.d/*.conf'
     exit-status:
       or:

@@ -18,7 +18,6 @@ command:
       workstation: 1
       CIS_ID:
       - 5.1.1.7
-      - 8.2
       NIST800-53R5: NA
   local_syslog_input_old:
     title: 5.1.1.7 | Ensure rsyslog is not configured to receive logs from a remote client
@@ -35,7 +34,6 @@ command:
       workstation: 1
       CIS_ID:
       - 5.1.1.7
-      - 8.2
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

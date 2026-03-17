@@ -12,7 +12,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 5.2.3
+      - 4.2.2
       NIST800-53R5:
       - AC-3
       - MP-2

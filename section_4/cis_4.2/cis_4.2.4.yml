@@ -5,7 +5,7 @@
    {{ if .Vars.amazon2cis_sshd_limited }}
 command:
   sshd_access_limited:
-    title: 4.2.4 | Ensure SSH access is configured
+    title: 4.2.4 | Ensure sshd access is configured
     exec: grep -E "^(Allow|Deny)(User|Group)" /etc/ssh/sshd_config
     exit-status:
       or:
