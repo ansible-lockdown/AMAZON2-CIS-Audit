@@ -3,7 +3,7 @@
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_1_1_2_1_2 }}
 mount:
-  tmp_options:
+  tmp_nodev_option:
     title: 1.1.2.1.2 | Ensure nodev option set on /tmp partition
     mountpoint: /tmp
     exists: true
@@ -18,7 +18,7 @@ mount:
       - AC-3
       - MP-2
 file:
-  tmp_fstab_options:
+  tmp_fstab_nodev_option:
      title: 1.1.2.1.2 | Ensure nodev option set on /tmp partition
      exists: true
      path: /etc/fstab
