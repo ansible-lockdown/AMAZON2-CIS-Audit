@@ -8,10 +8,7 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - {{ .Vars.amazon2cis_sshd.macs }}
-    {{ range .Vars.amazon2cis_ssh_weak_macs }}
-    - '!/{{ . }}/'
-    {{ end }}
+    - 'MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256'
     meta:
       server: 1
       workstation: NA

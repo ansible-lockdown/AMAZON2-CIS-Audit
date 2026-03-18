@@ -8,8 +8,8 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^ClientAliveInterval {{ .Vars.amazon2cis_sshd.clientaliveinterval }}/'
-    - '/^ClientAliveCountMax {{ .Vars.amazon2cis_sshd.clientalivecountmax }}/'
+    - '/^ClientAliveInterval {{ .Vars.amazon2cis_sshd_clientaliveinterval }}/'
+    - '/^ClientAliveCountMax {{ .Vars.amazon2cis_sshd_clientalivecountmax }}/'
     meta:
       server: 1
       workstation: NA

@@ -1,3 +1,5 @@
+---
+
 ## metadata for Audit benchmark
 benchmark_version: 'v3.0.0'
 
@@ -20,7 +22,7 @@ amazon2cis_selinux_state: enforcing
 amazon2cis_level_1: true
 amazon2cis_level_2: true
 # to enable rules that may have IO impact on a system e.g. full filesystem scans or CPU heavy
-amazon2cis_run_heavy_tests: true
+audit_run_heavy_tests: true
 
 # if Bios boot
 amazon2cis_legacy_boot: true
@@ -448,10 +450,10 @@ amazon2cis_warning_banner: Authorized uses only. All activity may be monitored a
 
 amazon2cis_time_synchronization: chrony
 amazon2cis_time_synchronization_servers:
-    - 0.pool.ntp.org
-    - 1.pool.ntp.org
-    - 2.pool.ntp.org
-    - 3.pool.ntp.org
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+  - 3.pool.ntp.org
 
 amazon2cis_chrony_server_options: "minpoll 8"
 amazon2cis_ntp_server_options: "iburst"
@@ -568,56 +570,18 @@ amazon2cis_ssh_loglevel: INFO
 # amazon2cis_ssh_maxsessions is the max number of sessions
 # To conform to CIS standards this value nees to be 10 or less
 
-amazon2cis_sshd:
-    clientalivecountmax: 3
-    # clientaliveinterval shoudl be between 1 and 900
-    clientaliveinterval: 15
-    ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
-    macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
-    kex: "curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256"
-    # logingracetime value is in seconds and needs to be set to 1 minute or less
-    logingracetime: 60
+amazon2cis_sshd_clientalivecountmax: 3
+# clientaliveinterval should be between 1 and 900
+amazon2cis_sshd_clientaliveinterval: 15
+amazon2cis_sshd_ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+amazon2cis_sshd_macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
+amazon2cis_sshd_kex: "curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256"
 
-amazon2cis_sshd_limited: false
 # Note the following to understand precedence and layout
-amazon2cis_sshd_access:
-  - AllowUser
-  - AllowGroup
-  - DenyUser
-  - DenyGroup
-
-amazon2cis_ssh_weak_ciphers:
-  - 3des-cbc
-  - aes128-cbc
-  - aes192-cbc
-  - aes256-cbc
-  - arcfour
-  - arcfour128
-  - arcfour256
-  - blowfish-cbc
-  - cast128-cbc
-  - rijndael-cbc@lysator.liu.se
-
-amazon2cis_ssh_weak_kex:
-  - diffie-hellman-group1-sha1
-  - diffie-hellman-group14-sha1
-  - diffie-hellman-group-exchange-sha1
-
-amazon2cis_ssh_weak_macs:
-  - hmac-md5
-  - hmac-md5-96
-  - hmac-ripemd160
-  - hmac-sha1
-  - hmac-sha1-96
-  - umac-64@openssh.com
-  - umac-128@openssh.com
-  - hmac-md5-etm@openssh.com
-  - hmac-md5-96-etm@openssh.com
-  - hmac-ripemd160-etm@openssh.com
-  - hmac-sha1-etm@openssh.com
-  - hmac-sha1-96-etm@openssh.com
-  - umac-64-etm@openssh.com
-  - umac-128-etm@openssh.com
+amazon2cis_sshd_allowusers: vagrant
+amazon2cis_sshd_allowgroups:
+amazon2cis_sshd_denyusers: nobody
+amazon2cis_sshd_denygroups:
 
 ## Sudo
 
@@ -625,7 +589,6 @@ amazon2cis_ssh_weak_macs:
 # this group needs to exists groups will not be created for remediation this is considered sys admins
 
 amazon2cis_sugroup: wheel
-amazon2cis_sugroup_users: ""
 
 amazon2cis_pwquality_minclass: true
 
@@ -647,8 +610,7 @@ amazon2cis_system_is_log_server: false
 # AuditD
 
 # auditd settings
-amazon2cis_auditd:
-    max_log_file_action: keep_logs
+amazon2cis_auditd_max_log_file_action: keep_logs
 
 # AIDE
 amazon2cis_config_aide: true

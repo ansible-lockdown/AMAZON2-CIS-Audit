@@ -2,7 +2,7 @@
 
 {{ if .Vars.amazon2cis_level_1 }}
 command:
-  {{ if .Vars.amazon2cis_run_heavy_tests }}
+  {{ if .Vars.audit_run_heavy_tests }}
     {{ if .Vars.amazon2cis_rule_1_2_1 }}
   gpg_keys:
     title: 1.2.1 | Ensure GPG keys are configured
