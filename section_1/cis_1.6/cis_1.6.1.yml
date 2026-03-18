@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+file:
+  {{ if .Vars.amazon2cis_rule_1_6_1 }}
+  motd:
+    title: 1.6.1 | Ensure message of the day is configured properly
+    path: /etc/motd
+    exists: true
+    mode: '0644'
+    owner: root
+    group: root
+    contents:
+    - '!/(?i)(amazon|centos|fedora|redhat|linux)/'
+    - '!/x86_64/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.6.1
+      NIST800-53R5:
+      - CM-1
+      - CM-3
+      - CM-6
+  {{ end }}
+{{ end }}

@@ -592,10 +592,6 @@ amazon2cis_sugroup: wheel
 
 amazon2cis_pwquality_minclass: true
 
-amazon2cis_pass:
-  max_days: 365
-  warn_age: 7
-
 # Used by Goss tests (align with amazon2cis_pass)
 amazon2cis_pass_max_days: 365
 amazon2cis_pass_warn_age: 7
