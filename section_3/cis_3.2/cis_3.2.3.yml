@@ -1,23 +1,20 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_3_2_3 }}
+  {{ if .Vars.amazon2cis_rule_3_2_2 }}
 command:
-  modprobe_rds:
-    title: 3.2.3 | Ensure rds kernel module is not available
-    exit-status:
-      or:
-      - 0
-      - 1
-    exec: grep -Rh rds /etc/modprobe.d/
+  modprobe_tipc:
+    title: 3.2.2 | Ensure tipc kernel module is not available
+    exit-status: 0
+    exec: grep -Rh tipc /etc/modprobe.d/
     stdout:
-    - '/install rds /bin/(false|true)/'
-    - '/blacklist rds/'
+    - '/install tipc /bin/(false|true)/'
+    - '/blacklist tipc/'
     meta:
       server: 2
       workstation: 2
       CIS_ID:
-      - 3.2.3
+      - 3.2.2
       NIST800-53R5:
       - CM-7
       - SI-4

@@ -1,16 +1,21 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_3_1 }}
+  {{ if .Vars.amazon2cis_rule_4_3_1 }}
 package:
-  aide:
-    title: 5.3.1 | Ensure AIDE is installed
+  sudo:
+    title: 4.3.1 | Ensure sudo is installed
     installed: true
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.3.1
-      NIST800-53R5: AU-2
+      - 4.3.1
+      NIST800-53R5:
+      - CM-1
+      - CM-2
+      - CM-6
+      - CM-7
+      - IA-5
   {{ end }}
 {{ end }}

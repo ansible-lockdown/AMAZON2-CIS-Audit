@@ -1,20 +1,20 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_3_2_2 }}
+  {{ if .Vars.amazon2cis_rule_3_2_4 }}
 command:
-  modprobe_tipc:
-    title: 3.2.2 | Ensure tipc kernel module is not available
+  modprobe_sctp:
+    title: 3.2.4 | Ensure sctp kernel module is not available
     exit-status: 0
-    exec: grep -Rh tipc /etc/modprobe.d/
+    exec: grep -Rh sctp /etc/modprobe.d/
     stdout:
-    - '/install tipc /bin/(false|true)/'
-    - '/blacklist tipc/'
+    - '/install sctp /bin/(false|true)/'
+    - '/blacklist sctp/'
     meta:
       server: 2
       workstation: 2
       CIS_ID:
-      - 3.2.2
+      - 3.2.4
       NIST800-53R5:
       - CM-7
       - SI-4
