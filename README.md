@@ -2,7 +2,7 @@
 
 ## Overview
 
-based on CIS 3.0.0 - 23th December 2023
+based on CIS 4.0.0 - 26th March 2026
 
 This is bespoke to Amazon due to control IDs and associations. Redhat baselines can be more upto date but IDs and controls are not officially Amazon.
 
