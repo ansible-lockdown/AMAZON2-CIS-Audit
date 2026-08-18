@@ -1,18 +1,18 @@
 ---
 
-{{ if .Vars.amazon2cis_level_2 }}
+{{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_3_2_1 }}
 command:
-  modprobe_dccp:
-    title: 3.2.1 | Ensure dccp kernel module is not available
+  can_modprobe:
+    title: 3.2.1 | Ensure can kernel module is not available
     exit-status: 0
-    exec: grep -Rh dccp /etc/modprobe.d/
+    exec: grep -Rh can /etc/modprobe.d/
     stdout:
-    - '/install dccp /bin/(false|true)/'
-    - '/blacklist dccp/'
+    - '/install can /bin/(false|true)/'
+    - '/blacklist can/'
     meta:
-      server: 2
-      workstation: 2
+      server: 1
+      workstation: NA
       CIS_ID:
       - 3.2.1
       NIST800-53R5:

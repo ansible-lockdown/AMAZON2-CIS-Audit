@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_3_5 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_5 }}
 command:
   auditd_locale_cnf:
-    title: 5.2.3.5 | Ensure events that modify the system's network environment are collected | conf check
+    title: 6.2.3.5 | Ensure events that modify the system's network environment are collected | conf check
     exec: grep system-locale /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -16,12 +16,12 @@ command:
     - '/^.*rules:-w /etc/sysconfig/network -p wa -k system-locale/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.5
+      - 6.2.3.5
       NIST800-53R5: NA
   auditd_locale_live:
-    title: 5.2.3.5 | Ensure events that modify the system's network environment are collected | running
+    title: 6.2.3.5 | Ensure events that modify the system's network environment are collected | running
     exec: auditctl -l | grep system-locale
     exit-status: 0
     stdout:
@@ -33,9 +33,9 @@ command:
     - '/^-w /etc/sysconfig/network -p wa -k system-locale/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.5
+      - 6.2.3.5
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

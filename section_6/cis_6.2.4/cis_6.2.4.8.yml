@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_4_8 }}
+  {{ if .Vars.amazon2cis_rule_6_2_4_8 }}
 command:
   audit_tools_perms:
-    title: 5.2.4.8 | Ensure audit tools are 755 or more restrictive
+    title: 6.2.4.8 | Ensure audit tools mode is configured
     exec: stat -c "%n_%a" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/augenrules
     exit-status: 0
     stdout:
     - '/.*_7(0|5)(0|5)$/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.4.8
+      - 6.2.4.8
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

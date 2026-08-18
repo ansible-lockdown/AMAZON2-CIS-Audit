@@ -11,7 +11,7 @@ mount:
     - nosuid
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 1.1.2.1.3
       NIST800-53R5:

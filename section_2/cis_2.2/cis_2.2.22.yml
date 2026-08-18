@@ -13,7 +13,7 @@ command:
     stdout: ['!/./']
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.22
       NIST800-53R5:

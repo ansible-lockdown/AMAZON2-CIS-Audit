@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_6 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_10 }}
 kernel-param:
   net.ipv4.conf.all.secure_redirects:
-    title: 3.3.6 | Ensure secure icmp redirects are not accepted
+    title: 3.3.1.10 | Ensure net.ipv4.conf.all.secure_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.6
+      - 3.3.1.10
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -18,13 +18,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv4.conf.default.secure_redirects:
-    title: 3.3.6 | Ensure secure icmp redirects are not accepted
+    title: 3.3.1.10 | Ensure net.ipv4.conf.all.secure_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.6
+      - 3.3.1.10
       NIST800-53R5:
       - CM-1
       - CM-2

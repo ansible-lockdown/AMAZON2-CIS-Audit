@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_5_2 }}
+kernel-param:
+  fs.protected_hardlinks:
+    title: 1.5.2 | Ensure fs.protected_hardlinks is configured
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.5.2
+      NIST800-53R5:
+      - AC-3
+      - AC-6
+  {{ end }}
+{{ end }}

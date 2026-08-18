@@ -2,35 +2,35 @@
 
 {{ if .Vars.amazon2cis_level_2 }}
   {{ if eq .Vars.amazon2cis_selinux_state "enforcing" }}
-    {{ if .Vars.amazon2cis_rule_1_5_1_5 }}
+    {{ if .Vars.amazon2cis_rule_1_4_1_5 }}
 command:
   selinux_run_enforcing:
-    title: 1.5.1.5 | Ensure the SELinux mode is enforcing | running
+    title: 1.4.1.5 | Ensure the SELinux mode is enforcing | running
     exit-status: 0
     exec: "getenforce"
     stdout:
     - "Enforcing"
     meta:
-      server: 1
+      server: 2
       workstation: NA
       CIS_ID:
-      - 1.5.1.5
+      - 1.4.1.5
       NIST800-53R5:
       - AC-3
       - MP-2
 file:
   selinux_enforcing_config:
-    title: 1.5.1.5 | Ensure the SELinux mode is enforcing| config
+    title: 1.4.1.5 | Ensure the SELinux mode is enforcing
     exists: true
     path: /etc/selinux/config
     contents:
     - '/SELINUX\s*=\s*enforcing/'
     - '!/^SELINUX\s*=\s*disabled/'
     meta:
-      server: 1
+      server: 2
       workstation: NA
       CIS_ID:
-      - 1.5.1.5
+      - 1.4.1.5
       NIST800-53R5:
       - AC-3
       - MP-2

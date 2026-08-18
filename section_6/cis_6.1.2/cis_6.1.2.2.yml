@@ -1,18 +1,18 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_1_2 }}
+  {{ if .Vars.amazon2cis_rule_6_1_2_2 }}
 service:
   rsyslog:
-    title: 5.1.1.2 | Ensure rsyslog service is enabled
+    title: 6.1.2.2 | Ensure rsyslog service is enabled and active
     name: rsyslog
     running: true
     enabled: true
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.1.2
+      - 6.1.2.2
       NIST800-53R5:
       - AU-3
       - AU-12

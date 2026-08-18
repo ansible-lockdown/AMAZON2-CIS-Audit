@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_4_2_1_1 }}
+  {{ if .Vars.amazon2cis_rule_5_4_2_1_1 }}
 file:
   faillock_system_auth:
-    title: 4.4.2.1.1 | Ensure pam_faillock module is enabled | system-auth
+    title: 5.4.2.1.1 | Ensure pam_faillock module is enabled | system-auth
     path: /etc/pam.d/system-auth
     exists: true
     contents:
@@ -15,7 +15,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.1.1
+      - 5.4.2.1.1
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -23,7 +23,7 @@ file:
       - CM-7
       - IA-5
   faillock_password_auth:
-    title: 4.4.2.1.1 | Ensure pam_faillock module is enabled | password-auth
+    title: 5.4.2.1.1 | Ensure pam_faillock module is enabled | password-auth
     path: /etc/pam.d/password-auth
     exists: true
     contents:
@@ -34,7 +34,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.1.1
+      - 5.4.2.1.1
       NIST800-53R5:
       - CM-1
       - CM-2

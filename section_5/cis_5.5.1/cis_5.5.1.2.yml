@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_5_5_1_2 }}
+command:
+  pass_min_days_login_defs:
+    title: 5.5.1.2 | Ensure minimum password days is configured
+    exit-status: 0
+    exec: grep -E '^\s*PASS_MIN_DAYS' /etc/login.defs
+    stdout:
+    - '/PASS_MIN_DAYS\s+{{ .Vars.amazon2cis_pass_min_days }}/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.5.1.2
+      NIST800-53R5:
+      - CM-6
+      - IA-5
+  {{ end }}
+{{ end }}

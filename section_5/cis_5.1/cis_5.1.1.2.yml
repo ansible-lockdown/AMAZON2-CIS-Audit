@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_1_1_2 }}
+  {{ if .Vars.amazon2cis_rule_5_1_1_2 }}
 file:
   /etc/crontab:
-    title: 4.1.1.2 | Ensure permissions on /etc/crontab are configured
+    title: 5.1.1.2 | Ensure access to /etc/crontab is configured
     exists: true
     owner: root
     group: root
@@ -13,7 +13,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.1.1.2
+      - 5.1.1.2
       NIST800-53R5:
       - AC-3
       - MP-2

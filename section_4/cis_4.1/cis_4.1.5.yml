@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_5 }}
+command:
+  firewalld_loopback_traffic:
+    title: 4.1.5 | Ensure firewalld loopback traffic is configured
+    exit-status: 0
+    exec: firewall-cmd --list-all --zone=trusted
+    stdout:
+    - '/interfaces:.*\blo\b/'
+    - '/target: ACCEPT/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.5
+      NIST800-53R5:
+      - CA-9
+  {{ end }}
+{{ end }}

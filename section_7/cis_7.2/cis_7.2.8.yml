@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_2_10 }}
+  {{ if .Vars.amazon2cis_rule_7_2_8 }}
 command:
   home_dirs_exist:
-    title: 6.2.10 | Ensure local interactive user home directories are configured
+    title: 7.2.8 | Ensure local interactive user home directories are configured
     exec: pwck -r | grep -Ev "journal|ftp|rngd|ec2-instance-connect" | grep "does not exist"
     exit-status:
       or:
@@ -14,9 +14,9 @@ command:
     - '!/./'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.10
+      - 7.2.8
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -24,7 +24,7 @@ command:
       - CM-7
       - IA-5
   home_dirs_restrict:
-    title: 6.2.10 | Ensure local interactive user home directories are configured | perms
+    title: 7.2.8 | Ensure local interactive user home directories are configured | perms
     exec: |
       for i in $(getent passwd {1000..60000} | awk -F: '{print $6}'); do
         stat -c "%a %n" "$i"
@@ -35,9 +35,9 @@ command:
     timeout: {{ .Vars.timeout_ms }}
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.10
+      - 7.2.8
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -45,7 +45,7 @@ command:
       - CM-7
       - IA-5
   home_dirs_owned:
-    title: 6.2.10 | Ensure local interactive user home directories are configured | user owned
+    title: 7.2.8 | Ensure local interactive user home directories are configured | user owned
     exec: |
       getent passwd {1000..60000} | \
       awk -F: '{ print $1  " "  $6 }' | \
@@ -63,8 +63,8 @@ command:
     timeout: {{ .Vars.timeout_ms }}
     meta:
       server: 1
-      workstation: 1
-      CIS_ID: 6.2.10
+      workstation: NA
+      CIS_ID: 7.2.8
       NIST800-53R5:
       - CM-1
       - CM-2

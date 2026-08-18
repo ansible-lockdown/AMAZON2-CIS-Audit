@@ -1,30 +1,30 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_2_1_4 }}
+  {{ if .Vars.amazon2cis_rule_6_1_1_2 }}
 service:
   systemd-journal-remote.stopped:
-    title: 5.1.2.1.4 | Ensure journald is not configured to receive logs from a remote client
+    title: 6.1.1.2 | Ensure systemd-journal-remote service is not in use
     name: systemd-journal-remote.socket
     running: false
     enabled: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.2.1.4
+      - 6.1.1.2
       NIST800-53R5: NA
 command:
   journald_socket_masked:
-    title: 5.1.2.1.4 | Ensure journald is not configured to receive logs from a remote client
+    title: 6.1.1.2 | Ensure systemd-journal-remote service is not in use
     exec: systemctl is-enabled systemd-journal-remote.socket
     exit-status: 1
     stdout:
     - '/^masked/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.2.1.4
+      - 6.1.1.2
   {{ end }}
 {{ end }}

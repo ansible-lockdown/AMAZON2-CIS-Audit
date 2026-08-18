@@ -2,16 +2,16 @@
 
 {{ if not .Vars.amazon2cis_selinux_disable }}
   {{ if .Vars.amazon2cis_level_1 }}
-    {{ if .Vars.amazon2cis_rule_1_5_1_1 }}
+    {{ if .Vars.amazon2cis_rule_1_4_1_1 }}
 package:
   libselinux:
-    title: 1.5.1.1 | Ensure SELinux is installed
+    title: 1.4.1.1 | Ensure SELinux is installed
     installed: true
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.5.1.1
+      - 1.4.1.1
       NIST800-53R5:
       - AC-3
       - MP-2

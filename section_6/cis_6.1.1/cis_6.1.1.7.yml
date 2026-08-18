@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_6_1_1_7 }}
+file:
+  /usr/lib/tmpfiles.d/systemd.conf:
+    title: 6.1.1.7 | Ensure journald log file access is configured
+    exists: true
+    mode: '0640'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.1.1.7
+      NIST800-53R5:
+      - AC-3
+      - AU-2
+      - MP-2
+  {{ end }}
+{{ end }}

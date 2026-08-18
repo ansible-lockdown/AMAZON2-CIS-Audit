@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_5_5_2_8 }}
+command:
+  nologin_accounts_locked:
+    title: 5.5.2.8 | Ensure accounts without a valid login shell are locked
+    exit-status: 0
+    exec: |
+      awk -F: '($1 != "root" && ($7 ~ /nologin/ || $7 == "/bin/false")) { print $1 }' /etc/passwd |
+        while read -r u; do passwd -S "$u" 2>/dev/null | awk '$2 != "L" && $2 != "LK" { print $1 }'; done || true
+    stdout: []
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 5.5.2.8
+      NIST800-53R5:
+      - AC-2
+      - AC-3
+      - MP-2
+  {{ end }}
+{{ end }}

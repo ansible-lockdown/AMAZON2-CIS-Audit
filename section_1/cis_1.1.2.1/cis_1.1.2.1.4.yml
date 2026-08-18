@@ -11,7 +11,7 @@ mount:
     - noexec
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 1.1.2.1.4
       NIST800-53R5:

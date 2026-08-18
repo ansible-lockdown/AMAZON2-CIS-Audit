@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_17 }}
+kernel-param:
+  net.ipv4.conf.default.log_martians:
+    title: 3.3.1.17 | Ensure net.ipv4.conf.default.log_martians is configured
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 3.3.1.17
+      NIST800-53R5:
+      - AU-3
+      - CM-6
+  {{ end }}
+{{ end }}

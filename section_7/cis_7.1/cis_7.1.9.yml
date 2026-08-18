@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_1_9 }}
+  {{ if .Vars.amazon2cis_rule_7_1_9 }}
 file:
   /etc/shells_perms:
-    title: 6.1.9 | Ensure permissions on /etc/shells are configured
+    title: 7.1.9 | Ensure access to /etc/shells is configured
     exists: true
     path: /etc/shells
     mode:
@@ -17,9 +17,9 @@ file:
     group: root
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.1.9
+      - 7.1.9
       NIST800-53R5:
       - AC-3
       - MP-2

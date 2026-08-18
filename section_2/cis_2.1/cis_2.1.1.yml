@@ -18,7 +18,7 @@ package:
       - AU-12
 service:
   chronyd:
-    title: 2.1.2 | Ensure chrony is configured | running
+    title: 2.1.1 | Ensure time synchronization is in use | running
     enabled: true
     running: true
     meta:

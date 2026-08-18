@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_2_3 }}
+  {{ if .Vars.amazon2cis_rule_5_2_3 }}
 command:
   /etc/ssh/ssh_pub_host_key_user:
-    title: 4.2.3 | Ensure permissions on SSH public host key files are configured | user
+    title: 5.2.3 | Ensure access to SSH public host key files is configured | user
     exec: "userkeys=$(sudo find /etc/ssh/ -name *_key.pub -type f ! -user root ); echo $userkeys"
     exit-status: 0
     stdout: ['!/./']
@@ -12,12 +12,12 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.3
+      - 5.2.3
       NIST800-53R5:
       - AC-3
       - MP-2
   /etc/ssh/ssh_pub_host_key_group:
-    title: 4.2.3 | Ensure permissions on SSH public host key files are configured | group
+    title: 5.2.3 | Ensure access to SSH public host key files is configured | group
     exec: "groupkeys=$(sudo find /etc/ssh/ -name *_key.pub -type f ! -group root ); echo $groupkeys"
     exit-status: 0
     stdout: ['!/./']
@@ -25,12 +25,12 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.3
+      - 5.2.3
       NIST800-53R5:
       - AC-3
       - MP-2
   /etc/ssh/ssh_pub_host_key_perms:
-    title: 4.2.3 | Ensure permissions on SSH public host key files are configured | perms
+    title: 5.2.3 | Ensure access to SSH public host key files is configured | perms
     exec: "keysperm=$(sudo find /etc/ssh/ -name *_key.pub -type f  -perm /137 ); echo $keyperms"
     exit-status: 0
     stdout: ['!/./']
@@ -38,7 +38,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.3
+      - 5.2.3
       NIST800-53R5:
       - AC-3
       - MP-2

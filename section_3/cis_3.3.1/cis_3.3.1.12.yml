@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_7 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_12 }}
 kernel-param:
   net.ipv4.conf.all.rp_filter:
-    title: 3.3.7 | Ensure reverse path filtering is enabled
+    title: 3.3.1.12 | Ensure net.ipv4.conf.all.rp_filter is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.7
+      - 3.3.1.12
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -18,13 +18,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv4.conf.default.rp_filter:
-    title: 3.3.7 | Ensure reverse path filtering is enabled
+    title: 3.3.1.12 | Ensure net.ipv4.conf.all.rp_filter is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.7
+      - 3.3.1.12
       NIST800-53R5:
       - CM-1
       - CM-2

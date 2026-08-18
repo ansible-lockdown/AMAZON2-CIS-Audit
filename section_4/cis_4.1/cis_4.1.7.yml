@@ -1,19 +1,19 @@
 ---
 
----
-{{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_4_2_3 }}
-  fwd_drop_svcs_and_ports:
-    title: 3.4.2.3 | Ensure firewalld drops unnecessary services and ports
-    exec:  echo "Warning - Manually check that unneccessary port and services do not have access in conjunction with site policy"
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_7 }}
+command:
+  fwd_svcs_and_ports_configured:
+    title: 4.1.7 | Ensure firewalld services and ports are configured
     exit-status: 0
+    exec: firewall-cmd --list-all --zone="{{ .Vars.amazon2cis_active_firewall_zone }}"
     stdout:
-    - '!/Warning/'
+    - '/services:/'
     meta:
-      server: 1
+      server: 2
       workstation: NA
       CIS_ID:
-      - 3.4.2.3
+      - 4.1.7
       NIST800-53R5:
       - CA-9
   {{ end }}

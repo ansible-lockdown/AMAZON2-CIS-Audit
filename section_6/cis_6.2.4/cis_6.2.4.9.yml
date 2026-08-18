@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
- {{ if .Vars.amazon2cis_rule_5_2_4_9 }}
+ {{ if .Vars.amazon2cis_rule_6_2_4_9 }}
 command:
   audit_tools_owner:
-    title: 5.2.4.9 | Ensure audit tools are owned by root
+    title: 6.2.4.9 | Ensure audit tools owner is configured
     exec: stat -c "%n_%U" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/augenrules
     exit-status: 0
     stdout:
     - '/.*_root$/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.4.9
+      - 6.2.4.9
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

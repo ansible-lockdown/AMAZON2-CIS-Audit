@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_5_1 }}
+command:
+  core_file_size_hard_limit:
+    title: 1.5.1 | Ensure core file size is configured
+    exit-status: 0
+    exec: |
+      grep -Ers '^\s*[^#]+\s+hard\s+core\s+([1-9][0-9]*)' /etc/security/limits.conf /etc/security/limits.d/ || true
+    stdout: []
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.5.1
+      NIST800-53R5:
+      - CM-6
+  {{ end }}
+{{ end }}

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_2_6 }}
+  {{ if .Vars.amazon2cis_rule_6_1_1_6 }}
 command:
   journald_log_rotation:
-    title: 5.1.2.6 | Ensure journald log rotation is configured per site policy
+    title: 6.1.1.6 | Ensure journald log file rotation is configured
     exec: grep -Ei "(MaxFileSec|KeepFree|MaxUse)" /etc/systemd/journald.conf
     exit-status: 0
     stdout:
@@ -16,9 +16,9 @@ command:
     - '/^MaxFileSec=/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.2.6
+      - 6.1.1.6
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

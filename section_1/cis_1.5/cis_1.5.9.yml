@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_1_4_3 }}
+  {{ if .Vars.amazon2cis_rule_1_5_9 }}
 file:
   core_dumps_procsizemax:
-    title: 1.4.3 | Ensure core dump backtraces are disabled | security/limits.conf
+    title: 1.5.9 | Ensure systemd-coredump ProcessSizeMax is configured | security/limits.conf
     path: /etc/systemd/coredump.conf
     exists: true
     contents:
@@ -13,7 +13,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.4.3
+      - 1.5.9
       NIST800-53R5:
       - CM-6b
   {{ end }}

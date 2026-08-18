@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_3_7 }}
+  {{ if .Vars.amazon2cis_rule_5_3_7 }}
 file:
   su_restricted:
-    title: 4.3.7 | Ensure access to the su command is restricted
+    title: 5.3.7 | Ensure access to the su command is restricted
     path: /etc/pam.d/su
     exists: true
     contents:
@@ -15,9 +15,9 @@ file:
       {{ end }}
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 4.3.7
+      - 5.3.7
       NIST800-53R5:
       - AC-3
       - MP-2

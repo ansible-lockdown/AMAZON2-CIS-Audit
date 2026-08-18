@@ -1,22 +1,22 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_1_2_1 }}
+  {{ if .Vars.amazon2cis_rule_5_1_2_1 }}
 file:
   /etc/at.deny:
-    title: 4.1.2.1 | Ensure at is restricted to authorized users
+    title: 5.1.2.1 | Ensure access to at is configured
     path: /etc/at.deny
     exists: false
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.1.2.1
+      - 5.1.2.1
       NIST800-53R5:
       - AC-3
       - MP-2
   /etc/at.allow:
-    title: 4.1.2.1 | Ensure at is restricted to authorized users
+    title: 5.1.2.1 | Ensure access to at is configured
     path: /etc/at.allow
     exists: true
     owner: root
@@ -26,7 +26,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.1.2.1
+      - 5.1.2.1
       NIST800-53R5:
       - AC-3
       - MP-2

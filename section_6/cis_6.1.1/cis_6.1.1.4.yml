@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_2_4 }}
+  {{ if .Vars.amazon2cis_rule_6_1_1_4 }}
 command:
   journald_storage:
-    title: 5.1.2.4 | Ensure journald is configured to write logfiles to persistent disk
+    title: 6.1.1.4 | Ensure journald Storage is configured
     exec: grep -i "storage" /etc/systemd/journald.conf
     exit-status: 0
     stdout:
     - '/^Storage=persistent/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.2.4
+      - 6.1.1.4
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

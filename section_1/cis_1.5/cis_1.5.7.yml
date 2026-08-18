@@ -1,23 +1,23 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_1_4_2 }}
+  {{ if .Vars.amazon2cis_rule_1_5_7 }}
 kernel-param:
   ptrace_scope:
-    title: 1.4.2 | Ensure ptrace_scope is restricted | sysctl_live
+    title: 1.5.7 | Ensure kernel.yama.ptrace_scope is configured | sysctl_live
     name: kernel.yama.ptrace_scope
     value: '1'
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.4.2
+      - 1.5.7
       NIST800-53R5:
       - CM-6
       - CM-6b
 command:
   ptrace_scope_conf:
-    title: 1.4.2 | Ensure ptrace_scope is restricted | sysctl_configured
+    title: 1.5.7 | Ensure kernel.yama.ptrace_scope is configured | sysctl_configured
     exit-status:
       or:
       - 0
@@ -29,7 +29,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.4.2
+      - 1.5.7
       NIST800-53R5:
       - CM-6
       - CM-6b

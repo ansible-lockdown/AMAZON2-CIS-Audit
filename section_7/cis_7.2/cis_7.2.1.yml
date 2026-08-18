@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_2_1 }}
+  {{ if .Vars.amazon2cis_rule_7_2_1 }}
 command:
   nopasswd_shadow:
-    title: 6.2.1 | Ensure accounts in /etc/passwd use shadowed passwords
+    title: 7.2.1 | Ensure accounts in /etc/passwd use shadowed passwords
     exec: awk -F':' '($2 != "x") { print $1 }' /etc/passwd
     exit-status: 0
     stdout:
     - '!/^.*/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.1
+      - 7.2.1
       NIST800-53R5:
       - IA-5
   {{ end }}

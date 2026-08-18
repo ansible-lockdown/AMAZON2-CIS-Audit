@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_3_3 }}
+  {{ if .Vars.amazon2cis_rule_5_3_3 }}
 file:
   sudoers_log_setting:
-    title: 4.3.3 | Ensure sudo log file exists | config
+    title: 5.3.3 | Ensure sudo log file exists | config
     path: /etc/sudoers
     exists: true
     contents:
@@ -13,13 +13,13 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.3.3
+      - 5.3.3
       NIST800-53R5:
       - AU-3
       - AU-12
 command:
   log_sudoers_d:
-    title: 4.3.3 | Ensure sudo log file exists | sudoers.d
+    title: 5.3.3 | Ensure sudo log file exists | sudoers.d
     exec: "grep -c '^Defaults logfile=/var/log/*.log' /etc/sudoers.d/.*/"
     exit-status:
       lt: 3
@@ -29,7 +29,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.3.3
+      - 5.3.3
       NIST800-53R5:
       - AU-3
       - AU-12

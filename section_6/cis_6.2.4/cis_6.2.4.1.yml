@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_4_1 }}
+  {{ if .Vars.amazon2cis_rule_6_2_4_1 }}
 file:
   audit_log_dir_perms:
-    title: 5.2.4.1 | Ensure the audit log directory is 0750 or more restrictive
+    title: 6.2.4.1 | Ensure the audit log file directory mode is configured
     exists: true
     path: /var/log/audit
     filetype: directory
@@ -14,10 +14,10 @@ file:
       - '0700'
       - '0500'
     meta:
-      server: 1
-      workstation: 1
+      server: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.4.1
+      - 6.2.4.1
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

@@ -1,17 +1,17 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_5_2_4 }}
+  {{ if .Vars.amazon2cis_rule_5_5_2_4 }}
 command:
   root_password_set:
-    title: 4.5.2.4 | Ensure root password is set
+    title: 5.5.2.4 | Ensure root account access is controlled
     exec: passwd -S root | egrep -e "(Password set, SHA512 crypt|Password locked)
     exit-status: 0
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.2.4
+      - 5.5.2.4
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

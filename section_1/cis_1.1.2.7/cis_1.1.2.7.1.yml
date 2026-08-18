@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.amazon2cis_level_2 }}
+{{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_1_1_2_7_1 }}
 mount:
   var_log_audit_mount:
@@ -8,7 +8,7 @@ mount:
     mountpoint: /var/log/audit
     exists: true
     meta:
-      server: 2
+      server: 1
       workstation: NA
       CIS_ID:
       - 1.1.2.7.1

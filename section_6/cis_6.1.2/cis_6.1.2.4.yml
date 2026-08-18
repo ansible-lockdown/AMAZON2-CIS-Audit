@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_1_5 }}
+  {{ if .Vars.amazon2cis_rule_6_1_2_4 }}
 file:
   /etc/rsyslog.conf:
-    title: 5.1.1.5 | Ensure logging is configured
+    title: 6.1.2.4 | Ensure rsyslog logging is configured
     exists: true
     contents:
     - '/^\*.emerg\s+:omusrmsg:\*/'
@@ -23,9 +23,9 @@ file:
     - '/^local6,local7.\*\s+-/var/log/localmessages/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.1.5
+      - 6.1.2.4
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_9 }}
+kernel-param:
+  net.ipv4.conf.default.accept_redirects:
+    title: 3.3.1.9 | Ensure net.ipv4.conf.default.accept_redirects is configured
+    value: '0'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 3.3.1.9
+      NIST800-53R5:
+      - CM-6
+      - CM-7
+  {{ end }}
+{{ end }}

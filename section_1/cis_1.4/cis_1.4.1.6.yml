@@ -1,11 +1,11 @@
 ---
 
 {{ if not .Vars.amazon2cis_selinux_disable }}
-  {{ if .Vars.amazon2cis_level_1 }}
-    {{ if .Vars.amazon2cis_rule_1_5_1_6 }}
+  {{ if .Vars.amazon2cis_level_2 }}
+    {{ if .Vars.amazon2cis_rule_1_4_1_6 }}
 command:
   selinux_unconfined:
-    title: 1.5.1.6 | Ensure no unconfined services exist
+    title: 1.4.1.6 | Ensure no unconfined services exist
     exit-status:
       or:
       - 0
@@ -13,10 +13,10 @@ command:
     exec: "ps -eZ | grep unconfined_service_t"
     stdout: ['!/./']
     meta:
-      server: 1
+      server: 2
       workstation: NA
       CIS_ID:
-      - 1.5.1.6
+      - 1.4.1.6
       NIST800-53R5:
       - AC-3
       - MP-2

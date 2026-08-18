@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_1_6 }}
+  {{ if .Vars.amazon2cis_rule_7_1_6 }}
 file:
   /etc/shadow-_perms:
-    title: 6.1.6 | Ensure permissions on /etc/shadow- are configured
+    title: 7.1.6 | Ensure access to /etc/shadow- is configured
     exists: true
     path: /etc/shadow-
     mode: '0000'
@@ -12,9 +12,9 @@ file:
     group: root
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.1.6
+      - 7.1.6
       NIST800-53R5:
       - AC-3
       - MP-2

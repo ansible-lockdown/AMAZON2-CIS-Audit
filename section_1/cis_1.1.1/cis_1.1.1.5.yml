@@ -1,10 +1,10 @@
 ---
 
-{{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_1_1_1_6 }}
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_1_5 }}
 command:
   squashfs_modprobe:
-    title: 1.1.1.6 | Ensure squashfs kernel module is not available
+    title: 1.1.1.5 | Ensure squashfs kernel module is not available
     exit-status: 0
     exec: grep -Rh -w squashfs /etc/modprobe.d/
     stdout:
@@ -13,7 +13,7 @@ command:
     meta:
       server: 1
       workstation: NA
-      CIS_ID: 1.1.1.6
+      CIS_ID: 1.1.1.5
       NIST800-53R5: CM-7
   {{ end }}
 {{ end }}

@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_5_5 }}
+kernel-param:
+  kernel.dmesg_restrict:
+    title: 1.5.5 | Ensure kernel.dmesg_restrict is configured
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.5.5
+      NIST800-53R5:
+      - SC-2
+      - SC-4
+  {{ end }}
+{{ end }}

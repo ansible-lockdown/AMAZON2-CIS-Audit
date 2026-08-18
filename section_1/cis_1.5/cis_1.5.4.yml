@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_5_4 }}
+kernel-param:
+  fs.suid_dumpable:
+    title: 1.5.4 | Ensure fs.suid_dumpable is configured
+    value: '0'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.5.4
+      NIST800-53R5:
+      - CM-6
+  {{ end }}
+{{ end }}

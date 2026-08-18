@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_20 }}
+file:
+  /etc/audit/rules.d/01-initialize.rules:
+    title: 6.2.3.20 | Ensure the audit configuration is loaded regardless of errors
+    exists: true
+    contains:
+    - '/^-c$/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 6.2.3.20
+  {{ end }}
+{{ end }}

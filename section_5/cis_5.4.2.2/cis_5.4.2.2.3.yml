@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_4_2_2_3 }}
+  {{ if .Vars.amazon2cis_rule_5_4_2_2_3 }}
 file:
   minlen_pwquality:
-    title: 4.4.2.2.3 | Ensure password length is configured
+    title: 5.4.2.2.3 | Ensure password length is configured
     path: /etc/security/pwquality.conf
     exists: true
     contents:
@@ -14,7 +14,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.2.3
+      - 5.4.2.2.3
       NIST800-53R5:
       - IA-5
   {{ end }}

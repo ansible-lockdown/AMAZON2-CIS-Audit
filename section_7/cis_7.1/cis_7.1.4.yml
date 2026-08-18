@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_1_4 }}
+  {{ if .Vars.amazon2cis_rule_7_1_4 }}
 file:
   /etc/group-_perms:
-    title: 6.1.4 | Ensure permissions on /etc/group- are configured
+    title: 7.1.4 | Ensure access to /etc/group- is configured
     exists: true
     path: /etc/group-
     mode:
@@ -17,9 +17,9 @@ file:
     group: root
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.1.4
+      - 7.1.4
       NIST800-53R5:
       - AC-3
       - MP-2

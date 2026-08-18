@@ -1,28 +1,28 @@
 ---
 
-{{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_4_2_1 }}
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_1 }}
 package:
   fwd_firewalld_installed:
-    title: 3.4.2.1 | Ensure firewalld is installed | firewalld pkg
+    title: 4.1.1 | Ensure firewalld is installed | firewalld pkg
     name: firewalld
     installed: true
     meta:
-      server: 1
-      workstation: 1
+      server: 2
+      workstation: NA
       CIS_ID:
-      - 3.4.2.1
+      - 4.1.1
       NIST800-53R5:
       - CA-9
   fwd_iptables_installed:
-    title: 3.4.2.1 | Ensure firewalld is installed | iptables pkg
+    title: 4.1.1 | Ensure firewalld is installed | iptables pkg
     name: iptables
     installed: true
     meta:
-      server: 1
-      workstation: 1
+      server: 2
+      workstation: NA
       CIS_ID:
-      - 3.4.2.1
+      - 4.1.1
       NIST800-53R5:
       - CA-9
   {{ end }}

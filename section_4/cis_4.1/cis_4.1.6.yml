@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_6 }}
+command:
+  firewalld_loopback_source_traffic:
+    title: 4.1.6 | Ensure firewalld loopback source address traffic is configured
+    exit-status: 0
+    exec: firewall-cmd --list-all --zone="{{ .Vars.amazon2cis_active_firewall_zone }}"
+    stdout:
+    - '/source address="127.0.0.1".*drop/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.6
+      NIST800-53R5:
+      - CA-9
+  {{ end }}
+{{ end }}

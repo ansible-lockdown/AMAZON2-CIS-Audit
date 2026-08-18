@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_3_13 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_13 }}
 command:
   auditd_delete_cnf:
-    title: 5.2.3.13 | Ensure file deletion events by users are collected | conf check
+    title: 6.2.3.13 | Ensure file deletion events by users are collected | conf check
     exec: grep delete /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -12,12 +12,12 @@ command:
     - '/^.*rules:-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat -F auid>=1000 -F auid!=(unset|4294967295) -F key=delete/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.13
+      - 6.2.3.13
       NIST800-53R5: NA
   auditd_delete_live:
-    title: 5.2.3.13 | Ensure file deletion events by users are collected | running
+    title: 6.2.3.13 | Ensure file deletion events by users are collected | running
     exec: auditctl -l | grep delete
     exit-status: 0
     stdout:
@@ -25,9 +25,9 @@ command:
     - '/^-a always,exit -F arch=b32 -S unlink,rename,unlinkat,renameat -F auid>=1000 -F auid!=-1 -F key=delete/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.13
+      - 6.2.3.13
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

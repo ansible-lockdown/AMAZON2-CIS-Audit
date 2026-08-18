@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_4_2_4_3 }}
+  {{ if .Vars.amazon2cis_rule_5_4_2_4_3 }}
 file:
   strong_hash_pamunix_system_auth:
-    title: 4.4.2.4.3 | Ensure pam_unix includes a strong password hashing algorithm | system-auth
+    title: 5.4.2.4.3 | Ensure pam_unix includes a strong password hashing algorithm | system-auth
     path: /etc/pam.d/system-auth
     exists: true
     contents:
@@ -13,11 +13,11 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.4.3
+      - 5.4.2.4.3
       NIST800-53R5:
       - IA-5
   strong_hash_pamunix_password_auth:
-    title: 4.4.2.4.3 | Ensure pam_unix includes a strong password hashing algorithm | password-auth
+    title: 5.4.2.4.3 | Ensure pam_unix includes a strong password hashing algorithm | password-auth
     path: /etc/pam.d/password-auth
     exists: true
     contents:
@@ -26,7 +26,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.4.3
+      - 5.4.2.4.3
       NIST800-53R5:
       - IA-5
   {{ end }}

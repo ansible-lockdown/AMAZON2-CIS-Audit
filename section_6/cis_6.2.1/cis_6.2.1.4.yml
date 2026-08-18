@@ -1,18 +1,18 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_1_4 }}
+  {{ if .Vars.amazon2cis_rule_6_2_1_4 }}
 service:
   auditd_enabled:
-    title: 5.2.1.4 | Ensure auditd service is enabled
+    title: 6.2.1.4 | Ensure auditd service is enabled and active
     name: auditd
     enabled: true
     running: true
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.1.4
+      - 6.2.1.4
       NIST800-53R5:
       - AU-2
       - AU-12

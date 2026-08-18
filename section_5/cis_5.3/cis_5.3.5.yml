@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_3_5 }}
+  {{ if .Vars.amazon2cis_rule_5_3_5 }}
 command:
   authenticate_sudoers:
-    title: 4.3.5 | Ensure re-authentication for privilege escalation is not disabled globally
+    title: 5.3.5 | Ensure re-authentication for privilege escalation is not disabled globally
     exec: 'grep -r "^[^#].*\!authenticate" /etc/sudoers*'
     exit-status:
       or:
@@ -14,9 +14,9 @@ command:
     - '!/.*/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 4.3.5
+      - 5.3.5
       NIST800-53R5: AC-6
   {{ end }}
 {{ end }}

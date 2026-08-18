@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_4_2_2_5 }}
+  {{ if .Vars.amazon2cis_rule_5_4_2_2_5 }}
 file:
   minrepeat_pwquality:
-    title: 4.4.2.2.5 | Ensure password same consecutive characters is configured
+    title: 5.4.2.2.5 | Ensure password same consecutive characters is configured
     path: /etc/security/pwquality.conf
     exists: true
     contents:
@@ -14,7 +14,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.2.5
+      - 5.4.2.2.5
       NIST800-53R5:
       - IA-5
   {{ end }}

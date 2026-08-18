@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_1_7 }}
+command:
+  unused_filesystem_modules:
+    title: 1.1.1.7 | Ensure unused filesystems kernel modules are not available
+    exit-status: 0
+    exec: |
+      lsmod | awk 'NR>1 {print $1}' | grep -E '^(afs|ceph|cifs|exfat|fat|fscache|fuse|gfs2|nfs_common|nfsd|smbfs_common)$' || true
+    stdout: []
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.1.1.7
+  {{ end }}
+{{ end }}

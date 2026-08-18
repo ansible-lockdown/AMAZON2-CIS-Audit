@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_2_10 }}
+  {{ if .Vars.amazon2cis_rule_5_2_10 }}
 file:
   sshd_hostbasedauth:
-    title: 4.2.10 | Ensure sshd HostbasedAuthentication is disabled
+    title: 5.2.10 | Ensure sshd HostbasedAuthentication is disabled
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -14,7 +14,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.10
+      - 5.2.10
       NIST800-53R5:
       - CM-1
       - CM-2

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_2_22 }}
+  {{ if .Vars.amazon2cis_rule_5_2_22 }}
 file:
   sshd_use_pam:
-    title: 4.2.22 | Ensure sshd UsePAM is enabled
+    title: 5.2.22 | Ensure sshd UsePAM is enabled
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -14,7 +14,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.22
+      - 5.2.22
       NIST800-53R5:
       - CM-1
       - CM-2

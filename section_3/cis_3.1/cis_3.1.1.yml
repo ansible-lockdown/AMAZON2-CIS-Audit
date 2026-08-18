@@ -13,7 +13,7 @@ command:
     exec: 'grep "^\s*linux" {{ .Vars.amazon2cis_bootloader_file }} | grep ipv6.disable=1'
     stdout: ['!/./']
     meta:
-      server: 2
+      server: 1
       workstation: NA
       CIS_ID:
       - 3.1.1
@@ -24,7 +24,7 @@ kernel-param:
     title: 3.1.1 | Ensure IPv6 status is identified | kernel
     value: '1'
     meta:
-      server: 2
+      server: 1
       workstation: NA
       CIS_ID:
       - 3.1.1
@@ -33,7 +33,7 @@ kernel-param:
   net.ipv6.conf.default.disable_ipv6:
     value: '1'
     meta:
-      server: 2
+      server: 1
       workstation: NA
       CIS_ID:
       - 3.1.1
@@ -46,7 +46,7 @@ file:
     contents:
     - '!/(\S+\s(ipv6\.disable=1.*)$)^GRUB_CMDLINE_LINUX="/'
     meta:
-      server: 2
+      server: 1
       workstation: NA
       CIS_ID:
       - 3.1.1

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_3_1 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_1 }}
 command:
   auditd_admin_scope_cnf:
-    title: 5.2.3.1 | Ensure changes to system administration scope (sudoers) is collected | conf_check
+    title: 6.2.3.1 | Ensure changes to system administration scope (sudoers) is collected | conf_check
     exec: grep scope /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -12,12 +12,12 @@ command:
     - '/^.*rules:-w /etc/sudoers.d/ -p wa -k scope/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.1
+      - 6.2.3.1
       NIST800-53R5: NA
   auditd_admin_scope_live:
-    title: 5.2.3.1 | Ensure changes to system administration scope (sudoers) is collected | running
+    title: 6.2.3.1 | Ensure changes to system administration scope (sudoers) is collected | running
     exec: auditctl -l | grep scope
     exit-status: 0
     stdout:
@@ -25,9 +25,9 @@ command:
     - '/^-w /etc/sudoers.d -p wa -k scope/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.1
+      - 6.2.3.1
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

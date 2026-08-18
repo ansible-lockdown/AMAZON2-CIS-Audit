@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_6_3_3 }}
+file:
+  /etc/aide.conf:
+    title: 6.3.3 | Ensure cryptographic mechanisms are used to protect the integrity of audit tools
+    exists: true
+    contains:
+    - '/^/sbin/auditctl\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/^/sbin/auditd\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/^/sbin/ausearch\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/^/sbin/aureport\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/^/sbin/autrace\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/^/sbin/augenrules\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.3.3
+      NIST800-53R5:
+      - AU-9
+  {{ end }}
+{{ end }}

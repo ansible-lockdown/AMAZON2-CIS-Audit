@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_8 }}
+command:
+  firewalld_default_zone_drop:
+    title: 4.1.8 | Configure firewall to drop all traffic
+    exit-status: 0
+    exec: firewall-cmd --get-default-zone
+    stdout:
+    - '/^drop$/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.8
+      NIST800-53R5:
+      - CA-9
+  {{ end }}
+{{ end }}

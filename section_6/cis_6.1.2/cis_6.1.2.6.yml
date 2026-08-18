@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_1_7 }}
+  {{ if .Vars.amazon2cis_rule_6_1_2_6 }}
 command:
   local_syslog_module_new:
-    title: 5.1.1.7 | Ensure rsyslog is not configured to receive logs from a remote client
+    title: 6.1.2.6 | Ensure rsyslog is not configured to receive logs from a remote client
     exec: grep -P -- '^\h*(module|input)\((load|type)="imtcp".*\)' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
     exit-status:
       or:
@@ -15,12 +15,12 @@ command:
     - '!/.*/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.1.7
+      - 6.1.2.6
       NIST800-53R5: NA
   local_syslog_input_old:
-    title: 5.1.1.7 | Ensure rsyslog is not configured to receive logs from a remote client
+    title: 6.1.2.6 | Ensure rsyslog is not configured to receive logs from a remote client
     exec: grep -P -- '^\h*input\(type="imtcp" port="514"\)' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
     exit-status:
       or:
@@ -31,9 +31,9 @@ command:
     - '!/.*/'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.1.7
+      - 6.1.2.6
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

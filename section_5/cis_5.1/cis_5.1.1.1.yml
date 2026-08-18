@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_1_1_1 }}
+  {{ if .Vars.amazon2cis_rule_5_1_1_1 }}
 package:
   cronie:
-    title: 4.1.1.1 | Ensure cron daemon is enabled and active | cronie
+    title: 5.1.1.1 | Ensure cron daemon is enabled and active | cronie
     installed: true
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.1.1.1
+      - 5.1.1.1
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -19,14 +19,14 @@ package:
       - IA-5
 service:
   crond:
-    title: 4.1.1.1 | Ensure cron daemon is enabled and active | crond
+    title: 5.1.1.1 | Ensure cron daemon is enabled and active | crond
     running: true
     enabled: true
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.1.1.1
+      - 5.1.1.1
       NIST800-53R5:
       - CM-1
       - CM-2

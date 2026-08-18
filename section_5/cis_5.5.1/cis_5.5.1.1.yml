@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_5_1_2 }}
+  {{ if .Vars.amazon2cis_rule_5_5_1_1 }}
 file:
   login_passwd_expire:
-    title: 4.5.1.2 | Ensure password expiration is 365 days or less
+    title: 5.5.1.1 | Ensure password expiration is configured
     path: /etc/login.defs
     exists: true
     contents:
@@ -15,7 +15,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.1.2
+      - 5.5.1.1
       NIST800-53R5:
       - CM-1
       - CM-2

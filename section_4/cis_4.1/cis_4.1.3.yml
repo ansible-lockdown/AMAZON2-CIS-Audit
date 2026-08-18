@@ -1,18 +1,22 @@
 ---
 
----
-{{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_4_2_4 }}
-  nic_assigned:
-    title: 3.4.2.4 | Ensure network interfaces are assigned to appropriate zone
-    exec: nmcli -t connection show | awk -F ':' '{if($4){print $4}}' | while read INT; do firewall-cmd --get-active-zones | grep -B1 $INT; done"
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_3 }}
+command:
+  fwd_nic_assigned_zone:
+    title: 4.1.3 | Ensure network interface zone is configured
     exit-status: 0
-    stdout: {{ .Vars.amazon2cis_firewall_interface }}
+    exec: |
+      for netint in $(find /sys/class/net/* -maxdepth 1 | awk -F"/" '{print $NF}'); do
+        [ "$netint" = "lo" ] && continue
+        firewall-cmd --get-zone-of-interface="$netint" >/dev/null 2>&1 || echo "$netint"
+      done
+    stdout: []
     meta:
-      server: 1
+      server: 2
       workstation: NA
       CIS_ID:
-      - 3.4.2.4
+      - 4.1.3
       NIST800-53R5:
       - CA-9
   {{ end }}

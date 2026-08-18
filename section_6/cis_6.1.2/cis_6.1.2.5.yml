@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_5_1_1_6 }}
+  {{ if .Vars.amazon2cis_rule_6_1_2_5 }}
 command:
   remote_syslog:
-    title: 5.1.1.6 | Ensure rsyslog is configured to send logs to a remote log host
+    title: 6.1.2.5 | Ensure rsyslog is configured to send logs to a remote log host
     exec: 'grep -E "action.*omfwd.*target" /etc/rsyslog.conf /etc/rsyslog.d/*.conf'
     exit-status:
       or:
@@ -15,9 +15,9 @@ command:
     - protocol="tcp"
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 5.1.1.6
+      - 6.1.2.5
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

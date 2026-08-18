@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_2_7 }}
+  {{ if .Vars.amazon2cis_rule_7_2_7 }}
 command:
   no_dup_groupname:
-    title: 6.2.7 | Ensure no duplicate group names exist
+    title: 7.2.7 | Ensure no duplicate group names exist
     exec: "cat /etc/group | cut -d: -f1 | uniq -d"
     exit-status: 0
     stdout:
     - '!/./'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.7
+      - 7.2.7
       NIST800-53R5:
       - CM-1
       - CM-2

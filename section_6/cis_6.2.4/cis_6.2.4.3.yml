@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_4_3 }}
+  {{ if .Vars.amazon2cis_rule_6_2_4_3 }}
 command:
   audit_logfile_owner:
-    title: 5.2.4.3 | Ensure only authorized users own audit log files
+    title: 6.2.4.3 | Ensure audit log files owner is configured
     exec: for file in `grep ^log_file /etc/audit/auditd.conf | awk '{ print $NF }'`; do stat -Lc "%n_%U" $file; done
     exit-status: 0
     stdout:
     - '/.*_root$/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.4.3
+      - 6.2.4.3
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

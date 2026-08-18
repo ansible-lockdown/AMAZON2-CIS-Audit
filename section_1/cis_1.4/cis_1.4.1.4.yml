@@ -2,10 +2,10 @@
 
 {{ if not .Vars.amazon2cis_selinux_disable }}
   {{ if .Vars.amazon2cis_level_1 }}
-    {{ if  .Vars.amazon2cis_rule_1_5_1_4 }}
+    {{ if  .Vars.amazon2cis_rule_1_4_1_4 }}
 command:
    selinux_running_mode:
-    title: 1.5.1.4 | Ensure the SELinux mode is not disabled | running
+    title: 1.4.1.4 | Ensure the SELinux mode is not disabled | running
     exit-status: 0
     exec: "getenforce"
     stdout:
@@ -15,13 +15,13 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.5.1.4
+      - 1.4.1.4
       NIST800-53R5:
       - AC-3
       - MP-2
 file:
   selinux_state_config:
-    title: 1.5.1.4 | Ensure the SELinux mode is not disabled | config
+    title: 1.4.1.4 | Ensure the SELinux mode is not disabled | config
     exists: true
     path: /etc/selinux/config
     contents:
@@ -31,7 +31,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.5.1.4
+      - 1.4.1.4
       NIST800-53R5:
       - AC-3
       - MP-2

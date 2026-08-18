@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_2_11 }}
+  {{ if .Vars.amazon2cis_rule_7_2_9 }}
 command:
   dot_file_perms:
-    title: 6.2.11 | Ensure local interactive user dot files access is configured
+    title: 7.2.9 | Ensure local interactive user dot files access is configured
     exec: 'find /home/ -name "\.*" -perm /g+w,o+w'
     exit-status: 0
     stdout:
     - '!/./'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.11
+      - 7.2.9
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -21,16 +21,16 @@ command:
       - CM-7
       - IA-5
   bash_history_perms:
-    title: 6.2.11 | Ensure local interactive user dot files access is configured | bash_history
+    title: 7.2.9 | Ensure local interactive user dot files access is configured | bash_history
     exec: 'find /home/ -name .bash_history -perm /go+rwx'
     exit-status: 0
     stdout:
     - '!/./'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.11
+      - 7.2.9
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -38,16 +38,16 @@ command:
       - CM-7
       - IA-5
   dot_files_that_should not exist:
-    title: 6.2.11 | Ensure local interactive user dot files access is configured | dot files that should not exist
+    title: 7.2.9 | Ensure local interactive user dot files access is configured | dot files that should not exist
     exec: find /home/ \( -name '.netrc' -o -name '.forward' -o -name '.rhosts' \)
     exit-status: 0
     stdout:
     - '!/./'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.2.11
+      - 7.2.9
       NIST800-53R5:
       - CM-1
       - CM-2

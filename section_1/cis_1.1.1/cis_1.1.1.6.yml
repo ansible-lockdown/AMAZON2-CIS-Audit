@@ -1,10 +1,10 @@
 ---
 
-{{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_1_1_1_7 }}
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_1_6 }}
 command:
   udf_modprobe:
-    title: 1.1.1.7 | Ensure udf kernel module is not available
+    title: 1.1.1.6 | Ensure udf kernel module is not available
     exit-status: 0
     exec: grep -Rh -w udf /etc/modprobe.d/
     stdout:
@@ -13,7 +13,7 @@ command:
     meta:
       server: 1
       workstation: NA
-      CIS_ID: 1.1.1.7
+      CIS_ID: 1.1.1.6
       NIST800-53R5: CM-7
   {{ end }}
 {{ end }}

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_5_3_3 }}
+  {{ if .Vars.amazon2cis_rule_5_5_3_3 }}
 file:
   etc_profile_umask:
-    title: 4.5.3.3 | Ensure default user umask is configured
+    title: 5.5.3.3 | Ensure default user umask is configured
     path: /etc/profile
     exists: true
     contents:
@@ -14,12 +14,12 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.3.3
+      - 5.5.3.3
       NIST800-53R5:
       - AC-3
       - MP-2
   etc_login_defs_umask:
-    title: 4.5.3.3 | Ensure default user umask is configured
+    title: 5.5.3.3 | Ensure default user umask is configured
     path: /etc/login.defs
     exists: true
     contents:
@@ -29,12 +29,12 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.3.3
+      - 5.5.3.3
       NIST800-53R5:
       - AC-3
       - MP-2
   etc_bashrc_umask:
-    title: 4.5.3.3 | Ensure default user umask is configured
+    title: 5.5.3.3 | Ensure default user umask is configured
     path: /etc/bashrc
     exists: true
     contents:
@@ -44,7 +44,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.3.3
+      - 5.5.3.3
       NIST800-53R5:
       - AC-3
       - MP-2

@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_3 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_6 }}
 kernel-param:
   net.ipv4.icmp_ignore_bogus_error_responses:
-    title: 3.3.3 | Ensure bogus icmp responses are ignored
+    title: 3.3.1.6 | Ensure net.ipv4.icmp_ignore_bogus_error_responses is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.3
+      - 3.3.1.6
       NIST800-53R5:
       - CM-1
       - CM-2

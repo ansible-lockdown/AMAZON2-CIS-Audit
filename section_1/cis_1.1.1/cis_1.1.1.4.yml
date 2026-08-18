@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_1_1_4 }}
+command:
+  overlay_modprobe:
+    title: 1.1.1.4 | Ensure overlay kernel module is not available
+    exit-status: 0
+    exec: grep -Rh overlay /etc/modprobe.d/
+    stdout:
+    - '/install overlay /bin/(false|true)/'
+    - '/blacklist overlay/'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.1.1.4
+      NIST800-53R5:
+      - CM-7
+  {{ end }}
+{{ end }}

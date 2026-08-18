@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.amazon2cis_level_1 }}
+{{ if .Vars.amazon2cis_level_2 }}
 package:
   {{ if not .Vars.amazon2cis_openldap_clients_required}}
     {{ if .Vars.amazon2cis_rule_2_3_2 }}
@@ -9,8 +9,8 @@ package:
     name: openldap-clients
     installed: false
     meta:
-      server: 1
-      workstation: 1
+      server: 2
+      workstation: NA
       CIS_ID:
       - 2.3.2
       NIST800-53R5:

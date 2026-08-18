@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_4_5_3_1 }}
+  {{ if .Vars.amazon2cis_rule_5_5_3_1 }}
 file:
   shells_nologin:
-    title: 4.5.3.1 | Ensure nologin is not listed in /etc/shells
+    title: 5.5.3.1 | Ensure nologin is not listed in /etc/shells
     path: /etc/shells
     exists: true
     contents:
@@ -13,7 +13,7 @@ file:
       server: 2
       workstation: NA
       CIS_ID:
-      - 4.5.3.1
+      - 5.5.3.1
       - NA
       NIST800-53R5:
       - CM-1

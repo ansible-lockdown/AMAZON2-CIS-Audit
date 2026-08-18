@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_5 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_8 }}
 kernel-param:
   net.ipv4.conf.all.accept_redirects:
-    title: 3.3.5 | Ensure icmp redirects are not accepted
+    title: 3.3.1.8 | Ensure net.ipv4.conf.all.accept_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.5
+      - 3.3.1.8
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -18,13 +18,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv4.conf.default.accept_redirects:
-    title: 3.3.5 | Ensure icmp redirects are not accepted
+    title: 3.3.1.8 | Ensure net.ipv4.conf.all.accept_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.5
+      - 3.3.1.8
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -32,13 +32,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv6.conf.all.accept_redirects:
-    title: 3.3.5 | Ensure icmp redirects are not accepted
+    title: 3.3.1.8 | Ensure net.ipv4.conf.all.accept_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.5
+      - 3.3.1.8
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -46,13 +46,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv6.conf.default.accept_redirects:
-    title: 3.3.5 | Ensure icmp redirects are not accepted
+    title: 3.3.1.8 | Ensure net.ipv4.conf.all.accept_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.5
+      - 3.3.1.8
       NIST800-53R5:
       - CM-1
       - CM-2

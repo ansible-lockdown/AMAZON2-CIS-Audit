@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_1_4_4 }}
+  {{ if .Vars.amazon2cis_rule_1_5_10 }}
 file:
   core_dumps_storage:
-    title: 1.4.4 | Ensure core dump storage is disabled | security/limits.conf
+    title: 1.5.10 | Ensure systemd-coredump Storage is configured | security/limits.conf
     path: /etc/systemd/coredump.conf
     exists: true
     contents:
@@ -13,7 +13,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.4.4
+      - 1.5.10
       NIST800-53R5:
   {{ end }}
 {{ end }}

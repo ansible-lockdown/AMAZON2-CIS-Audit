@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_4_3_4 }}
+  {{ if .Vars.amazon2cis_rule_5_3_4 }}
 command:
   nopasswd_sudoers_d:
-    title: 4.3.4 | Ensure users must provide password for escalation
+    title: 5.3.4 | Ensure users must provide password for escalation
     exec: grep -R NOPASSWD /etc/sudoers /etc/sudoers.d/* | grep -v ".*:#"
     exit-status:
       or:
@@ -14,9 +14,9 @@ command:
     - '!/.*/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 4.3.4
+      - 5.3.4
       NIST800-53R5: AC-6
   {{ end }}
 {{ end }}

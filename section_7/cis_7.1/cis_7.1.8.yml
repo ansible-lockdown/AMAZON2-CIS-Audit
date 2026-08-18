@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_1_8 }}
+  {{ if .Vars.amazon2cis_rule_7_1_8 }}
 file:
   /etc/gshadow-_perms:
-    title: 6.1.8 | Ensure permissions on /etc/gshadow- are configured
+    title: 7.1.8 | Ensure access to /etc/gshadow- is configured
     exists: true
     path: /etc/gshadow-
     mode: '0000'
@@ -12,9 +12,9 @@ file:
     group: root
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.1.8
+      - 7.1.8
       NIST800-53R5:
       - AC-3
       - MP-2

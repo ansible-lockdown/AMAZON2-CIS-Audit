@@ -1,25 +1,25 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_9 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_16 }}
 kernel-param:
   net.ipv4.conf.all.log_martians:
-    title: 3.3.9 | Ensure suspicious packets are logged
+    title: 3.3.1.16 | Ensure net.ipv4.conf.all.log_martians is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.9
+      - 3.3.1.16
       NIST800-53R5: AU-3
   net.ipv4.conf.default.log_martians:
-    title: 3.3.9 | Ensure suspicious packets are logged
+    title: 3.3.1.16 | Ensure net.ipv4.conf.all.log_martians is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.9
+      - 3.3.1.16
       NIST800-53R5: AU-3
   {{ end }}
 {{ end }}

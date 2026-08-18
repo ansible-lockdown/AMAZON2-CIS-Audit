@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_3_2 }}
+  {{ if .Vars.amazon2cis_rule_5_3_2 }}
 file:
   sudoers_pty:
-    title: 4.3.2 | Ensure sudo commands use pty | Config
+    title: 5.3.2 | Ensure sudo commands use pty | Config
     path: /etc/sudoers
     exists: true
     contents:
@@ -13,12 +13,12 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.3.2
+      - 5.3.2
       NIST800-53R5:
       - AC-6
 command:
   pty_sudoers_d:
-    title: 4.3.2 | Ensure sudo commands use pty | sudoers.d
+    title: 5.3.2 | Ensure sudo commands use pty | sudoers.d
     exec: "ls -1 /etc/sudoers.d/* > /dev/null 2>&1; if [ '$?' = '0' ]; then grep -c '^Defaults.*\\suse_pty' /etc/sudoers.d/*; else echo 99;fi"
     exit-status: 0
     stdout:
@@ -27,7 +27,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.3.2
+      - 5.3.2
       NIST800-53R5:
       - AC-6
   {{ end }}

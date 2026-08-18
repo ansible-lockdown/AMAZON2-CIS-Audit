@@ -2,16 +2,16 @@
 
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_ipv6_required }}
-    {{ if .Vars.amazon2cis_rule_3_3_11 }}
+    {{ if .Vars.amazon2cis_rule_3_3_2_7 }}
 kernel-param:
   net.ipv6.conf.all.accept_ra:
-    title: 3.3.11 | Ensure ipv6 router advertisements are not accepted
+    title: 3.3.2.7 | Ensure net.ipv6.conf.all.accept_ra is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.11
+      - 3.3.2.7
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -19,13 +19,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv6.conf.default.accept_ra:
-    title: 3.3.11 | Ensure ipv6 router advertisements are not accepted
+    title: 3.3.2.7 | Ensure net.ipv6.conf.all.accept_ra is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.11
+      - 3.3.2.7
       NIST800-53R5:
       - CM-1
       - CM-2

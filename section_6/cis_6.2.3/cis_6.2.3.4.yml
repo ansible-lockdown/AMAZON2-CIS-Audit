@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_3_4 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_4 }}
 command:
   auditd_time_cnf:
-    title: 5.2.3.4 | Ensure events that modify date and time information are collected | conf check
+    title: 6.2.3.4 | Ensure events that modify date and time information are collected | conf check
     exec: grep time-change /etc/audit/rules.d/*.rules
     exit-status: 0
     stdout:
@@ -13,12 +13,12 @@ command:
     - '/^.*rules:-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -k time-change/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.4
+      - 6.2.3.4
       NIST800-53R5: NA
   auditd_time_live:
-    title: 5.2.3.4 | Ensure events that modify date and time information are collected | running
+    title: 6.2.3.4 | Ensure events that modify date and time information are collected | running
     exec: auditctl -l | grep time-change
     exit-status: 0
     stdout:
@@ -27,9 +27,9 @@ command:
     - '/^-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -F key=time-change/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.4
+      - 6.2.3.4
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_1_1_1_4 }}
+  {{ if .Vars.amazon2cis_rule_1_1_1_3 }}
 command:
   hfsplus_modprobe:
-    title: 1.1.1.4 | Ensure hfsplus kernel module is not available
+    title: 1.1.1.3 | Ensure hfsplus kernel module is not available
     exit-status: 0
     exec: grep -Rh -w hfsplus /etc/modprobe.d/
     stdout:
@@ -13,7 +13,7 @@ command:
     meta:
       server: 1
       workstation: NA
-      CIS_ID: 1.1.1.4
+      CIS_ID: 1.1.1.3
       NIST800-53R5: CM-7
   {{ end }}
 {{ end }}

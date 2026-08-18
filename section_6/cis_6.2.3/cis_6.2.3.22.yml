@@ -1,19 +1,19 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_3_21 }}
+  {{ if .Vars.amazon2cis_rule_6_2_3_22 }}
 command:
   auditd_conf_vs_live:
-    title: 5.2.3.21 | Ensure the running and on disk configuration is the same
+    title: 6.2.3.22 | Ensure the running and on disk configuration is the same
     exec: augenrules --check
     exit-status: 0
     stdout:
     - '/^\/usr\/sbin\/augenrules: No change/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.3.21
+      - 6.2.3.22
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

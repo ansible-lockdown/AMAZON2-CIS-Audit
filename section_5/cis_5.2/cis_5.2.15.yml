@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_2_15 }}
+  {{ if .Vars.amazon2cis_rule_5_2_15 }}
 file:
   sshd_macs:
-    title: 4.2.15 | Ensure sshd MACs are configured
+    title: 5.2.15 | Ensure sshd MACs are configured
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -13,7 +13,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.15
+      - 5.2.15
       NIST800-53R5:
       - CM-1
       - CM-2

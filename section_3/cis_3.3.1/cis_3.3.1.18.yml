@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_10 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_18 }}
 kernel-param:
   net.ipv4.tcp_syncookies:
-    title: 3.3.10 | Ensure tcp syn cookies is enabled
+    title: 3.3.1.18 | Ensure net.ipv4.tcp_syncookies is configured
     value: '1'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.10
+      - 3.3.1.18
       NIST800-53R5:
       - CM-1
       - CM-2

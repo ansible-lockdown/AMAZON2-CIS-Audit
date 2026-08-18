@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.amazon2cis_level_2 }}
+  {{ if .Vars.amazon2cis_rule_4_1_4 }}
+command:
+  firewalld_active_zone_target:
+    title: 4.1.4 | Ensure firewalld active zone target is configured
+    exit-status: 0
+    exec: firewall-cmd --list-all --zone="{{ .Vars.amazon2cis_active_firewall_zone }}" | grep -E '^\s*target:'
+    stdout:
+    - '!/target: ACCEPT/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.4
+      NIST800-53R5:
+      - CA-9
+  {{ end }}
+{{ end }}

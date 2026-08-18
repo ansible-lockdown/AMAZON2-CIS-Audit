@@ -10,7 +10,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.8
       NIST800-53R5:
@@ -21,7 +21,7 @@ package:
     installed: false
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.8
       NIST800-53R5:
@@ -37,7 +37,7 @@ file:
     linked-to: /dev/null
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.8
       NIST800-53R5:
@@ -50,7 +50,7 @@ file:
     linked-to: /dev/null
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
       - 2.2.8
       NIST800-53R5:

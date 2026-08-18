@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_1_5_6 }}
+kernel-param:
+  kernel.kptr_restrict:
+    title: 1.5.6 | Ensure kernel.kptr_restrict is configured
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.5.6
+      NIST800-53R5:
+      - CM-6
+  {{ end }}
+{{ end }}

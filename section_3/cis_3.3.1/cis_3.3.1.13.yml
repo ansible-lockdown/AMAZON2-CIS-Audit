@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_13 }}
+kernel-param:
+  net.ipv4.conf.default.rp_filter:
+    title: 3.3.1.13 | Ensure net.ipv4.conf.default.rp_filter is configured
+    value: '1'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 3.3.1.13
+      NIST800-53R5:
+      - CM-6
+      - SC-7
+  {{ end }}
+{{ end }}

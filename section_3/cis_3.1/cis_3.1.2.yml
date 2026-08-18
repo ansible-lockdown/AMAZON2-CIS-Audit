@@ -4,7 +4,7 @@
   {{ if .Vars.amazon2cis_rule_3_1_2 }}
 command:
   iwconfig:
-    title: 3.1.2 | Ensure wireless interfaces are disabled
+    title: 3.1.2 | Ensure wireless interfaces are not available
     exit-status: 127
     exec: iwconfig
     meta:

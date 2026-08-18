@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_6_1_10 }}
+  {{ if .Vars.amazon2cis_rule_7_1_10 }}
 file:
   /etc/security/opasswd_perms:
-    title: 6.1.10 | Ensure permissions on /etc/security/opasswd are configured
+    title: 7.1.10 | Ensure access to /etc/security/opasswd is configured
     exists: true
     path: /etc/security/opasswd
     mode:
@@ -17,9 +17,9 @@ file:
     group: root
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 6.1.10
+      - 7.1.10
       NIST800-53R5:
       - AC-3
       - MP-2

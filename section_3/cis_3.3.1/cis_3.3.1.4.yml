@@ -1,16 +1,16 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_3_3_2 }}
+  {{ if .Vars.amazon2cis_rule_3_3_1_4 }}
 kernel-param:
   net.ipv4.conf.all.send_redirects:
-    title: 3.3.2 | Ensure packet redirect sending is disabled
+    title: 3.3.1.4 | Ensure net.ipv4.conf.all.send_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.2
+      - 3.3.1.4
       NIST800-53R5:
       - CM-1
       - CM-2
@@ -18,13 +18,13 @@ kernel-param:
       - CM-7
       - IA-5
   net.ipv4.conf.default.send_redirects:
-    title: 3.3.2 | Ensure packet redirect sending is disabled
+    title: 3.3.1.4 | Ensure net.ipv4.conf.all.send_redirects is configured
     value: '0'
     meta:
       server: 1
-      workstation: 1
+      workstation: NA
       CIS_ID:
-      - 3.3.2
+      - 3.3.1.4
       NIST800-53R5:
       - CM-1
       - CM-2

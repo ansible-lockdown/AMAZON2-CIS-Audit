@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_4_2_2_1 }}
+  {{ if .Vars.amazon2cis_rule_5_4_2_2_1 }}
 file:
   pwquality_system_auth:
-    title: 4.4.2.2.1 | Ensure pam_pwquality module is enabled | system-auth
+    title: 5.4.2.2.1 | Ensure pam_pwquality module is enabled | system-auth
     path: /etc/pam.d/system-auth
     exists: true
     contents:
@@ -13,11 +13,11 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.2.1
+      - 5.4.2.2.1
       NIST800-53R5:
       - IA-5
   pwquality_password_auth:
-    title: 4.4.2.2.1 | Ensure pam_pwquality module is enabled | password-auth
+    title: 5.4.2.2.1 | Ensure pam_pwquality module is enabled | password-auth
     path: /etc/pam.d/password-auth
     exists: true
     contents:
@@ -26,7 +26,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.4.2.2.1
+      - 5.4.2.2.1
       NIST800-53R5:
       - IA-5
   {{ end }}

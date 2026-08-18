@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_2 }}
-  {{ if .Vars.amazon2cis_rule_5_2_1_2 }}
+  {{ if .Vars.amazon2cis_rule_6_2_1_2 }}
 command:
   boot_audit_on:
-    title: 5.2.1.2 | Ensure auditing for processes that start prior to auditd is enabled | bootloader file
+    title: 6.2.1.2 | Ensure auditing for processes that start prior to auditd is enabled | bootloader file
     exec: grep "audit=" /boot/grub2/grub.cfg
     exit-status: 0
     stdout:
@@ -12,12 +12,12 @@ command:
     - '!/^\s*linux /boot/vmlinuz-.*\saudit=0.*/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.1.2
+      - 6.2.1.2
       NIST800-53R5: NA
   default_audit_on:
-    title: 5.2.1.2 | Ensure auditing for processes that start prior to auditd is enabled | bootloader file
+    title: 6.2.1.2 | Ensure auditing for processes that start prior to auditd is enabled | bootloader file
     exec: grep "audit=" /etc/default/grub
     exit-status: 0
     stdout:
@@ -25,9 +25,9 @@ command:
     - '!/^GRUB_CMDLINE_LINUX_DEFAULT=.*audit=0/'
     meta:
       server: 2
-      workstation: 2
+      workstation: NA
       CIS_ID:
-      - 5.2.1.2
+      - 6.2.1.2
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

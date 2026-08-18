@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_2_18 }}
+  {{ if .Vars.amazon2cis_rule_5_2_18 }}
 file:
   sshd_maxstartups:
-    title: 4.2.18 | Ensure sshd MaxStartups is configured
+    title: 5.2.18 | Ensure sshd MaxStartups is configured
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -13,7 +13,7 @@ file:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.2.18
+      - 5.2.18
       NIST800-53R5:
       - CM-1
       - CM-2

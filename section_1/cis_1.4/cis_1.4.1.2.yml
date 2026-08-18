@@ -2,10 +2,10 @@
 
 {{ if not .Vars.amazon2cis_selinux_disable }}
   {{ if .Vars.amazon2cis_level_1 }}
-    {{ if .Vars.amazon2cis_rule_1_5_1_2 }}
+    {{ if .Vars.amazon2cis_rule_1_4_1_2 }}
 command:
   selinux_disabled_boot:
-    title: 1.5.1.2 | Ensure SELinux is not disabled in bootloader configuration
+    title: 1.4.1.2 | Ensure SELinux is not disabled in bootloader configuration
     exit-status: 1
     exec: 'grep "^\s*linux" {{ .Vars.amazon2cis_bootloader_file }} | grep -E "(selinux=0|enforcing=0)"'
     # looking for it not to return anything
@@ -15,7 +15,7 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 1.5.1.2
+      - 1.4.1.2
       NIST800-53R5:
       - AC-3
       - MP-2

@@ -1,10 +1,10 @@
 ---
 
 {{ if .Vars.amazon2cis_level_1 }}
-  {{ if .Vars.amazon2cis_rule_4_5_1_4 }}
+  {{ if .Vars.amazon2cis_rule_5_5_1_5 }}
 command:
   inactive_passwd:
-    title: 4.5.1.4 | Ensure inactive password lock is 30 days or less | password
+    title: 5.5.1.5 | Ensure inactive password lock is configured | password
     exec: useradd -D | grep INACTIVE
     exit-status: 0
     stdout:
@@ -13,9 +13,9 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.1.4
+      - 5.5.1.5
   inactive_users:
-    title: 4.5.1.4 | Ensure inactive password lock is 30 days or less | users
+    title: 5.5.1.5 | Ensure inactive password lock is configured | users
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | grep -vw root | cut -d : -f1,7'
     stdout:
     - '!/./'
@@ -24,6 +24,6 @@ command:
       server: 1
       workstation: NA
       CIS_ID:
-      - 4.5.1.4
+      - 5.5.1.5
   {{ end }}
 {{ end }}
