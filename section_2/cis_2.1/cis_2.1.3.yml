@@ -10,7 +10,7 @@ file:
     path: /etc/sysconfig/chronyd
     exists: true
     contents:
-    - 'OPTIONS="-u chrony"'
+    - '/^OPTIONS=".*-u chrony/'
     skip: false
     meta:
       server: 1
