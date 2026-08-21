@@ -33,7 +33,7 @@ Based on CIS 4.0.0
 - vars/CIS.yml: added amazon2cis_active_firewall_zone and amazon2cis_pass_min_days, referenced
   by the new 4.1.4/4.1.6 and 5.5.1.2 tests but previously undefined
 - renamed "cis_1.1.2.5.4 .yml" - the stray space hid it from content checks
-
+- README updates and updated contributing and contributors
 
 Based on CIS 3.0.0
 
