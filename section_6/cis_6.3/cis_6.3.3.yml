@@ -7,12 +7,12 @@ file:
     title: 6.3.3 | Ensure cryptographic mechanisms are used to protect the integrity of audit tools
     exists: true
     contains:
-    - '/^/sbin/auditctl\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
-    - '/^/sbin/auditd\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
-    - '/^/sbin/ausearch\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
-    - '/^/sbin/aureport\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
-    - '/^/sbin/autrace\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
-    - '/^/sbin/augenrules\\s+p\\+i\\+n\\+u\\+g\\+s\\+b\\+acl\\+xattrs\\+sha512/'
+    - '/sbin/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/sbin/auditd p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/sbin/ausearch p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/sbin/aureport p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/sbin/autrace p+i+n+u+g+s+b+acl+xattrs+sha512'
+    - '/sbin/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512'
     meta:
       server: 1
       workstation: NA

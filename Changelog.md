@@ -1,18 +1,5 @@
 # Changes to AMAZON2-CIS-Audit
 
-August 2026 - QA pass fixes
-
-- section_2/cis_2.1/cis_2.1.3.yml: restored the missing `file:` resource type - the block
-  parsed as an unknown top-level resource so the control had never asserted anything
-- section_4/cis_4.1/cis_4.1.3.yml: rewritten - doubled `---` marker, no resource type,
-  unbalanced quote in the exec string, and it read firewall-cmd's `no zone` from stdout when
-  firewalld writes it to stderr; now keyed off exit status
-- section_4/cis_4.1/cis_4.1.7.yml: rewritten - doubled `---` marker, no resource type, and it
-  asserted `!/Warning/` against a command that always echoes "Warning", so it could never pass
-- vars/CIS.yml: added amazon2cis_active_firewall_zone and amazon2cis_pass_min_days, referenced
-  by the new 4.1.4/4.1.6 and 5.5.1.2 tests but previously undefined
-- renamed "cis_1.1.2.5.4 .yml" - the stray space hid it from content checks
-
 August 2026
 Based on CIS 4.0.0
 
@@ -31,6 +18,22 @@ Based on CIS 4.0.0
 - goss.yml rewritten for the new layout; the previous gate file referenced directories that
   no longer exist
 - Renamed "cis_1.1.2.5.4 .yml" - the stray space in the filename hid it from content checks
+- section_2/cis_2.1/cis_2.1.3.yml: asserted the literal `OPTIONS="-u chrony"`, but AL2 ships
+  `OPTIONS="-F 2 -u chrony"` - a compliant host failed. Now a regex
+- section_6/cis_6.3/cis_6.3.3.yml: regexes were double-escaped and wrapped in `/.../` while
+  containing unescaped `/` in the `/sbin/...` paths, so they could never match. Now plain
+  substring matches
+- section_2/cis_2.1/cis_2.1.3.yml: restored the missing `file:` resource type - the block
+  parsed as an unknown top-level resource so the control had never asserted anything
+- section_4/cis_4.1/cis_4.1.3.yml: rewritten - doubled `---` marker, no resource type,
+  unbalanced quote in the exec string, and it read firewall-cmd's `no zone` from stdout when
+  firewalld writes it to stderr; now keyed off exit status
+- section_4/cis_4.1/cis_4.1.7.yml: rewritten - doubled `---` marker, no resource type, and it
+  asserted `!/Warning/` against a command that always echoes "Warning", so it could never pass
+- vars/CIS.yml: added amazon2cis_active_firewall_zone and amazon2cis_pass_min_days, referenced
+  by the new 4.1.4/4.1.6 and 5.5.1.2 tests but previously undefined
+- renamed "cis_1.1.2.5.4 .yml" - the stray space hid it from content checks
+- README updates and updated contributing and contributors
 
 Based on CIS 3.0.0
 
