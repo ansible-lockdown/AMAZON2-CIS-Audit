@@ -1,5 +1,10 @@
 # Changes to AMAZON2-CIS-Audit
 
+September 2026
+
+- 6.2.3.6: placeholder `echo "Manual"` check could only ever fail and asserted nothing;
+  replaced with conf and running checks on the `-k privileged` rules, matching 6.2.3.5 and 6.2.3.7
+
 August 2026
 Based on CIS 4.0.0
 
