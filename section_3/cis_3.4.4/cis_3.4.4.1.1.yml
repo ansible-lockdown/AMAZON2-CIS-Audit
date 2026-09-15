@@ -12,27 +12,17 @@ package:
       workstation: NA
       CIS_ID:
       - 3.4.4.1.1
-      CISv8:
-      - 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CA-9
   iptables_services_installed:
-    title: 3.5.3.1.1 | Ensure iptables packages are installed
+    title: 3.4.4.1.1 | Ensure iptables packages are installed | iptables-services
     name: iptables-services
     installed: true
     meta:
       server: 1
       workstation: NA
       CIS_ID:
-      - 3.5.3.1.1
-      CISv8:
-      - 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
+      - 3.4.4.1.1
       NIST800-53R5:
       - CA-9
   {{ end }}

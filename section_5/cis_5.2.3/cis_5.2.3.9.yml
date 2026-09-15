@@ -19,10 +19,6 @@ command:
       workstation: 2
       CIS_ID:
       - 5.2.3.9
-      CISv8: 8.5
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: NA
   auditd_perms_live:
     title: 5.2.3.9 | Ensure discretionary access control permission modification events are collected | running
@@ -40,10 +36,6 @@ command:
       workstation: 2
       CIS_ID:
       - 5.2.3.9
-      CISv8: 8.5
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

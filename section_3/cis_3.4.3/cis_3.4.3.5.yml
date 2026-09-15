@@ -14,11 +14,6 @@ command:
       workstation: 1
       CIS_ID:
       - 3.4.3.5
-      CISv8:
-      - 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: CA-9
   nftables_loopback_source:
     title: 3.4.3.5 | Ensure nftables loopback traffic is configured
@@ -31,11 +26,6 @@ command:
       workstation: 1
       CIS_ID:
       - 3.4.3.5
-      CISv8:
-      - 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: CA-9
     {{ if .Vars.amazon2cis_ipv6_required }}
   nftables_loopback_ipv6:
@@ -49,11 +39,6 @@ command:
       workstation: 1
       CIS_ID:
       - 3.4.3.5
-      CISv8:
-      - 4.4
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: CA-9
     {{ end }}
   {{ end }}

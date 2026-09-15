@@ -14,10 +14,6 @@ file:
       workstation: NA
       CIS_ID:
       - 4.4.2.3.4
-      CISv8: 5.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - IA-5
   authtok_pwquality_password_auth:
@@ -31,10 +27,6 @@ file:
       workstation: NA
       CIS_ID:
       - 4.4.2.3.4
-      CISv8: 5.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - IA-5
   {{ end }}

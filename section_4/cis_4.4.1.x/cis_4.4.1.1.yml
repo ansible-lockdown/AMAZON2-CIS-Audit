@@ -14,11 +14,7 @@ command:
       workstation: NA
       CIS_ID:
       - 4.4.1.1
-      CISv8:
       - NA
-      CISv8_IG1: NA
-      CISv8_IG2: NA
-      CISv8_IG3: NA
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

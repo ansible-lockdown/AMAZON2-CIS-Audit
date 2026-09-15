@@ -15,10 +15,6 @@ file:
       workstation: NA
       CIS_ID:
       - 4.4.2.1.2
-      CISv8: 6.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: NA
   faillock_password_auth_deny:
     title: 4.4.2.1.2 | Ensure password failed attempts lockout is configured | password-auth
@@ -32,10 +28,6 @@ file:
       workstation: NA
       CIS_ID:
       - 4.4.2.1.2
-      CISv8: 6.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5: NA
   {{ end }}
 {{ end }}

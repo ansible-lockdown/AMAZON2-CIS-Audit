@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.amazon2cis_level_1 }}
+  {{ if .Vars.amazon2cis_rule_4_1_1_5 }}
+file:
+  /etc/cron.weekly:
+    title: 4.1.1.5 | Ensure permissions on /etc/cron.weekly are configured
+    path: /etc/cron.weekly
+    exists: true
+    owner: root
+    group: root
+    mode: '0700'
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 4.1.1.5
+      NIST800-53R5:
+      - AC-3
+      - MP-2
+  {{ end }}
+{{ end }}

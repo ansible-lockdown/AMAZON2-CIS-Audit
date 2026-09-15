@@ -18,7 +18,7 @@ On our [Discord Server](https://www.lockdownenterprise.com/discord) to ask quest
 
 ## Requirements
 
-You must have [goss](https://goss.rocks) available to your host you would like to test.
+You must have [goss](https://github.com/krameff/goss) available to your host you would like to test.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
@@ -51,7 +51,7 @@ If a site has specific options e.g. password complexity these can also be set.
 
 ## Usage
 
-You must have [goss](https://goss.rocks) available to your host you would like to test.
+You must have [goss](https://github.com/krameff/goss) available to your host you would like to test.
 
 You must have root access to the system as some commands require privilege information.
 
@@ -159,5 +159,5 @@ In this case installed or skipped using the standard name for a package to be in
 
 ## further information
 
-- [goss documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#patterns)
+- [goss documentation](https://github.com/krameff/goss/blob/devel/docs/index.md)
 - [CIS standards](https://www.cisecurity.org)

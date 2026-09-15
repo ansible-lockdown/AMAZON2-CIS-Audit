@@ -8,20 +8,12 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - {{ .Vars.amazon2cis_sshd.kex }}
-    {{ range .Vars.amazon2cis_ssh_weak_kex }}
-    - '!/{{ . }}/'
-    {{ end }}
+    - 'KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256'
     meta:
       server: 1
       workstation: NA
       CIS_ID:
       - 4.2.12
-      CISv8:
-      - 4.1
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - SC-8
   {{ end }}

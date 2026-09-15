@@ -5,7 +5,7 @@
 user:
   root_gid:
     title: 4.5.2.1 | Ensure default group for the root account is GID 0
-    name: root
+    username: root
     exists: true
     uid: 0
     gid: 0
@@ -14,11 +14,6 @@ user:
       workstation: NA
       CIS_ID:
       - 4.5.2.1
-      CISv8:
-      - 4.1
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-1
       - CM-2

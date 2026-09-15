@@ -14,11 +14,6 @@ command:
       workstation: NA
       CIS_ID:
       - 4.5.1.4
-      CISv8:
-      - 5.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   inactive_users:
     title: 4.5.1.4 | Ensure inactive password lock is 30 days or less | users
     exec: 'grep -E ^[^:]+:[^\!*] /etc/shadow | grep -vw root | cut -d : -f1,7'
@@ -30,10 +25,5 @@ command:
       workstation: NA
       CIS_ID:
       - 4.5.1.4
-      CISv8:
-      - 5.2
-      CISv8_IG1: true
-      CISv8_IG2: true
-      CISv8_IG3: true
   {{ end }}
 {{ end }}

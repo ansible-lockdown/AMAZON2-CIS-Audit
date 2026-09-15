@@ -1,3 +1,5 @@
+---
+
 {{ if .Vars.amazon2cis_level_1 }}
   {{ if .Vars.amazon2cis_rule_2_2_6 }}
     {{ if not .Vars.amazon2cis_samba_server }}
@@ -11,11 +13,6 @@ package:
       workstation: 1
       CIS_ID:
       - 2.2.6
-      CISv8:
-      - 4.8
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-7
@@ -23,7 +20,7 @@ package:
       {{ if .Vars.amazon2cis_samba_mask }}
 file:
   samba_service_masked:
-    title: 2.2.6 | Ensure samba server services are not in use | masked
+    title: 2.2.6 | Ensure samba file server services are not in use | masked
     path: /etc/systemd/system/smb.service
     exists: true
     filetype: symlink
@@ -33,11 +30,6 @@ file:
       workstation: 1
       CIS_ID:
       - 2.2.6
-      CISv8:
-      - 4.8
-      CISv8_IG1: false
-      CISv8_IG2: true
-      CISv8_IG3: true
       NIST800-53R5:
       - CM-6
       - CM-7
